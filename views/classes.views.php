@@ -73,28 +73,28 @@ include "partials/_nav_censeur.php";
                                                                             id="v-pills-home-tab" data-bs-toggle="pill"
                                                                             data-bs-target="#v-pills-home" type="button"
                                                                             role="tab" aria-controls="v-pills-home"
-                                                                            aria-selected="true">Semaine</button>
+                                                                            aria-selected="true">Nom de l'enseignant</button>
                                                                         <button class="nav-link"
                                                                             id="v-pills-profile-tab"
                                                                             data-bs-toggle="pill"
                                                                             data-bs-target="#v-pills-profile"
                                                                             type="button" role="tab"
                                                                             aria-controls="v-pills-profile"
-                                                                            aria-selected="false">Mois</button>
+                                                                            aria-selected="false">titre de la lecon</button>
                                                                         <button class="nav-link"
                                                                             id="v-pills-messages-tab"
                                                                             data-bs-toggle="pill"
                                                                             data-bs-target="#v-pills-messages"
                                                                             type="button" role="tab"
                                                                             aria-controls="v-pills-messages"
-                                                                            aria-selected="false">Trimestre</button>
+                                                                            aria-selected="false">numero et titre de la sequence</button>
                                                                         <button class="nav-link"
                                                                             id="v-pills-settings-tab"
                                                                             data-bs-toggle="pill"
                                                                             data-bs-target="#v-pills-settings"
                                                                             type="button" role="tab"
                                                                             aria-controls="v-pills-settings"
-                                                                            aria-selected="false">Annee</button>
+                                                                            aria-selected="false">objectifs de la lecon</button>
                                                                     </div>
                                                                     <div class="tab-content" id="v-pills-tabContent">
                                                                         <div class="tab-pane fade show active"
