@@ -25,6 +25,20 @@
                     <input class="form-control border-0" type="search" placeholder="Search">
                 </form>
             <a href="index.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2 text-info"></i>Tableau de Bord</a>
+
+
+
+            <div class="nav-item dropdown">
+            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
+                        class="fa fa-laptop me-2 text-info"></i><span class="text-info">Créer</span></a>
+                <div class="dropdown-menu bg-transparent border-0">
+                    <a href="#" class="dropdown-item text-info">Cahier de texte</a>
+                    <a href="#" class="dropdown-item text-info">Compte enseignant</a>
+                </div>
+            </div>
+
+
+
             <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                         class="fa fa-laptop me-2 text-info"></i><span class="text-info">Classes</span></a>
@@ -45,6 +59,13 @@
                     <a href="#" class="dropdown-item text-info">2nd A4 All</a>
                 </div>
             </div>
+
+
+
+
+
+
+
             <a href="#" class="nav-item nav-link text-info"><i class="fa fa-th me-2"></i>Emploi de temps</a>
             <a href="#" class="nav-item nav-link text-info"><i class="fa fa-chart-bar me-2"></i>Stats - Evaluations</a>
         </div>
