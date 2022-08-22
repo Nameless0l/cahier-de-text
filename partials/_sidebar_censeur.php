@@ -34,7 +34,7 @@
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="#" class="dropdown-item text-info">Cahier de texte</a>
                     <a href="#" class="dropdown-item text-info">Compte enseignant</a>
-                </div>
+                </div>xml_set_external_entity_ref_handler
             </div>
 
 
