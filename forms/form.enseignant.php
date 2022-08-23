@@ -6,14 +6,14 @@ include "partials/_header.php";
 <form class="row g-3 needs-validation" novalidate>
   <div class="col-md-4">
     <label for="validationCustom01" class="form-label">Nom de l'enseignant</label>
-    <input type="text" class="form-control" id="validationCustom01"  placeholder=" le nom de l'enseignant" required>
+    <input type="text" class="form-control" id="validationCustom01" placeholder=" le nom de l'enseignant" required>
     <div class="valid-feedback">
       Looks good!
     </div>
   </div>
   <div class="col-md-4">
     <label for="validationCustom02" class="form-label">Prenom</label>
-    <input type="text" class="form-control" id="validationCustom02"  placeholder=" le prenom de l'enseignant"required>
+    <input type="text" class="form-control" id="validationCustom02" placeholder=" le prenom de l'enseignant" required>
     <div class="valid-feedback">
       Looks good!
     </div>
@@ -31,18 +31,18 @@ include "partials/_header.php";
     <div class="invalid-feedback">
       Please provide a valid city.
     </div>
-    <div class="col-md-6" >
-        <h3> class enseignée</h3>
- <div class="form-check">
-    <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
-    <label class="form-check-label" for="validationFormCheck2">Mathematiques</label>
-  </div>
-  <div class="form-check mb-3">
-    <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" required>
-    <label class="form-check-label" for="validationFormCheck3">Physique</label>
-    <div class="valid-feedback">More example invalid feedback text</div>
-  </div>
- </div>
+    <div class="col-md-6">
+      <h3> class enseignée</h3>
+      <div class="form-check">
+        <input type="radio" class="form-check-input" id="validationFormCheck2" name="radio-stacked" required>
+        <label class="form-check-label" for="validationFormCheck2">Mathematiques</label>
+      </div>
+      <div class="form-check mb-3">
+        <input type="radio" class="form-check-input" id="validationFormCheck3" name="radio-stacked" required>
+        <label class="form-check-label" for="validationFormCheck3">Physique</label>
+        <div class="valid-feedback">More example invalid feedback text</div>
+      </div>
+    </div>
   </div>
   <div class="col-md-3">
     <label for="validationCustom04" class="form-label">Statut</label>
@@ -56,24 +56,25 @@ include "partials/_header.php";
     </div>
   </div>
   <div class="col-3">
-  <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-  <label class="form-check-label" for="flexCheckDefault">
-    Default checkbox
-  </label>
-</div>
-<div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-  <label class="form-check-label" for="flexCheckChecked">
-    Checked checkbox
-  </label>
-</div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        Default checkbox
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
+      <label class="form-check-label" for="flexCheckChecked">
+        Checked checkbox
+      </label>
+    </div>
   </div>
   <div class="col-12">
     <button class="btn btn-primary" type="submit">Submit form</button>
   </div>
-  
+
 </form>
 </div>
 </body>
+
 </html>
