@@ -16,8 +16,8 @@
                 </div>
             </div>
             <div class="ms-3">
-                <h6 class="mb-0 text-white">Natacha Brenda</h6>
-                <span>Censeur</span>
+                <h6 class="mb-0 text-white">Natacha Fonkpu</h6>
+                <span>Enseignant</span>
             </div>
         </div>
         <div class="navbar-nav w-100">
@@ -30,10 +30,9 @@
 
             <div class="nav-item dropdown">
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
-                        class="fa fa-laptop me-2 text-info"></i><span class="text-info">Créer</span></a>
+                        class="fa fa-laptop me-2 text-info"></i><span class="text-info">Mes classes</span></a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="/src/user.php" class="dropdown-item text-info">Cahier de texte</a>
-                    <a href="/forms/form.enseignant.php" class="dropdown-item text-info">Compte enseignant</a>
+                    <a href="#" class="dropdown-item text-info">Cahier de texte</a>
                 </div>
             </div>
 

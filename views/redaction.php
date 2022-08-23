@@ -1,6 +1,6 @@
 <?php
 
-$bdd = new PDO("mysql:host=127.0.0.1;dbname=cahier_de_texte;charset=utf8", "root", "");
+$bdd = new PDO("mysql:host=127.0.0.1;dbname=cahier_de_text;charset=utf8", "root", "");
 
 ?>
 
@@ -23,6 +23,7 @@ $bdd = new PDO("mysql:host=127.0.0.1;dbname=cahier_de_texte;charset=utf8", "root
         <select name="trimestre" id="trimestre">
             <option value="un">Un</option>
             <option value="deux">Deux</option>
+            <option value="trois">trois</option>
         </select>
     </form>
     
