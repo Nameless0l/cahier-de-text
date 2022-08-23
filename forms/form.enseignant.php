@@ -1,8 +1,14 @@
-<?php
-$title = "Accueil";
-include "partials/_header.php";
-
-?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+  <title>Document</title>
+</head>
+<body style="padding: 10 rem">
+  
 <form class="row g-3 needs-validation" novalidate>
   <div class="col-md-4">
     <label for="validationCustom01" class="form-label">Nom de l'enseignant</label>
@@ -55,19 +61,44 @@ include "partials/_header.php";
       Please select a valid state.
     </div>
   </div>
-  <div class="col-3">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-      <label class="form-check-label" for="flexCheckDefault">
-        Default checkbox
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" checked>
-      <label class="form-check-label" for="flexCheckChecked">
-        Checked checkbox
-      </label>
-    </div>
+  <div class="col-3 dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <div class="list-group">
+  <label class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value=" mathematiques">
+    Mathematiques
+  </label>
+  <label class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="Physiques">
+    Physiques
+  </label>
+  <label class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="informaiques">
+    Informaiques
+  </label>
+  <label class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="hisoire">
+    Hisoire
+  </label>
+  <label class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="geographie">
+    Geographie
+  </label>
+  <label class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="geographie">
+    Geographie
+  </label>
+  <label class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="geographie">
+    Geographie
+  </label>
+  <label class="list-group-item">
+    <input class="form-check-input me-1" type="checkbox" value="geographie">
+    Geographie
+  </label>
+</div>
   </div>
   <div class="col-12">
     <button class="btn btn-primary" type="submit">Submit form</button>
