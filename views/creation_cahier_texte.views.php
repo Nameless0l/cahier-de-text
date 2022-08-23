@@ -4,47 +4,6 @@ include "partials/_header.php";
 include "fonctions/fonction_form.php";
 ?>
 
-<?php
-$bdd = new PDO("mysql:host=127.0.0.1;dbname=cahier_de_texte;charset=utf8", "root", "");
-
-if(isset($_POST["retour"]))
-{
-  $classe = htmlspecialchars($_POST["classe"]);
-
-  $nbreleve = htmlspecialchars($_POST["nbreleve"]);
-
-  $nomcenseur = htmlspecialchars($_POST["censeur"]);
-
-  $chef_classe = htmlspecialchars($_POST["chef"]);
-
-  $prof_principale = htmlspecialchars($_POST["prof_principale"]);
-
-  $matricule = htmlspecialchars($_POST["matricule"]);
-
-  $emploidetemps = uploade("emploidetemps");
-  $fichedeprogression = uploade("fichedeprogression");
-  
-
- 
-
-
-  if(!empty($_POST["classe"]) AND !empty($_POST["chef"]) AND !empty($_POST["prof_principale"]) AND !empty($_POST["matricule"]) AND !empty($_POST["nbreleve"]) AND !empty($_POST["censeur"]))
-  {
-    echo "ca y ai";
-        $ins_enseignant = $bdd -> prepare("INSERT INTO classes(nom_classe, nbre_eleve, censeur, chef_classe, prof_principal, emploi_temps,fiche_progression) VALUES(?,?,?,?,?,?,?)");
-        $ins_enseignant -> execute(array($classe,$nbreleve,$nomcenseur,$chef_classe,$prof_principale,$emploidetemps,$fichedeprogression));
-
-        $ins_cahiertext = $bdd -> prepare("INSERT INTO cahierdetexte(nom_classe,matricule_cens_en_charge) VALUES(?,?)");
-        $ins_cahiertext -> execute(array($classe, $matricule));
-        $erreur = "Le cahier a été créé";
-  }
-  else
-  {
-    $error = "veuillez remplir tous les champs";
-  }
-}
-
-?>
 
 <h2 class="text" align = "center">CREATION CAHIER DE TEXTE</h2>
 
@@ -110,8 +69,6 @@ elseif(isset($alert))
   echo $alert;
 }
 ?>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
 
 <?php include "partials/_footer.php"; ?>
