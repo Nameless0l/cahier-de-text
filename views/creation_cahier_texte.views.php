@@ -1,4 +1,10 @@
 <?php
+$title = "création cahier de texte";
+include "partials/_header.php";
+include "fonctions/fonction_form.php";
+?>
+
+<?php
 $bdd = new PDO("mysql:host=127.0.0.1;dbname=cahier_de_texte;charset=utf8", "root", "");
 
 if(isset($_POST["retour"]))
@@ -39,20 +45,6 @@ if(isset($_POST["retour"]))
 }
 
 ?>
-
-<!DOCTYPE html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta charset="utf-8">
-    <title>Cahier de texte</title>
-    <link rel="stylesheet" href="document/styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.0/css/all.min.css"/>
-    <script src="app.js"></script>
-</head>
-
-<body>
-
 
 <h2 class="text" align = "center">CREATION CAHIER DE TEXTE</h2>
 
@@ -122,52 +114,5 @@ elseif(isset($alert))
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 
 
-</body>
-</html>
-<?php
-function uploade($nom)
-{
- 
-  $emploidetemps = $_FILES[$nom]["name"];
+<?php include "partials/_footer.php"; ?>
 
-  $type = $_FILES[$nom]["type"];
-
-  $taille = $_FILES[$nom]["size"];
-
-  $fichier_temporaire = $_FILES[$nom]["tmp_name"];
-
-  $erreur = $_FILES[$nom]["error"];
-
-  $destination = "document/".$emploidetemps;
-
-  $extensionvalide = array("jpg", "jpeg", "png", "gif");
-
- $type_emploidetemps = ["$nom/jpg", "$nom/jpeg", "$nom/png", "$nom/gif"];
-
- $extension = explode(".", $emploidetemps);
-
-
- 
-    if(count($extension) <= 2 && in_array(strtolower(end($extension)), $extensionvalide))
-    {
-        if($erreur == 0)
-        {
-            if(move_uploaded_file($fichier_temporaire,$destination))
-            {
-              $alert = "uploade effectue";
-            }
-            else
-            {
-              $error = "erreur";
-            }
-        }
-        else
-        {
-          $error = "error";
-        }
-    }
-return $emploidetemps;
-}
-
-
-?>
