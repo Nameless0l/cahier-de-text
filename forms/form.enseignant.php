@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
     <title>Formulaire enseifnant</title>
 </head>
 <body style=" padding:10rem">
@@ -77,6 +78,7 @@
   <div class="col-12">
     <button class="btn btn-primary" type="submit">Submit form</button>
   </div>
+  
 </form>
 </body>
 </html>

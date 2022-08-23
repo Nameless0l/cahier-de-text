@@ -1,7 +1,6 @@
 <!-- <div class="container-xxl position-relative bg-info d-flex p-0"> -->
 
 
-
 <!-- Sidebar Start -->
 <div class="sidebar  pe-4 pb-3">
     <nav class="navbar  navbar-light">
@@ -32,7 +31,7 @@
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                         class="fa fa-laptop me-2 text-info"></i><span class="text-info">Créer</span></a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="/src/user.php" class="dropdown-item text-info">Cahier de texte</a>
+                    <a href="/views/redaction.php" class="dropdown-item text-info">Cahier de texte</a>
                     <a href="/forms/form.enseignant.php" class="dropdown-item text-info">Compte enseignant</a>
                 </div>
             </div>
@@ -59,7 +58,6 @@
                     <a href="#" class="dropdown-item text-info">2nd A4 All</a>
                 </div>
             </div>
-
 
 
 
