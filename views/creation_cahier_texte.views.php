@@ -59,16 +59,7 @@ include "fonctions/fonction_form.php";
 </table>
 </form>
 </div>
-<?php
-if(isset($error))
-{
-  echo $error;
-}
-elseif(isset($alert))
-{
-  echo $alert;
-}
-?>
+
 
 
 <?php include "partials/_footer.php"; ?>

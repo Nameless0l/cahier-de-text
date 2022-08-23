@@ -20,8 +20,6 @@ if(isset($_POST["retour"]))
   $fichedeprogression = uploade("fichedeprogression");
   
 
- 
-
 
   if(!empty($_POST["classe"]) AND !empty($_POST["chef"]) AND !empty($_POST["prof_principale"]) AND !empty($_POST["matricule"]) AND !empty($_POST["nbreleve"]) AND !empty($_POST["censeur"]))
   {
@@ -39,4 +37,14 @@ if(isset($_POST["retour"]))
   }
 }
 
+?>
+<?php
+if(isset($error))
+{
+  echo $error;
+}
+elseif(isset($alert))
+{
+  echo $alert;
+}
 ?>
