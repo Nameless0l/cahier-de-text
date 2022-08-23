@@ -1,4 +1,5 @@
 <?php
+
 $bdd = new PDO("mysql:host=127.0.0.1;dbname=cahier_de_texte;charset=utf8", "root", "");
 
 if (isset($_POST["retour"])) {
@@ -48,6 +49,14 @@ if (isset($_POST["retour"])) {
 </head>
 
 <body>
+=======
+$title = "création cahier de texte";
+include "partials/_header.php";
+include "fonctions/fonction_form.php";
+include "partials/_sidebar_censeur.php";
+include "partials/_nav_censeur.php";
+?>
+>>>>>>> ed011e6d9696c5757caa654b0517b0bbc175264a
 
 
   <h2 class="text" align="center">CREATION CAHIER DE TEXTE</h2>
@@ -113,6 +122,7 @@ if (isset($_POST["retour"])) {
           <td style="text-align: right;"><input type="submit" name="retour" value="Créer"></td>
         </tr>
 
+<<<<<<< HEAD
       </table>
     </form>
   </div>
@@ -130,43 +140,16 @@ if (isset($_POST["retour"])) {
 </body>
 
 </html>
-<?php
+<?php 
 function uploade($nom)
 {
 
-  $emploidetemps = $_FILES[$nom]["name"];
-
-  $type = $_FILES[$nom]["type"];
-
-  $taille = $_FILES[$nom]["size"];
-
-  $fichier_temporaire = $_FILES[$nom]["tmp_name"];
-
-  $erreur = $_FILES[$nom]["error"];
-
-  $destination = "document/" . $emploidetemps;
-
-  $extensionvalide = array("jpg", "jpeg", "png", "gif");
-
-  $type_emploidetemps = ["$nom/jpg", "$nom/jpeg", "$nom/png", "$nom/gif"];
-
-  $extension = explode(".", $emploidetemps);
+  $emploidetemps = $_FILES[$nom]["name"];}
+  ?>
+</table>
+</form>
+</div>
 
 
 
-  if (count($extension) <= 2 && in_array(strtolower(end($extension)), $extensionvalide)) {
-    if ($erreur == 0) {
-      if (move_uploaded_file($fichier_temporaire, $destination)) {
-        $alert = "uploade effectue";
-      } else {
-        $error = "erreur";
-      }
-    } else {
-      $error = "error";
-    }
-  }
-  return $emploidetemps;
-}
-
-
-?>
+<?php include "partials/_footer.php"; ?>
