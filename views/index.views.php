@@ -3,7 +3,6 @@ $title = "Accueil";
 include "partials/_header.php";
 include "partials/_sidebar_censeur.php";
 include "partials/_nav_censeur.php";
-
 ?>
 
 <div class="row mt-5">
