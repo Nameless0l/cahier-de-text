@@ -1,8 +1,4 @@
-<?php
 
-$bdd = new PDO("mysql:host=127.0.0.1;dbname=cahier_de_text;charset=utf8", "root", "");
-
-?>
 
 <!DOCTYPE html>
     <head>
@@ -381,7 +377,7 @@ $bdd = new PDO("mysql:host=127.0.0.1;dbname=cahier_de_text;charset=utf8", "root"
    </form>
     </div>
     
-     <script src="ckeditor/ckeditor.js"></script>
+     <script src="../vendor/ckeditor/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('objectifs');
 </script>
