@@ -23,7 +23,7 @@
 <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 </div>
 <!-- Javascript ckeditor-->
-<script src="vendor/ckeditor/ckeditor.js"></script>
+<script src="local/ckeditor/ckeditor.js"></script>
 <script>
     CKEDITOR.replace('objectifs');
 </script>
