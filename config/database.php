@@ -1,7 +1,7 @@
 <?php
 ignore_user_abort(true);
 	if(!defined('DB_HOST'))define('DB_HOST', 'localhost');
-	if(!defined('DB_NAME'))define('DB_NAME', 'sunrise');
+	if(!defined('DB_NAME'))define('DB_NAME', 'cahier_de_texte');
 	if(!defined('DB_USERNAME'))define('DB_USERNAME', 'root');
 	if(!defined('DB_PASSWORD'))define('DB_PASSWORD', '');	
 
