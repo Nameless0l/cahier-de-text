@@ -1,0 +1,1 @@
+<?php include "views/creation_cahier_texte.views.php"; ?>
