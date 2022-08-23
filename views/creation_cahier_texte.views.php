@@ -146,7 +146,6 @@ function uploade($nom)
 
  $extension = explode(".", $emploidetemps);
 
- 
 
  
     if(count($extension) <= 2 && in_array(strtolower(end($extension)), $extensionvalide))
