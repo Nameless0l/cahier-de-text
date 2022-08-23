@@ -121,8 +121,6 @@ include "partials/_nav_censeur.php";
           <td></td>
           <td style="text-align: right;"><input type="submit" name="retour" value="Créer"></td>
         </tr>
-
-<<<<<<< HEAD
       </table>
     </form>
   </div>
