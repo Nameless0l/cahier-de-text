@@ -18,7 +18,14 @@ $bdd = new PDO("mysql:host=127.0.0.1;dbname=cahier_de_texte;charset=utf8", "root
 <p>COURS</p>
 
     <p> journée du: (DATE)</p>
-    <P>Période(trimestre)</P>
+    <form>
+        <label for="trimestre">Trimestre:</label>
+        <select name="trimestre" id="trimestre">
+            <option value="un">Un</option>
+            <option value="deux">Deux</option>
+        </select>
+    </form>
+    
         <div class="container-sm">
    <form method="POST" action="" enctype="multipart/form-data">
     
@@ -142,7 +149,13 @@ $bdd = new PDO("mysql:host=127.0.0.1;dbname=cahier_de_texte;charset=utf8", "root
 <p>------------------------------------------------------------------------------------------------------------------</p>
     <p>TRAVAUX PRATIQUES</p>
     <p> journée du: (DATE)</p>
-    <P>Période(trimestre)</P>
+    <form>
+        <label for="trimestre">Trimestre:</label>
+        <select name="trimestre" id="trimestre">
+            <option value="un">Un</option>
+            <option value="deux">Deux</option>
+        </select>
+    </form>
 
     <div class="container-sm">
    <form method="POST" action="" enctype="multipart/form-data">
@@ -214,7 +227,13 @@ $bdd = new PDO("mysql:host=127.0.0.1;dbname=cahier_de_texte;charset=utf8", "root
 
     <p>Evaluation</p>
     <p> journée du: (DATE)</p>
-    <P>Période(trimestre)</P>
+    <form>
+        <label for="trimestre">Trimestre:</label>
+        <select name="trimestre" id="trimestre">
+            <option value="un">Un</option>
+            <option value="deux">Deux</option>
+        </select>
+    </form>
 
     <div class="container-sm">
    <form method="POST" action="" enctype="multipart/form-data">
@@ -309,7 +328,13 @@ $bdd = new PDO("mysql:host=127.0.0.1;dbname=cahier_de_texte;charset=utf8", "root
 
     <p>ACTIVITES D'INTEGRATION</p>
     <p> journée du: (DATE)</p>
-    <P>Période(trimestre)</P>
+    <form>
+        <label for="trimestre">Trimestre:</label>
+        <select name="trimestre" id="trimestre">
+            <option value="un">Un</option>
+            <option value="deux">Deux</option>
+        </select>
+    </form>
 
     <div class="container-sm">
    <form method="POST" action="" enctype="multipart/form-data">
