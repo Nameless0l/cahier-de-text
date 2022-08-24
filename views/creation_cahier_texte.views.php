@@ -8,7 +8,7 @@ include "partials/_nav_censeur.php";
 
 
 <div class="hello">
-  <p align = "center">Veuiller remplir ces information </p>
+  <p align = "center">Veuiller remplir ces informations </p>
     <form method="POST" action="" enctype="multipart/form-data">
        <table align="center">
          <tr>
