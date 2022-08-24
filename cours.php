@@ -1,0 +1,1 @@
+<?php include "views/cours.views.php"; ?>

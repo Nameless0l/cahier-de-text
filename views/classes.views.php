@@ -1,10 +1,4 @@
-<?php
-$title = "Accueil";
-include "partials/_header.php";
-include "partials/_sidebar_censeur.php";
-include "partials/_nav_censeur.php";
 
-?>
 <div>
     <div class="col-sm-12 col-xl-12">
         <div class="bg-light rounded h-100 p-4">
@@ -248,4 +242,3 @@ include "partials/_nav_censeur.php";
 
 
 
-<?php include "partials/_footer.php" ?>
