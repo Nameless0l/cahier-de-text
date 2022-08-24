@@ -81,7 +81,7 @@
                                                                             data-bs-target="#v-pills-messages"
                                                                             type="button" role="tab"
                                                                             aria-controls="v-pills-messages"
-                                                                            aria-selected="false">semestre</button>
+                                                                            aria-selected="false">trimestre</button>
                                                                         <button class="nav-link"
                                                                             id="v-pills-settings-tab"
                                                                             data-bs-toggle="pill"
