@@ -11,7 +11,7 @@
         <div>
             <ul class="navbar-nav mr-lg-2">
                 <li class="nav-item  d-none d-lg-flex">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="schedule.php">
                     Emploi de temps
                     </a>
                 </li>
