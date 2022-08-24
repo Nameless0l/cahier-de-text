@@ -7,10 +7,8 @@ include "partials/_nav_censeur.php";
 ?>
 
 
-<h2 class="text" align = "center">CREATION CAHIER DE TEXTE</h2>
-
 <div class="hello">
-  <p align = "center">Veuiller entrer les informations le concernant</p>
+  <p align = "center">Veuiller remplir ces informations </p>
     <form method="POST" action="" enctype="multipart/form-data">
        <table align="center">
          <tr>
