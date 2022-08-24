@@ -38,9 +38,9 @@ if (!empty($_POST)) {
 ?>
 <?php
 $title = 'Ajout d\'un Enseignant';
-include '../partials/_header.php';
-include "../partials/_sidebar_censeur.php";
-include "../partials/_nav_censeur.php";
+include 'partials/_header.php';
+include "partials/_sidebar_censeur.php";
+include "partials/_nav_censeur.php";
 ?>
 
 <div >
@@ -120,5 +120,5 @@ include "../partials/_nav_censeur.php";
   </form>
 </div>
 <?php
-include '../partials/_footer.php';
+include 'partials/_footer.php';
 ?>
