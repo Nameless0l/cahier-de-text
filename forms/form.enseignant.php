@@ -11,17 +11,17 @@
 
 <body style="padding: 10 rem">
 
-  <form class="row g-3 needs-validation" novalidate>
+  <form  method="POST" class="row g-3 needs-validation" novalidate>
     <div class="col-md-4">
       <label for="validationCustom01" class="form-label">Nom de l'enseignant</label>
-      <input type="text" class="form-control" id="validationCustom01" placeholder=" le nom de l'enseignant" required>
+      <input type="text" class="form-control" id="nom" placeholder=" le nom de l'enseignant" required>
       <div class="valid-feedback">
         Looks good!
       </div>
     </div>
     <div class="col-md-4">
       <label for="validationCustom02" class="form-label">Prenom</label>
-      <input type="text" class="form-control" id="validationCustom02" placeholder=" le prenom de l'enseignant" required>
+      <input type="text" class="form-control" id="prenom" placeholder=" le prenom de l'enseignant" required>
       <div class="valid-feedback">
         Looks good!
       </div>
