@@ -1,9 +1,3 @@
-<?php
-$title = "Accueil";
-include "partials/_header.php";
-include "partials/_sidebar_censeur.php";
-include "partials/_nav_censeur.php";
-?>
 
 <div class="row mt-5">
     <div class="col-sm-6">
@@ -379,4 +373,3 @@ include "partials/_nav_censeur.php";
         </div>
     </div>
 </div>
-<?php include "partials/_footer.php"; ?>
