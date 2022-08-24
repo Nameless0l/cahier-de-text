@@ -67,28 +67,28 @@
                                                                             id="v-pills-home-tab" data-bs-toggle="pill"
                                                                             data-bs-target="#v-pills-home" type="button"
                                                                             role="tab" aria-controls="v-pills-home"
-                                                                            aria-selected="true">Nom de l'enseignant</button>
+                                                                            aria-selected="true">semaine</button>
                                                                         <button class="nav-link"
                                                                             id="v-pills-profile-tab"
                                                                             data-bs-toggle="pill"
                                                                             data-bs-target="#v-pills-profile"
                                                                             type="button" role="tab"
                                                                             aria-controls="v-pills-profile"
-                                                                            aria-selected="false">titre de la lecon</button>
+                                                                            aria-selected="false">mois</button>
                                                                         <button class="nav-link"
                                                                             id="v-pills-messages-tab"
                                                                             data-bs-toggle="pill"
                                                                             data-bs-target="#v-pills-messages"
                                                                             type="button" role="tab"
                                                                             aria-controls="v-pills-messages"
-                                                                            aria-selected="false">numero et titre de la sequence</button>
+                                                                            aria-selected="false">semestre</button>
                                                                         <button class="nav-link"
                                                                             id="v-pills-settings-tab"
                                                                             data-bs-toggle="pill"
                                                                             data-bs-target="#v-pills-settings"
                                                                             type="button" role="tab"
                                                                             aria-controls="v-pills-settings"
-                                                                            aria-selected="false">objectifs de la lecon</button>
+                                                                            aria-selected="false">Annee</button>
                                                                     </div>
                                                                     <div class="tab-content" id="v-pills-tabContent">
                                                                         <div class="tab-pane fade show active"
