@@ -1,0 +1,1 @@
+<?php include "views/travaux_pratiques.views.php"; ?>
