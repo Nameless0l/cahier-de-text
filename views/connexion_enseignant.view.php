@@ -6,35 +6,49 @@ if (!empty($_POST)) {
 
 
     if (
-        isset($_POST["pass"],  $_POST["matricule"])
-        && !empty($_POST["pass"]) && !empty($_POST["matricule"])
+        isset($_POST["pass"],  $_POST["email"])
+        && !empty($_POST["pass"]) && !empty($_POST["email"])
     ) {
         // $pass = strip_tags($_POST["nom"]);
-        // $matricule = strip_tags($_POST["matricule"]);
+        // $email = strip_tags($_POST["email"]);
+        
+        require_once 'functions/selection_table.php';
         require_once 'config/database.php';
+     
 
-        // controles souhaités sur l'unicité des matricules
+        // controles souhaités sur l'unicité des emails
 
         // connection db
-        $sql = "SELECT * FROM enseignant WHERE matricule= :matricule";
+        $sql = "SELECT * FROM ".Select_table($_POST["email"])." WHERE email= :email";
         $query = $db->prepare($sql);
 
         // $query->bindValue(":pass", $nom, PDO::PARAM_STR);
-        $query->bindValue(":matricule", $_POST["matricule"], PDO::PARAM_STR);
+        $query->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
 
         $query->execute();
 
         $user = $query->fetch();
         if (!$user) {
-            die("Matricule  ou mot de pass incorrecte ");
+            die("email  ou mot de pass incorrecte ");
         }
         if (!password_verify($_POST["pass"], $user["mot_de_pass"])) {
 
-            die("Matricule  ou jehjhrejmot de pass incorrecte ");
+            die("email  ou jehjhrejmot de pass incorrecte ");
         }
         // ouverture de la sesson php
     session_start();
-
+    $_SESSION["user"]=[
+        "id_enseignant"=>$user["id_enseignant"],
+        "email"=>$user["email"],
+        "Nom"=>$user["Nom"],
+        "Prenom"=>$user["Prenom"],
+        "quartier"=>$user["quartier"],
+        "mot_de_pass"=>$user["mot_de_pass"],
+        "matieres"=>$user["matieres"],
+        "classes"=>$user["classes"],
+        "ville"=>$user["ville"],
+    ];
+    header("Location:");
     } else {
         die('formulaire incomplet');
     }
@@ -52,8 +66,8 @@ include "partials/_nav_censeur.php";
     <form class="row g-3 needs-validation" method="post">
 
         <div class="col-md-12">
-            <label for="validationCustom01" class="form-label">Matricule</label>
-            <input type="text" name="matricule" class="form-control" id="validationCustom01" required="required" placeholder=" Entrer votre mancule ici">
+            <label for="validationCustom01" class="form-label">Email</label>
+            <input type="text" name="email" class="form-control" id="validationCustom01" required="required" placeholder=" Entrer votre mancule ici">
 
         </div>
         <div class="col-md-12">
