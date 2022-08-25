@@ -29,7 +29,7 @@
     <link href="/assets/css/bootstrao_version_5.2/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/table.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/teacher.css">
-
+    <link rel="stylesheet" href="assets/css/afficheteach.css">
     <!-- Template Stylesheet -->
     <link href="assets/css/style.css" rel="stylesheet">
 </head>

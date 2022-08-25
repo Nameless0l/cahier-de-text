@@ -61,9 +61,6 @@
 
 
 
-
-
-
             <a href="#" class="nav-item nav-link text-info"><i class="fa fa-th me-2"></i>Emploi de temps</a>
             <a href="#" class="nav-item nav-link text-info"><i class="fa fa-chart-bar me-2"></i>Stats - Evaluations</a>
         </div>
