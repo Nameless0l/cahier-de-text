@@ -47,34 +47,9 @@ include "partials/_nav_censeur.php";
 
 <div>
 
-  <form class="row g-3 needs-validation" method="post">
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="censeur" id="censeur">
-      <label class="form-check-label" for="censeur">
-        Censeur
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="enseignant" id="enseignant" checked>
-      <label class="form-check-label" for="enseignant">
-        Enseignant
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="inspecteur" id="enseignant">
-      <label class="form-check-label" for="Inspecteur">
-        Inspecteur
-      </label>
-    </div>
-    <div class="form-check">
-      <input class="form-check-input" type="radio" name="parent" id="parent">
-      <label class="form-check-label" for="parent">
-        Parent
-      </label>
-    </div>
-    
+  <form class="row g-3 needs-validation" method="post">    
     <div class="col-md-4">
-      <label for="validationCustom01" class="form-label"><?php echo ''?></label>
+      <label for="validationCustom01" class="form-label">Matricule</label>
       <input type="text" name="matricule" class="form-control" id="validationCustom01" required="required" placeholder=" Matricule ici">
       <div class="valid-feedback">
         Looks good!
@@ -110,7 +85,7 @@ include "partials/_nav_censeur.php";
     </div>
     <div class="col-md-6">
       <label for="validationCustom03" class="form-label">Email</label>
-      <input type="text" name="email" class="form-control" id="validationCustom03" required="required">
+      <input type="email" name="email" class="form-control" id="validationCustom03" required="required">
       <div class="invalid-feedback">
         Please.
       </div>

@@ -11,15 +11,15 @@ if (!empty($_POST)) {
     ) {
         // $pass = strip_tags($_POST["nom"]);
         // $email = strip_tags($_POST["email"]);
-        
+
         require_once 'functions/selection_table.php';
         require_once 'config/database.php';
-     
+
 
         // controles souhaités sur l'unicité des emails
 
         // connection db
-        $sql = "SELECT * FROM ".Select_table($_POST["email"])." WHERE email= :email";
+        $sql = "SELECT * FROM " . Select_table($_POST["email"]) . " WHERE email= :email";
         $query = $db->prepare($sql);
 
         // $query->bindValue(":pass", $nom, PDO::PARAM_STR);
@@ -36,19 +36,19 @@ if (!empty($_POST)) {
             die("email  ou jehjhrejmot de pass incorrecte ");
         }
         // ouverture de la sesson php
-    session_start();
-    $_SESSION["user"]=[
-        "id_enseignant"=>$user["id_enseignant"],
-        "email"=>$user["email"],
-        "Nom"=>$user["Nom"],
-        "Prenom"=>$user["Prenom"],
-        "quartier"=>$user["quartier"],
-        "mot_de_pass"=>$user["mot_de_pass"],
-        "matieres"=>$user["matieres"],
-        "classes"=>$user["classes"],
-        "ville"=>$user["ville"],
-    ];
-    header("Location:");
+        session_start();
+        $_SESSION["user"] = [
+            "id_enseignant" => $user["id_enseignant"],
+            "email" => $_POST["email"],
+            "Nom" => $user["Nom"],
+            "Prenom" => $user["Prenom"],
+            "quartier" => $user["quartier"],
+            "mot_de_pass" => $_POST["mot_de_pass"],
+            "matieres" => $user["matieres"],
+            "classes" => $user["classes"],
+            "ville" => $user["ville"],
+        ];
+        header("Location: index.php");
     } else {
         die('formulaire incomplet');
     }
@@ -57,14 +57,11 @@ if (!empty($_POST)) {
 <?php
 $title = 'Enseignant';
 include 'partials/_header.php';
-include "partials/_sidebar_censeur.php";
-include "partials/_nav_censeur.php";
 ?>
 
-<div>
+<div class="col-md-12 pt-2">
 
-    <form class="row g-3 needs-validation" method="post">
-
+    <form class="needs-validation" method="post">
         <div class="col-md-12">
             <label for="validationCustom01" class="form-label">Email</label>
             <input type="text" name="email" class="form-control" id="validationCustom01" required="required" placeholder=" Entrer votre mancule ici">
@@ -74,9 +71,11 @@ include "partials/_nav_censeur.php";
             <label for="validationCustom01" class="form-label">Mot de pass</label>
             <input type="password" name="pass" class="form-control" id="validationCustom01" required="required" placeholder="Password">
         </div>
-</div>
-<div class="col-12">
-    <button class="btn btn-primary" type="submit">se connecter</button>
+        <div class="col- md-6 pt-2 ">
+            <p>
+                <button class="btn btn-primary" type="submit">se connecter</button>
+            </p>
+        </div>
 </div>
 </form>
 </div>
