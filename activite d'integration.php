@@ -1,0 +1,1 @@
+<?php include "views/parts/activite d'integration.views.php"; ?>

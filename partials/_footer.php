@@ -22,6 +22,43 @@
 <!-- Back to Top -->
 <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
 </div>
+<!-- Javascript ckeditor-->
+<script src="vendor/ckeditor/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace('objectifs');
+</script>
+<script>
+     CKEDITOR.replace('plan');
+ </script> 
+ <script>
+     CKEDITOR.replace('corpus');
+ </script>
+
+ <script>
+    CKEDITOR.replace('evaluation_diag');
+</script>
+<script>
+     CKEDITOR.replace('exo_dapp');
+ </script> 
+ <script>
+     CKEDITOR.replace('dafalm');
+ </script>
+ <script>
+     CKEDITOR.replace('obj_vise');
+ </script> 
+ <script>
+     CKEDITOR.replace('ref_enon');
+ </script> 
+  <script>
+     CKEDITOR.replace('epreuve');
+ </script>
+ <script>
+     CKEDITOR.replace('correction');
+ </script> 
+ <script>
+     CKEDITOR.replace('ISLPD');
+ </script>
+<!-- Javascript ckeditor-->
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
