@@ -9,10 +9,10 @@ include "functions/affichage_enseignant.php";
 
 
 <!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> -->
-<div >
+<div class="col-sm-4"><a href="#custom-modal" class="btn btn-custom waves-effect waves-light mb-4" data-animation="fadein" data-plugin="custommodal" data-overlayspeed="200" data-overlaycolor="#36404a" onclick="openForm()"><i class="mdi mdi-plus"></i> Add Member</a></div>
+<div id="myForm">
     <div class="container">
         <div class="row">
-            <div class="col-sm-4"><a href="#custom-modal" class="btn btn-custom waves-effect waves-light mb-4" data-animation="fadein" data-plugin="custommodal" data-overlayspeed="200" data-overlaycolor="#36404a"><i class="mdi mdi-plus"></i> Add Member</a></div>
                 <?php
                     $sql = $db->prepare('SELECT * FROM enseignant');
                     $result = $sql->execute();
@@ -48,4 +48,9 @@ include "functions/affichage_enseignant.php";
     </div>
     <!-- container -->
 </div>
+<script>
+function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+</script>
 <?php include "partials/_footer.php" ?>

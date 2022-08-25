@@ -2,7 +2,6 @@
 
 if (!empty($_POST)) {
 
-
   if (
     isset($_POST["nom"], $_POST["prenom"], $_POST["matricule"])
     && !empty($_POST["nom"]) && !empty($_POST["matricule"]) && !empty($_POST["prenom"])
@@ -10,24 +9,26 @@ if (!empty($_POST)) {
     $nom = strip_tags($_POST["nom"]);
     $prenom = strip_tags($_POST["prenom"]);
     $matricule = strip_tags($_POST["matricule"]);
+    $email = strip_tags($_POST["email"]);
     $ville = strip_tags($_POST["ville"]);
     $quartier = strip_tags($_POST["quartier"]);
     $matieres = strip_tags($_POST["matieres"]);
-    $pass =password_hash("Nameless",PASSWORD_ARGON2ID);
+    $pass = password_hash("Nameless", PASSWORD_ARGON2ID);
     //hashons le mot de prenom
     require_once 'config/database.php';
 
     // controles souhaités sur l'unicité des matricules
 
 
-    $sql = "INSERT INTO enseignant (Nom,Prenom,matieres,matricule,ville,quartier,mot_de_pass) VALUES(
-      :nom, :prenom,:matieres,:matricule,:ville,:quartier,'$pass')";
+    $sql = "INSERT INTO enseignant (Nom,Prenom,matieres,matricule,ville,quartier,mot_de_pass,email) VALUES(
+      :nom, :prenom,:matieres,:matricule,:ville,:quartier,'$pass',:email)";
     $query = $db->prepare($sql);
 
     $query->bindValue(":nom", $nom, PDO::PARAM_STR);
     $query->bindValue(":prenom", $prenom, PDO::PARAM_STR);
     $query->bindValue(":matieres", $matieres, PDO::PARAM_STR);
     $query->bindValue(":matricule", $matricule, PDO::PARAM_STR);
+    $query->bindValue(":email", $email, PDO::PARAM_STR);
     $query->bindValue(":ville", $ville, PDO::PARAM_STR);
     $query->bindValue("quartier", $quartier, PDO::PARAM_STR);
 
@@ -44,11 +45,36 @@ include "partials/_sidebar_censeur.php";
 include "partials/_nav_censeur.php";
 ?>
 
-<div >
+<div>
 
   <form class="row g-3 needs-validation" method="post">
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="censeur" id="censeur">
+      <label class="form-check-label" for="censeur">
+        Censeur
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="enseignant" id="enseignant" checked>
+      <label class="form-check-label" for="enseignant">
+        Enseignant
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="inspecteur" id="enseignant">
+      <label class="form-check-label" for="Inspecteur">
+        Inspecteur
+      </label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="radio" name="parent" id="parent">
+      <label class="form-check-label" for="parent">
+        Parent
+      </label>
+    </div>
+    
     <div class="col-md-4">
-      <label for="validationCustom01" class="form-label">Matricule</label>
+      <label for="validationCustom01" class="form-label"><?php echo ''?></label>
       <input type="text" name="matricule" class="form-control" id="validationCustom01" required="required" placeholder=" Matricule ici">
       <div class="valid-feedback">
         Looks good!
@@ -82,6 +108,12 @@ include "partials/_nav_censeur.php";
         Please provide a valid city.
       </div>
     </div>
+    <div class="col-md-6">
+      <label for="validationCustom03" class="form-label">Email</label>
+      <input type="text" name="email" class="form-control" id="validationCustom03" required="required">
+      <div class="invalid-feedback">
+        Please.
+      </div>
     <fieldset class="col-md-3">
       <legend>classes</legend>
 

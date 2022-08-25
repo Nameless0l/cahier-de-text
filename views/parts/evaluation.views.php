@@ -1,7 +1,7 @@
 <?php
 $title = "Remplissage evaluation";
 include "partials/_header.php";
-include "fonctions/fonction_form.php";
+include "functions/fonction_form.php";
 include "partials/_sidebar_censeur.php";
 include "partials/_nav_censeur.php";
 ?>

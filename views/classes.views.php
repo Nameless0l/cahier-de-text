@@ -1,3 +1,9 @@
+<?php
+$title = "Classes";
+include "partials/_header.php";
+include "partials/_sidebar_censeur.php";
+include "partials/_nav_censeur.php";
+?>
 
 <div>
     <div class="col-sm-12 col-xl-12">
@@ -239,6 +245,4 @@
 </div>
 
 
-
-
-
+<?php include "partials/_footer.php" ?>
