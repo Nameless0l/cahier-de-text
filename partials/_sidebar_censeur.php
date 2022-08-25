@@ -32,7 +32,7 @@
                         class="fa fa-laptop me-2 text-info"></i><span class="text-info">Créer</span></a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="creation_cahier_texte.php" class="dropdown-item text-info">Cahier de texte</a>
-                    <a href="/forms/form.enseignant.php" class="dropdown-item text-info">Compte enseignant</a>
+                    <a href="Ajout_enseignant.php" class="dropdown-item text-info">Compte enseignant</a>
                 </div>
             </div>
 

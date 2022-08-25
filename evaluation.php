@@ -1,1 +1,1 @@
-<?php include "views/evaluation.views.php"; ?>
+<?php include "views/parts/evaluation.views.php"; ?>

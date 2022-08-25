@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html>
+<body>
 <?php
 ignore_user_abort(true);
 	if(!defined('DB_HOST'))define('DB_HOST', 'localhost');
@@ -9,7 +12,6 @@ ignore_user_abort(true);
 	
 		$db = new PDO("mysql: host =".DB_HOST."; dbname=".DB_NAME, DB_USERNAME, DB_PASSWORD);
 		
-		$db ->exec("SET NAMES utf8");
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		
 	
@@ -18,4 +20,14 @@ ignore_user_abort(true);
 		die('Erreur: '. $e->getMessage());
 		
 	}
-
+if ($result->num_rows > 0) {
+    // output data of each row
+    while($row = $result->fetch_assoc()) {
+        echo "<br> nom: ". $row["nom"]. " profession ". $row["profession"]. " " . $row["email"] . "<br>";
+    }
+} else {
+    echo "0 results";
+}
+?>
+</body>
+</html>

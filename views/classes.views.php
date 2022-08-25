@@ -73,21 +73,21 @@ include "partials/_nav_censeur.php";
                                                                             id="v-pills-home-tab" data-bs-toggle="pill"
                                                                             data-bs-target="#v-pills-home" type="button"
                                                                             role="tab" aria-controls="v-pills-home"
-                                                                            aria-selected="true">Semaine</button>
+                                                                            aria-selected="true">semaine</button>
                                                                         <button class="nav-link"
                                                                             id="v-pills-profile-tab"
                                                                             data-bs-toggle="pill"
                                                                             data-bs-target="#v-pills-profile"
                                                                             type="button" role="tab"
                                                                             aria-controls="v-pills-profile"
-                                                                            aria-selected="false">Mois</button>
+                                                                            aria-selected="false">mois</button>
                                                                         <button class="nav-link"
                                                                             id="v-pills-messages-tab"
                                                                             data-bs-toggle="pill"
                                                                             data-bs-target="#v-pills-messages"
                                                                             type="button" role="tab"
                                                                             aria-controls="v-pills-messages"
-                                                                            aria-selected="false">Trimestre</button>
+                                                                            aria-selected="false">trimestre</button>
                                                                         <button class="nav-link"
                                                                             id="v-pills-settings-tab"
                                                                             data-bs-toggle="pill"
