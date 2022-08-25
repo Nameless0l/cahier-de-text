@@ -11,9 +11,48 @@
         <div>
             <ul class="navbar-nav mr-lg-2">
                 <li class="nav-item  d-none d-lg-flex">
-                    <a class="nav-link" href="schedule.php">
-                    Emploi de temps
-                    </a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Emploi de Temps</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Niveau 1</a>
+                                <div class="dropdown-menu bg-transparent border-0">
+                                    <a href="classes.php" class="dropdown-item text-info">6ieme</a>
+                                    <a href="#" class="dropdown-item text-info">5ieme</a>
+                                </div>
+                            </div>
+
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Niveau 2</a>
+                                <div class="dropdown-menu bg-transparent border-0">
+                                    <a href="classes.php" class="dropdown-item text-info">4ieme</a>
+                                    <a href="#" class="dropdown-item text-info">3ieme</a>
+                                </div>
+                            </div>
+
+                            <div class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Niveau 3</a>
+                                <div class="dropdown-menu bg-transparent border-0">
+                                    <a href="classes.php" class="dropdown-item text-info">2nde</a>
+                                    <a href="#" class="dropdown-item text-info">1ere</a>
+                                    <a href="#" class="dropdown-item text-info">Tle</a>
+                                </div>
+                            </div>
+
+                            <!-- <a href="classes.php" class="dropdown-item text-info">Tle A4 Esp2</a>
+                            <a href="#" class="dropdown-item text-info">Tle A4 All</a>
+                            <a href="#" class="dropdown-item text-info">Pre D</a>
+                            <a href="classes.php" class="dropdown-item text-info">Pre C</a>
+                            <a href="#" class="dropdown-item text-info">Pre A4 Esp1</a>
+                            <a href="#" class="dropdown-item text-info">Pre A4 Esp2</a>
+                            <a href="#" class="dropdown-item text-info">Pre A4 All</a>
+                            <a href="#" class="dropdown-item text-info">2nd C</a>
+                            <a href="#" class="dropdown-item text-info">2nd A4 Esp2</a>
+                            <a href="classes.php" class="dropdown-item text-info">2nd A4 Esp1</a>
+                            <a href="#" class="dropdown-item text-info">2nd A4 All</a> -->
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item  d-none d-lg-flex">
                     <a class="nav-link" href="#">
