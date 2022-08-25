@@ -1,1 +1,1 @@
-<?php include "views/activite d'integration.views.php"; ?>
+<?php include "views/parts/activite d'integration.views.php"; ?>
