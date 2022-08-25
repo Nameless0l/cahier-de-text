@@ -1,36 +1,40 @@
 <?php
 
+use App\Model\User;
+
 if (!empty($_POST)) {
 
 
     if (
-        isset($_POST["nom"], $_POST["prenom"], $_POST["matricule"])
-        && !empty($_POST["nom"]) && !empty($_POST["matricule"]) && !empty($_POST["prenom"])
+        isset($_POST["pass"],  $_POST["matricule"])
+        && !empty($_POST["pass"]) && !empty($_POST["matricule"])
     ) {
-        $nom = strip_tags($_POST["nom"]);
-        $prenom = strip_tags($_POST["prenom"]);
-        $matricule = strip_tags($_POST["matricule"]);
-        $ville = strip_tags($_POST["ville"]);
-        $quartier = strip_tags($_POST["quartier"]);
-        $matieres = strip_tags($_POST["matieres"]);
-        //hashons le mot de prenom
-        require_once '../config/database.php';
+        // $pass = strip_tags($_POST["nom"]);
+        // $matricule = strip_tags($_POST["matricule"]);
+        require_once 'config/database.php';
 
         // controles souhaités sur l'unicité des matricules
 
-
-        $sql = "INSERT INTO enseignant (Nom,Prenom,matieres,matricule,ville,quartier) VALUES(
-      :nom, :prenom,:matieres,:matricule,:ville,:quartier)";
+        // connection db
+        $sql = "SELECT * FROM enseignant WHERE matricule= :matricule";
         $query = $db->prepare($sql);
 
-        $query->bindValue(":nom", $nom, PDO::PARAM_STR);
-        $query->bindValue(":prenom", $prenom, PDO::PARAM_STR);
-        $query->bindValue(":matieres", $matieres, PDO::PARAM_STR);
-        $query->bindValue(":matricule", $matricule, PDO::PARAM_STR);
-        $query->bindValue(":ville", $ville, PDO::PARAM_STR);
-        $query->bindValue("quartier", $quartier, PDO::PARAM_STR);
+        // $query->bindValue(":pass", $nom, PDO::PARAM_STR);
+        $query->bindValue(":matricule", $_POST["matricule"], PDO::PARAM_STR);
 
         $query->execute();
+
+        $user = $query->fetch();
+        if (!$user) {
+            die("Matricule  ou mot de pass incorrecte ");
+        }
+        if (!password_verify($_POST["pass"], $user["mot_de_pass"])) {
+
+            die("Matricule  ou jehjhrejmot de pass incorrecte ");
+        }
+        // ouverture de la sesson php
+    session_start();
+
     } else {
         die('formulaire incomplet');
     }
@@ -46,17 +50,15 @@ include "partials/_nav_censeur.php";
 <div>
 
     <form class="row g-3 needs-validation" method="post">
-      
-       <div class="col-md-12">
+
+        <div class="col-md-12">
             <label for="validationCustom01" class="form-label">Matricule</label>
             <input type="text" name="matricule" class="form-control" id="validationCustom01" required="required" placeholder=" Entrer votre mancule ici">
-            <div class="valid-feedback">
-                Looks good!
-            </div>
+
         </div>
         <div class="col-md-12">
             <label for="validationCustom01" class="form-label">Mot de pass</label>
-            <input type="password" name="nom" class="form-control" id="validationCustom01" required="required" placeholder="Password">
+            <input type="password" name="pass" class="form-control" id="validationCustom01" required="required" placeholder="Password">
         </div>
 </div>
 <div class="col-12">

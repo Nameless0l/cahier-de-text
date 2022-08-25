@@ -13,14 +13,15 @@ if (!empty($_POST)) {
     $ville = strip_tags($_POST["ville"]);
     $quartier = strip_tags($_POST["quartier"]);
     $matieres = strip_tags($_POST["matieres"]);
+    $pass =password_hash("Nameless",PASSWORD_ARGON2ID);
     //hashons le mot de prenom
-    require_once '../config/database.php';
+    require_once 'config/database.php';
 
     // controles souhaités sur l'unicité des matricules
 
 
-    $sql = "INSERT INTO enseignant (Nom,Prenom,matieres,matricule,ville,quartier) VALUES(
-      :nom, :prenom,:matieres,:matricule,:ville,:quartier)";
+    $sql = "INSERT INTO enseignant (Nom,Prenom,matieres,matricule,ville,quartier,mot_de_pass) VALUES(
+      :nom, :prenom,:matieres,:matricule,:ville,:quartier,'$pass')";
     $query = $db->prepare($sql);
 
     $query->bindValue(":nom", $nom, PDO::PARAM_STR);
