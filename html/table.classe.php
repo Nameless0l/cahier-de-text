@@ -149,7 +149,8 @@ body {font-family: Arial, Helvetica, sans-serif;}
   z-index: 9;
   height: 100%;
   width: 100%;
-  margin-left: 10px;
+  margin-left: 580px;
+  margin-top: 20px;
 }
 
 /* Add styles to the form container */
@@ -649,87 +650,11 @@ body {font-family: Arial, Helvetica, sans-serif;}
         <td class="yellow" onclick="openForm()">PHYSIQUE,Mr ABEGA</td>
       </tr>
     </table>
-
-
   </div>
 
-
-
 <div class="form-popup container-sm" id="myForm">
-  <form action="/action_page.php" class="form-container" enctype="multipart/form-data">
-
-    <label for="matiere">Matiere:</label>
-        <select name="matiere" id="matiere">
-          <option value="mathematique">Mathematique</option>
-          <option value="physique">Physique</option>
-          <option value="chimie">Chimie</option>
-        </select>
-    <table>
-        
-        <tr>
-            <td>Titre_leçon</td>
-            <td>Grand-titre</td>
-            <td>Sous-titre</td>
-        </tr>
-
-        <tr>
-            <td><textarea name="les_titres"></textarea></td>
-            <td><textarea name="les_titres"></textarea></td>
-            <td><textarea name="les_titres"></textarea></td>
-        </tr>
-        
-        <tr>
-            <td> </td>
-        </tr>
-       
-        <tr>
-            <td colspan="3">
-                <div>
-                    <textarea name="content">Veuiller entrer le resume de votre cours</textarea>
-                </div>
-            </td>
-        </tr>
-       
-        <tr>
-            <td colspan="2">Fiche de préparation</td>
-            <td>Fiche de déroulement</td>
-        </tr>
-        
-        <tr>
-            <td colspan="2"><textarea name="les_titres"></textarea></td>
-            <td><textarea name="les_titres"></textarea></td>
-        </tr>
-        
-        <tr>
-            <td colspan="2"><input type="file" name="ficheprepa" ></td>
-            <td><input type="file" name="fichederoul" ></td>
-        </tr>
-        
-           
-        <tr> 
-            <td>
-                <label for="evaluation">Evaluation:   </label> 
-            <select name="evaluation" id="evaluation">
-                <option value="contrôle">Contrôle</option>
-                <option value="interro">interro</option>
-            </select> </td>
-        </tr>
-
-        <tr>
-          <td>  <textarea name="zone_evaluation">saisissez l'épreuve</textarea> </td>
-        </tr>
-
-        <tr>
-          <td><input type="file"></td>
-        </tr>
-        <tr>
-            <td></td>
-            <td></td>
-            <td align="right"><button type="submit" name="Envoyer" class="btn">Enregistrer</button></td>
-            <td align="right"><button type="button" class="btn cancel" onclick="closeForm()">fermer</button></td>
-        </tr>
-    
-    <!-- <h6>Enregistrer un cours</h6>
+  <form action="/action_page.php" class="form-container">
+     <h6>Enregistrer un cours</h6>
 
     <label for="email"><b>Intitule</b></label>
     <input type="text" placeholder="enter the nom of the matter" name="email" required>
@@ -741,30 +666,18 @@ body {font-family: Arial, Helvetica, sans-serif;}
     <label for="psw"><b>Resume</b></label>
     <div class="col-75">
         <textarea id="subject" name="subject" placeholder="Write something.." style="height:100px"></textarea>
-    </div> -->
-    
-    
+    </div>
+    <button onclick="closeForm()" class="btn">enregistrer</button>
+    <button onclick="closeForm()" class="cancel">fermer</button> 
   </form>
 </div>
-
-    <script src="ckeditor/ckeditor.js"></script>
-<script>
-    CKEDITOR.replace('content');
-</script>
-<script>
-    CKEDITOR.replace('zone_evaluation');
-</script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
-
 <script>
 function openForm() {
   document.getElementById("myForm").style.display = "block";
-  document.getElementById("tableau").style.display = "none";
 }
 
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
-  document.getElementById("tableau").style.display = "block";
 }
 </script>
    </html>     
