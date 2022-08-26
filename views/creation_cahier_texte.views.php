@@ -1,10 +1,7 @@
 <?php
 session_start();
 ?>
-<?php if($_SESSION['member']['table'] == "censeur")
-{
-  $matcenseur = $_SESSION['member']['matricule'];
-  ?>
+
 <?php
 $title = "création cahier de texte";
 include "partials/_header.php";
@@ -13,8 +10,8 @@ include "partials/_sidebar_censeur.php";
 include "partials/_nav_censeur.php";
 ?>
 <?php
-$rec_classe = $bdd->query("SELECT * FROM classes WHERE matri_censeur_charge = '$matcenseur' ");
-$rec_eleve = $bdd->query("SELECT * FROM eleve WHERE matr_cens_charge = '$matcenseur' ");
+$rec_classe = $bdd->query("SELECT * FROM classes WHERE matri_censeur_charge = 'pbc' ");
+$rec_eleve = $bdd->query("SELECT * FROM eleve WHERE matr_cens_charge = 'pbc' ");
 $rec_enseignant = $bdd->query("SELECT * FROM ens_cens WHERE matri_censeur = 'abc'");
 ?>
 
@@ -101,6 +98,4 @@ while($result = $rec_enseignant->fetch())
 
 
 <?php include "partials/_footer.php"; ?>
-<?php
-}
-?>
+
