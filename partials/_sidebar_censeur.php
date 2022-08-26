@@ -2,6 +2,7 @@
 
 
 <!-- Sidebar Start -->
+
 <div class="sidebar  pe-4 pb-3">
     <nav class="navbar  navbar-light">
         <a href="#" class="navbar-brand mx-4 mb-3">
@@ -15,7 +16,7 @@
                 </div>
             </div>
             <div class="ms-3">
-                <h6 class="mb-0 text-white">Natacha Brenda</h6>
+                <h6 class="mb-0 text-black"><?= $_SESSION["user"]["Nom"].' '.$_SESSION["user"]["Prenom"] ?></h6>
                 <span>Censeur</span>
             </div>
         </div>

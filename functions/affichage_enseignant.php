@@ -3,7 +3,6 @@ include 'config/database.php';
 
 
 
-
 function enseignant($nom, $profession, $email){
     echo '
             <div class="col-lg-4">
