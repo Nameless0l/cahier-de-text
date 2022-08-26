@@ -68,12 +68,14 @@ if (!empty($_POST)) {
         die('formulaire incomplet');
     }
 }
+
 ?>
 <?php
 $title = 'Enseignant';
 include 'partials/_header.php';
 ?>
 
+<!-- 1 -->
 <!-- <div class="col-md-12 pt-2">
 
     <form class="needs-validation" method="post">
@@ -141,4 +143,4 @@ include 'partials/_header.php';
         </div>
         <!-- Sign In End -->
     </div>
-  
+  <!-- 1 -->
