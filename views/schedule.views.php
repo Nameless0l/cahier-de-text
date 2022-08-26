@@ -1,4 +1,5 @@
 <?php
+session_start();
 $title = "Emploi de temps";
 include "partials/_header.php";
 include "partials/_sidebar_censeur.php";

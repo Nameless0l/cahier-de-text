@@ -71,8 +71,9 @@ if (!empty($_POST)) {
 
 ?>
 <?php
-$title = 'Enseignant';
+$title = 'Connexion';
 include 'partials/_header.php';
+include 'config/constants.php';
 ?>
 
 <!-- 1 -->
@@ -121,18 +122,18 @@ include 'partials/_header.php';
                        <form method="post">
                        <div class="form-floating mb-3">
                             <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Email address</label>
+                            <label for="floatingInput">Adresse Mail</label>
                         </div>
                         <div class="form-floating mb-4">
                             <input type="password" name="pass" class="form-control" id="floatingPassword" placeholder="Password">
-                            <label for="floatingPassword">Password</label>
+                            <label for="floatingPassword">Mot de Passe</label>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-4">
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                <label class="form-check-label" for="exampleCheck1">Se Souvenir de Moi la prochaine fois</label>
                             </div>
-                            <a href="">Forgot Password</a>
+                            <!-- <a href="">Forgot Password</a> -->
                         </div>
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
                        </form>

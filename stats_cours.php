@@ -1,3 +1,5 @@
 
 
-<?php include "views/stats_cours.views.php"; ?>
+<?php 
+session_start();
+include "views/stats_cours.views.php"; ?>
