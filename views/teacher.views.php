@@ -18,7 +18,7 @@ include "functions/affichage_enseignant.php";
                     $result = $sql->execute();
                     $enseignants = $sql->fetchAll(PDO::FETCH_ASSOC);
                     foreach($enseignants as $enseignant){
-                        enseignant($enseignant['nom'], $enseignant['profession'], $enseignant['email'] );
+                        enseignant($enseignant['Nom'], $enseignant['Statut'], $enseignant['email'] );
                     }
                  ?>
             <!-- end col -->

@@ -90,18 +90,18 @@ include "partials/_nav_censeur.php";
         Please.
       </div>
     <fieldset class="col-md-3">
-      <legend>classes</legend>
+      <legend>Matieres</legend>
 
       <div>
         <input type="checkbox" id="scales" name="matieres" value="Mathematques">
         <label for="scales">Mathatiques</label>
       </div>
       <div>
-        <input type="checkbox" id="horns">
+        <input type="checkbox" id="horns" name="matieres" value="Physiques">
         <label for="horns">Physiques</label>
       </div>
       <div>
-        <input type="checkbox" id="horns">
+        <input type="checkbox" id="horns" name="matieres" value="Chimie">
         <label for="horns">Chimie</label>
       </div>
     </fieldset>
