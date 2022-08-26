@@ -72,24 +72,6 @@ while($result = $rec_enseignant->fetch())
 
 </tr>
 
-
-
-
-  
-
-        
-
-
-
-
-
-
-
-
-
-
-
-
         <tr>
           <td align= "left"><label for="emploidetemps">Emploi de temps :</label></td>
           <td><input type="file" name="emploidetemps" id="emploidetemps"></td>

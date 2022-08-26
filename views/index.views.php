@@ -1,6 +1,4 @@
 <?php
-
-
 $title = "Accueil";
 include "partials/_header.php";
 include "partials/_sidebar_censeur.php";
