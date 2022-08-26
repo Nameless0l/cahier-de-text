@@ -1,2 +1,5 @@
 
-<?php include "views/classes.views.php" ?>
+<?php 
+session_start();
+include "views/classes.views.php" 
+?>

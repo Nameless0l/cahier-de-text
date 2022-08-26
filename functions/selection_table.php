@@ -10,6 +10,8 @@ function Select_table(string $email):string
         "parent",
     ];
 
+    $erreur= '';
+
     require 'config/database.php';
 
     foreach ($table as $table_name) {
@@ -26,9 +28,12 @@ function Select_table(string $email):string
         
         var_dump($user);
 
-        if ($user) return $table_name;
+        if ($user) {
+            $erreur="iwdukjeff";
+            return $table_name;}
 
-    }die("Mail incorrect");
+    }
+    header('Location:connexion.php');
 
 }
 ?>
