@@ -1,4 +1,7 @@
 <?php
+	$bdd = new PDO("mysql:host=127.0.0.1;dbname=cahier_de_texte;charset=utf8", "root", "");
+?>
+<?php
 ignore_user_abort(true);
 	if(!defined('DB_HOST'))define('DB_HOST', 'localhost');
 	if(!defined('DB_NAME'))define('DB_NAME', 'cahier_de_texte');
@@ -18,4 +21,5 @@ ignore_user_abort(true);
 		die('Erreur: '. $e->getMessage());
 		
 	}
-
+	?>
+	
