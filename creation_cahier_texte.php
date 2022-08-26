@@ -1,4 +1,5 @@
 <?php
+session_start();
 include "config/database.php";
 ?>  
 <?php include "views/creation_cahier_texte.views.php"; ?>
