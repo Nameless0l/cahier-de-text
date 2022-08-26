@@ -1,6 +1,5 @@
 
-<?php include "views/index.views.php"; ?>
-
-
-
-            
+<?php 
+session_start();
+include "views/index.views.php"; 
+?>
