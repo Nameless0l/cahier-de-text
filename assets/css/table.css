@@ -1,4 +1,4 @@
-table   {
+/* table   {
     border-collapse: collapse;
     border: 1px solid black;
  } 
@@ -10,4 +10,13 @@ table   {
     border: 1px solid black;
     padding: 5px;
     background-color: white;
+ } */
+ #togglePassword{
+   /* margin-left: -30px;  */
+   cursor: pointer;
  }
+
+ .disabledbutton {
+   pointer-events: none;
+   opacity: 0.4;
+}

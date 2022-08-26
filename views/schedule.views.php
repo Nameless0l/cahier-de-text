@@ -33,8 +33,8 @@ include "functions/affichage_cahier.php";
                                 <div class="col-lg-12 col-md-12">
                                     <!-- <small class="text-light fw-semibold mb-3">Enable Scrolling & Backdrop</small> -->
                                     <div class="mt-3">
-                                        <table class="col-lg-10 col-sm-12 col-md-12 table-bordered table-striped">
-                                            <thead>
+                                        <table class="col-lg-10 col-sm-12 col-md-12 table table-bordered">
+                                            <thead class='bg-dark text-center'>
                                                 <th>Lundi</th>
                                                 <th>Mardi</th>
                                                 <th>Mercredi</th>
@@ -43,7 +43,7 @@ include "functions/affichage_cahier.php";
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>
+                                                    <td class= 'text-center'>
                                                         <button style='border:none; background-color: white;'
                                                             data-bs-toggle="offcanvas" data-bs-target="#offcanvasBoth"
                                                             aria-controls="offcanvasBoth">
@@ -68,6 +68,758 @@ include "functions/affichage_cahier.php";
                                                                     </small>
                                                                 </div>
                                                                 <div class="px-3">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#ffcanvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            Mathematiques
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="ffcanvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>MATHEMATIQUES</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        mardi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#fcanvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            E.P.S
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="fcanvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>E.P.S</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        mercredi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#canvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            E.C.M
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="canvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>E.C.M</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        jeudi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#anvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            SVTEEHB
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="anvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>SVTEEHB</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        Vendredi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            Francais
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="offcanvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>FRANCAIS</strong><br>
+                                                                    <small>Mme DUPAS M. <br>
+                                                                        lundi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="px-3">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#ffcanvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            Mathematiques
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="ffcanvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>MATHEMATIQUES</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        mardi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#fcanvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            E.P.S
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="fcanvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>E.P.S</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        mercredi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#canvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            E.C.M
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="canvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>E.C.M</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        jeudi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#anvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            SVTEEHB
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="anvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>SVTEEHB</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        Vendredi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            Francais
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="offcanvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>FRANCAIS</strong><br>
+                                                                    <small>Mme DUPAS M. <br>
+                                                                        lundi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="px-3">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#ffcanvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            Mathematiques
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="ffcanvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>MATHEMATIQUES</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        mardi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#fcanvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            E.P.S
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="fcanvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>E.P.S</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        mercredi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#canvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            E.C.M
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="canvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>E.C.M</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        jeudi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#anvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            SVTEEHB
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="anvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>SVTEEHB</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        Vendredi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            Francais
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="offcanvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>FRANCAIS</strong><br>
+                                                                    <small>Mme DUPAS M. <br>
+                                                                        lundi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="px-3">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#ffcanvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            Mathematiques
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="ffcanvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>MATHEMATIQUES</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        mardi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#fcanvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            E.P.S
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="fcanvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>E.P.S</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        mercredi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#canvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            E.C.M
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="canvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>E.C.M</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        jeudi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#anvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            SVTEEHB
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="anvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>SVTEEHB</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        Vendredi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            Francais
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="offcanvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>FRANCAIS</strong><br>
+                                                                    <small>Mme DUPAS M. <br>
+                                                                        lundi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="px-3">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#ffcanvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            Mathematiques
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="ffcanvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>MATHEMATIQUES</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        mardi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#fcanvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            E.P.S
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="fcanvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>E.P.S</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        mercredi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#canvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            E.C.M
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="canvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>E.C.M</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        jeudi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
+                                                                    <embed src=document/DataCamp01.pdf width=800
+                                                                        height=500 type='application/pdf' />
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td class= 'text-center'>
+                                                        <button style='border:none; background-color: white;'
+                                                            data-bs-toggle="offcanvas" data-bs-target="#anvasBoth"
+                                                            aria-controls="offcanvasBoth">
+                                                            SVTEEHB
+                                                        </button>
+                                                        <div class="offcanvas offcanvas-end" data-bs-scroll="true"
+                                                            tabindex="-1" id="anvasBoth"
+                                                            aria-labelledby="offcanvasBothLabel">
+                                                            <div class="offcanvas-header">
+                                                                <h5 id="offcanvasBothLabel" class="offcanvas-title">
+                                                                    Contenu du cours
+                                                                </h5>
+                                                                <button type="button" class="btn-close text-reset"
+                                                                    data-bs-dismiss="offcanvas"
+                                                                    aria-label="Close"></button>
+                                                            </div>
+                                                            <div class="offcanvas-body  mx-0 flex-grow-0">
+                                                                <div style='border-left: 3px solid red' class="px-3">
+                                                                    <strong>SVTEEHB</strong><br>
+                                                                    <small>M. DUPAS <br>
+                                                                        Vendredi 30 sept. de 07h30 à 08h25
+                                                                    </small>
+                                                                </div>
+                                                                <div class="mt-5">
                                                                     <embed src=document/DataCamp01.pdf width=800
                                                                         height=500 type='application/pdf' />
                                                                 </div>
@@ -108,7 +860,7 @@ include "functions/affichage_cahier.php";
 
 
 
-    <!-- <td>
+    <!-- <td class= 'text-center'>
                                         <button style='border:none; background-color: white;' type="button" data-bs-toggle="offcanvas"
                                             data-bs-target="#offcanvasBoth" aria-controls="offcanvasBoth">
                                             Enable both scrolling & backdrop
@@ -128,7 +880,7 @@ include "functions/affichage_cahier.php";
                                             </div>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td class= 'text-center'>
                                         <button style='border:none; background-color: white;' type="button" data-bs-toggle="offcanvas"
                                             data-bs-target="#offcanvasBoth" aria-controls="offcanvasBoth">
                                             Enable both scrolling & backdrop
@@ -148,7 +900,7 @@ include "functions/affichage_cahier.php";
                                             </div>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td class= 'text-center'>
                                         <button style='border:none; background-color: white;' type="button" data-bs-toggle="offcanvas"
                                             data-bs-target="#offcanvasBoth" aria-controls="offcanvasBoth">
                                             Enable both scrolling & backdrop
@@ -168,7 +920,7 @@ include "functions/affichage_cahier.php";
                                             </div>
                                         </div>
                                     </td>
-                                    <td>
+                                    <td class= 'text-center'>
                                         <button style='border:none;background-color: white;' type="button" data-bs-toggle="offcanvas"
                                             data-bs-target="#offcanvasBoth" aria-controls="offcanvasBoth">
                                             Enable both scrolling & backdrop

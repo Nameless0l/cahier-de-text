@@ -1,0 +1,7 @@
+.stats_cours{
+
+}
+.stats_cours:hover{
+    transform: scale(1.02, 1.02);
+    box-shadow: 0.3rem 0.3rem rgba(0, 0, 0, 0.3);
+}
