@@ -30,7 +30,7 @@ if (!empty($_POST)) {
 
         // $query->bindValue(":pass", $nom, PDO::PARAM_STR);
         $query->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
-        // $query->bindValue(":derniere_connexion", $derniere_connexion, PDO::PARAM_STR);
+         $query->bindValue(":derniere_connexion", $derniere_connexion, PDO::PARAM_STR);
 
         $query->execute();
 
@@ -132,7 +132,7 @@ include 'partials/_header.php';
                         </div>
                         <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
                        </form>
-                        <p class="text-center mb-0">Don't have an Account? <a href="">Sign Up</a></p>
+                        <p class="text-center mb-0">Don't have an Account? <a href="#">Sign Up</a></p>
                     </div>
                 </div>
             </div>

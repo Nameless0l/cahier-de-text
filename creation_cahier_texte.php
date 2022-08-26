@@ -17,7 +17,6 @@ if(isset($_POST["retour"]))
   if(!empty($_FILES))
   {
     $emploidetemps = uploade_files_pdf("emploidetemps");
-echo "nuoisjdjd";
     $fichedeprogression = uploade_files_pdf("fichedeprogression");
   }  
 
