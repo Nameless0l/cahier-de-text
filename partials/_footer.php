@@ -77,6 +77,7 @@
 <!-- Template Javascript -->
 <script src="assets/js/main.js"></script>
 <script src="assets/js/editor.js"></script>
+<script src="assets/js/eye_visibility.js"></script>
 </body>
 
 </html>
