@@ -113,9 +113,9 @@ include 'config/constants.php';
                     <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <a href="index.html" class="">
-                                <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i><?=WEBSITE_LOGO ?></h3>
+                                <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
                             </a>
-                            <h3>Connexion</h3>
+                            <h3>Sign In</h3>
                         </div>
                        <form method="post">
                        <div class="form-floating mb-3">
@@ -133,9 +133,9 @@ include 'config/constants.php';
                             </div>
                             <!-- <a href="">Forgot Password</a> -->
                         </div>
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Se Connecter</button>
+                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
                        </form>
-                        <!-- <p class="text-center mb-0">Don't have an Account? <a href="#">Sign Up</a></p> -->
+                        <p class="text-center mb-0">Don't have an Account? <a href="#">Sign Up</a></p>
                     </div>
                 </div>
             </div>

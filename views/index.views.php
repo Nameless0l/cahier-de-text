@@ -14,7 +14,7 @@ include "partials/_nav_censeur.php";
 <div class="row mt-5">
     <div class="col-sm-6">
         <h3 class="mb-0 font-weight-bold"><?= $_SESSION["user"]["Nom"] ?></h3>
-        <p> Derniere connexion: <?= $_SESSION["user"]["derniere_modification"]?></p>
+        <p> Derniere connexion:</p>
         <!-- <?php require_once 'functions/last.seen.php'; ?> -->
     </div>
     <div class="col-sm-6">
