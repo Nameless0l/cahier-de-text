@@ -1,31 +1,54 @@
+
 <?php
 $title = 'Connexion';
 include 'partials/_header.php';
 include 'config/constants.php';
 ?>
 
+<!-- <div class="col-md-12 pt-2">
 
+    <form class="needs-validation" method="post">
+        <div class="col-md-12">
+            <label for="validationCustom01" class="form-label">Email</label>
+            <input type="text" name="email" class="form-control" id="validationCustom01" required="required" placeholder=" Entrer votre mancule ici">
+
+        </div>
+        <div class="col-md-12">
+            <label for="validationCustom01" class="form-label">Mot de pass</label>
+            <input type="password" name="pass" class="form-control" id="validationCustom01" required="required" placeholder="Password">
+        </div>
+        <div class="col- md-6 pt-2 ">
+            <p>
+                <button class="btn btn-primary" type="submit">se connecter</button>
+            </p>
+        </div>
+</div>
+</form>
+</div> -->
 
 <div class="container-xxl position-relative bg-white d-flex p-0">
-    <div class="container-fluid">
-        <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
-            <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
-                <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
-                    <div class="d-flex align-items-center justify-content-between mb-3">
-                        <a href="index.html" class="">
-                            <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i></h3>
-                        </a>
-                        <h3>Connexion</h3>
-                    </div>
-                    <div style="color:red ; margin:1.2rem">
-                        <?php
-                        if (isset($errors))
-                            foreach ($errors as $key => $value)
-                                echo "<div class='alert alert-danger'> $value </div>";
-                        ?>
-                    </div>
-                    <form method="POST">
-                        <div class="form-floating mb-3">
+        <!-- Spinner Start -->
+        <!-- <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div> -->
+        <!-- Spinner End -->
+
+
+        <!-- Sign In Start -->
+        <div class="container-fluid">
+            <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
+                <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
+                    <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <a href="index.html" class="">
+                                <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
+                            </a>
+                            <h3>Sign In</h3>
+                        </div>
+                       <form method="post">
+                       <div class="form-floating mb-3">
                             <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                             <label for="floatingInput">Adresse Mail</label>
                         </div>
@@ -40,12 +63,13 @@ include 'config/constants.php';
                             </div>
                             <!-- <a href="">Forgot Password</a> -->
                         </div>
-                        <button type="submit" name="submit" class="btn btn-primary py-3 w-100 mb-4">Se Connecter</button>
-                    </form>
-                    <!-- <p class="text-center mb-0">Don't have an Account? <a href="#">Sign Up</a></p> -->
+                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
+                       </form>
+                        <p class="text-center mb-0">Don't have an Account? <a href="#">Sign Up</a></p>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- Sign In End -->
     </div>
-    <!-- Sign In End -->
-</div>
+  
