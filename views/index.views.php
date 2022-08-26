@@ -2,9 +2,15 @@
 
 
 $title = "Accueil";
+if(!isset($_SESSION["user"])){
+    header("Location: connexion.php");
+    die("Vous n'etes pas connectée");
+}
 include "partials/_header.php";
 include "partials/_sidebar_censeur.php";
 include "partials/_nav_censeur.php";
+
+
 ?>
 
 <div class="row mt-5">

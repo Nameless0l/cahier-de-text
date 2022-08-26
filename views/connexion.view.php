@@ -4,7 +4,7 @@ use App\Model\User;
 
 session_start();
 if(isset($_SESSION["user"])){
-    header("Location: ../index.php");
+    header("Location: index.php");
     exit ;
 }
 
@@ -30,12 +30,12 @@ if (!empty($_POST)) {
 
         // $query->bindValue(":pass", $nom, PDO::PARAM_STR);
         $query->bindValue(":email", $_POST["email"], PDO::PARAM_STR);
-         $query->bindValue(":derniere_connexion", $derniere_connexion, PDO::PARAM_STR);
+        //  $query->bindValue(":derniere_connexion", $derniere_connexion, PDO::PARAM_STR);
 
         $query->execute();
 
         $user = $query->fetch();
-        $nm="Mbassss";
+        // $nm="Mbassss";
         $sql="UPDATE ".Select_table($_POST["email"])." SET Nom=:Nom WHERE email= :email";
         $query = $db->prepare($sql);
         // $query->execute(array(":Nom"=>$nm));
@@ -62,6 +62,7 @@ if (!empty($_POST)) {
             "derniere_connexion" => $user["derniere_connexion"],
             "table"=> $table
         ];
+        // $id_ensei= $_SESSION["user"]["id_enseignant"];
         header("Location: index.php");
     } else {
         die('formulaire incomplet');
