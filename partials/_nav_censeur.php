@@ -57,7 +57,7 @@
                     </div>
                 </li>
                 <li class="nav-item  d-none d-lg-flex">
-                    <a class="nav-link" href="#">
+                    <a class="nav-link" href="stats_cours.php">
                         Statistiques
                     </a>
                 </li>
@@ -115,9 +115,9 @@
                     <span class="d-none d-lg-inline-flex">Hi, <?= $_SESSION["user"]["Nom"] ?></span>
                 </a>
                 <div class="dropdown-menu dropdown-menu-end bg-light border-0 rounded-0 rounded-bottom m-0">
-                    <a href="../profile.php" class="dropdown-item">My Profile</a>
+                    <a href="profile.php" class="dropdown-item">My Profile</a>
                     <a href="#" class="dropdown-item">Settings</a>
-                    <a href="../deconnexion.php" class="dropdown-item">Log Out</a>
+                    <a href="deconnexion.php" class="dropdown-item">Log Out</a>
                 </div>
             </div>
         </div>

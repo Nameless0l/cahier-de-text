@@ -3,8 +3,8 @@
 use App\Model\User;
 
 session_start();
-if(!isset($_SESSION["user"])){
-    header("Location: ../connexion.php");
+if(isset($_SESSION["user"])){
+    header("Location: ../index.php");
     exit ;
 }
 

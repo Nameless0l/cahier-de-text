@@ -1,10 +1,14 @@
 <?php
-
-
 $title = "Accueil";
+if(!isset($_SESSION["user"])){
+    header("Location: connexion.php");
+    die("Vous n'etes pas connectée");
+}
 include "partials/_header.php";
 include "partials/_sidebar_censeur.php";
 include "partials/_nav_censeur.php";
+
+
 ?>
 
 <div class="row mt-5">
@@ -26,7 +30,7 @@ include "partials/_nav_censeur.php";
                 </div>
             </div>
             <div class="pr-1 mb-3 mr-2 mb-xl-0">
-                <button type="button" class="btn btn-warning bg-white btn-icon-text border"><i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i>Exporter</button>
+                <button type="button" class="btn btn-warning bg-white btn-icon-text border">Exporter</button>
             </div>
             <div class="pr-1 mb-3 mb-xl-0">
                 <button type="button" class="btn btn-warning bg-white btn-icon-text border"><i class="typcn typcn-info-large-outline mr-2"></i>Info</button>
@@ -36,8 +40,8 @@ include "partials/_nav_censeur.php";
 </div>
 <div class="container" ?>
     <div class=" d-flex justify-content-around flex-wrap">
-        <div class="card col-md-5">
-            <div class="card-body">
+        <div class="card col-md-5" style="border:none">
+            <div class="card-body " >
                 <div class="d-flex flex-wrap justify-content-between">
                     <h4 class="card-title mb-3"></h4>
                 </div>
@@ -161,7 +165,7 @@ include "partials/_nav_censeur.php";
                 </div>
             </div>
         </div>
-        <div class="card col-md-6 ml-3">
+        <div class="card col-md-6 ml-3" style="border:none">
             <div class="card-body">
                 <div class="d-flex flex-wrap justify-content-between">
                     <h4 class="card-title mb-3"></h4>
@@ -292,10 +296,10 @@ include "partials/_nav_censeur.php";
 </div>
 
 <div class="container d-flex justify-content-around flex-wrap">
-    <div class="card col-md-5 mt-3 p-5">
+    <div class="card col-md-5 mt-3 " style="border:none">
         <div class="d-flex flex-wrap justify-content-between ">
             <h4 class="card-title mb-1"> Tle D </h4>
-            <a href="#" class="mb-1">Voir Tout </a>
+            <a href="stats_cours.php#tled" class="mb-1">Voir Tout </a>
         </div>
         <div class="mt-3">
             <label for="">Mathematiques</label>
@@ -326,10 +330,10 @@ include "partials/_nav_censeur.php";
             </div>
         </div>
     </div>
-    <div class="card col-md-5 mt-3 p-5">
+    <div class="card col-md-5 mt-3 " style="border:none">
         <div class="d-flex flex-wrap justify-content-between ">
             <h4 class="card-title mb-1"> Tle C </h4>
-            <a href="#" class="mb-1">Voir Tout </a>
+            <a href="stats_cours.php#tlec" class="mb-1">Voir Tout </a>
         </div>
         <div class="mt-3">
             <label for="">Mathematiques</label>
