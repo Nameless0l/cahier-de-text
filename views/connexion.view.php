@@ -25,7 +25,7 @@ if (!empty($_POST)) {
         // controles souhaités sur l'unicité des emails
 
         // connection db
-        $sql = "SELECT * FROM " . Select_table($_POST["email"]) . " WHERE email= :email";
+        $sql = "SELECT * FROM " .$table= Select_table($_POST["email"]) . " WHERE email= :email";
         $query = $db->prepare($sql);
 
         // $query->bindValue(":pass", $nom, PDO::PARAM_STR);
@@ -38,7 +38,7 @@ if (!empty($_POST)) {
         $nm="Mbassss";
         $sql="UPDATE ".Select_table($_POST["email"])." SET Nom=:Nom WHERE email= :email";
         $query = $db->prepare($sql);
-        $query->execute(array(":Nom"=>$nm));
+        // $query->execute(array(":Nom"=>$nm));
     
         if (!$user) {
             die("email  ou mot de pass incorrecte ");
@@ -60,6 +60,7 @@ if (!empty($_POST)) {
             "classes" => $user["classes"],
             "ville" => $user["ville"],
             "derniere_connexion" => $user["derniere_connexion"],
+            "table"=> $table
         ];
         header("Location: index.php");
     } else {
