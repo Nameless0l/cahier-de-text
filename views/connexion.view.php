@@ -4,7 +4,7 @@ use App\Model\User;
 
 session_start();
 if(isset($_SESSION["user"])){
-    header("Location: ../index.php");
+    header("Location: index.php");
     exit ;
 }
 
@@ -70,8 +70,9 @@ if (!empty($_POST)) {
 }
 ?>
 <?php
-$title = 'Enseignant';
+$title = 'Connexion';
 include 'partials/_header.php';
+include 'config/constants.php';
 ?>
 
 <!-- <div class="col-md-12 pt-2">
@@ -112,29 +113,29 @@ include 'partials/_header.php';
                     <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
                         <div class="d-flex align-items-center justify-content-between mb-3">
                             <a href="index.html" class="">
-                                <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i>DASHMIN</h3>
+                                <h3 class="text-primary"><i class="fa fa-hashtag me-2"></i><?=WEBSITE_LOGO ?></h3>
                             </a>
-                            <h3>Sign In</h3>
+                            <h3>Connexion</h3>
                         </div>
                        <form method="post">
                        <div class="form-floating mb-3">
                             <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                            <label for="floatingInput">Email address</label>
+                            <label for="floatingInput">Adresse Mail</label>
                         </div>
                         <div class="form-floating mb-4">
                             <input type="password" name="pass" class="form-control" id="floatingPassword" placeholder="Password">
-                            <label for="floatingPassword">Password</label>
+                            <label for="floatingPassword">Mot de Passe</label>
                         </div>
                         <div class="d-flex align-items-center justify-content-between mb-4">
                             <div class="form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                                <label class="form-check-label" for="exampleCheck1">Se Souvenir de Moi la prochaine fois</label>
                             </div>
-                            <a href="">Forgot Password</a>
+                            <!-- <a href="">Forgot Password</a> -->
                         </div>
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Sign In</button>
+                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Se Connecter</button>
                        </form>
-                        <p class="text-center mb-0">Don't have an Account? <a href="#">Sign Up</a></p>
+                        <!-- <p class="text-center mb-0">Don't have an Account? <a href="#">Sign Up</a></p> -->
                     </div>
                 </div>
             </div>
