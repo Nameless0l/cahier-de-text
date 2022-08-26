@@ -1,37 +1,36 @@
-<?php include "views/creation_cahier_texte.views.php"; ?>
 <?php
 include "config/database.php";
+?>  
+<?php include "views/creation_cahier_texte.views.php"; ?>
+<?php
+
 
 if(isset($_POST["retour"]))
 {
-  $classe = htmlspecialchars($_POST["classe"]);
+  $classe = htmlspecialchars($_POST["classroom"]);
 
-  $nbreleve = htmlspecialchars($_POST["nbreleve"]);
+  $nbreleve = htmlspecialchars($_POST["nbrleve"]);
 
-  $nomcenseur = htmlspecialchars($_POST["censeur"]);
+  $chef_classe = htmlspecialchars($_POST["chefe"]);
 
-  $chef_classe = htmlspecialchars($_POST["chef"]);
-
-  $prof_principale = htmlspecialchars($_POST["prof_principale"]);
-
-  $matricule = htmlspecialchars($_POST["matricule"]);
-
-  $emploidetemps = uploade("emploidetemps");
-  $fichedeprogression = uploade("fichedeprogression");
-  
-
-  if(!empty($_POST["classe"]) AND !empty($_POST["chef"]) AND !empty($_POST["prof_principale"]) AND !empty($_POST["matricule"]) AND !empty($_POST["nbreleve"]) AND !empty($_POST["censeur"]))
+  $prof_principal = htmlspecialchars($_POST["prof_principal"]);
+  if(!empty($_FILES))
   {
-        $ins_enseignant = $db -> prepare("INSERT INTO classes(nom_classe, nbre_eleve, censeur, chef_classe, prof_principal, emploi_temps,fiche_progression) VALUES(?,?,?,?,?,?,?)");
-        $ins_enseignant -> execute(array($classe,$nbreleve,$nomcenseur,$chef_classe,$prof_principale,$emploidetemps,$fichedeprogression));
+    $emploidetemps = uploade_files_pdf("emploidetemps");
+echo "nuoisjdjd";
+    $fichedeprogression = uploade_files_pdf("fichedeprogression");
+  }  
 
-        $ins_cahiertext = $db -> prepare("INSERT INTO cahierdetexte(nom_classe,matricule_cens_en_charge) VALUES(?,?)");
-        $ins_cahiertext -> execute(array($classe, $matricule));
+  if(!empty($_POST["classroom"]) AND !empty($_POST["chefe"]) AND !empty($_POST["prof_principal"]) AND !empty($_POST["nbrleve"]))
+  {
+        $ins_enseignant = $db -> prepare("INSERT INTO cahierdetexte(nom_classe, nbre_eleve, chef_classe, prof_principal, emploi_temps,fiche_progression) VALUES(?,?,?,?,?,?)");
+        $ins_enseignant -> execute(array($classe,$nbreleve,$chef_classe,$prof_principal,$emploidetemps,$fichedeprogression));
+
         $error = "Le cahier a été créé";
   }
   else
   {
-    $error = "veuillez remplir tous les champs";
+    $error = "----------------------veuillez remplir tous les champs";
   }
 }
 

@@ -5,41 +5,90 @@ include "functions/fonction_form.php";
 include "partials/_sidebar_censeur.php";
 include "partials/_nav_censeur.php";
 ?>
-
+<?php
+$rec_classe = $bdd->query("SELECT * FROM classes WHERE matri_censeur_charge = 'bgc' ");
+$rec_eleve = $bdd->query("SELECT * FROM eleve WHERE matr_cens_charge = 'bgc' ");
+$rec_enseignant = $bdd->query("SELECT * FROM ens_cens WHERE matri_censeur = 'abc'");
+?>
 
 <div class="hello">
   <p align = "center">Veuiller remplir ces informations </p>
     <form method="POST" action="" enctype="multipart/form-data">
        <table align="center">
          <tr>
-           <td align= "left"><label for="classe">Classe :</label></td>
-           <td><input type="text" name="classe" id="classe"  value="<?php if(isset($classe)){ echo $classe;} ?>"></td>
+           <td align= "left">Classe :</td>
+           <td><input list="choix_classe" name="classroom"><datalist id="choix_classe">
+         
+            <?php 
+            while($resultat = $rec_classe->fetch()){
+            ?>
+              <option value="<?php echo $resultat['nom_classe'] ?>"></option>
+              <?php }?>
+              </datalist></td>
          </tr>
 
           <tr>
-           <td align= "left"><label for="nbreleve">Nombre d'élève :</label></td>
-           <td><input type="text" name="nbreleve" id="nbreleve"  value="<?php if(isset($classe)){ echo $classe;} ?>"></td>
-         </tr> 
-
-         <tr>
-           <td align= "left"><label for="censeur">Votre nom :</label></td>
-           <td><input type="text" name="censeur" id="censeur"  value="<?php if(isset($classe)){ echo $classe;} ?>"></td>
-         </tr> 
-
-        <tr>
-          <td align= "left"><label for = "chef">Chef de classe :</label></td>
-          <td><input type="text" name="chef" id="chef"  value="<?php if(isset($chef_classe)){ echo $chef_classe;} ?>"></td>
-        </tr>
+           <td align= "left">Nombre d'élève :</td>
+           <td>
+           <input list="nbreleves" name="nbrleve">
+            <datalist id="nbreleves">
+            <?php $nbre =0;
+            while($nbre <= 20){$nbre++; ?>
+            <option value="<?php echo $nbre;?>"></option>
+            <?php }?>
+           </datalist></td>
+         </tr>  
 
         <tr>
-          <td align= "left"><label for = "prof_principale">Prof_principale :</label></td>
-          <td><input type="text" name="prof_principale" id="prof_principale"  value="<?php if(isset($prof_principale)){ echo $prof_principale;} ?>"></td>
+          <td align= "left">Chef de classe :</td>
+          <td>
+          <input list="chefs" name="chefe">
+            <datalist id="chefs">
+          <?php
+          while($resultat = $rec_eleve->fetch()){
+            ?>
+              <option value="<?php echo $resultat['nom'] ?>"></option>
+              <?php }?>
+           </datalist></td>
         </tr>
+<tr>
+<td align="left">Enseignant principale:</td>
+<td>
+<input list="ens_principal" name="prof_principal">
+  <datalist id="ens_principal" >
+  <?php
+while($result = $rec_enseignant->fetch())
+{
+  $enseignant = $result['matricule_ens']; 
+  $rec_e = $bdd->query("SELECT * FROM enseignant WHERE matricule = '$enseignant'");
+  $display = $rec_e->fetch();
+  ?>
+  <option value="<?php echo $display['nom']; ?>" ></option>
+  <?php
+  
+}?>
+  </datalist>
+</td>
 
-        <tr>
-          <td align= "left"><label for = "matricule">Votre matricule :</label></td>
-          <td><input type="text" name="matricule" id="matricule"  value="<?php if(isset($matricule)){ echo $matricule;} ?>"></td>
-        </tr>
+</tr>
+
+
+
+
+  
+
+        
+
+
+
+
+
+
+
+
+
+
+
 
         <tr>
           <td align= "left"><label for="emploidetemps">Emploi de temps :</label></td>
