@@ -1,7 +1,7 @@
 <?php
 
 if (!empty($_POST)) {
-
+  $error='Veillez remplir tout les champs';
   if (
     isset($_POST["nom"], $_POST["prenom"], $_POST["matricule"])
     && !empty($_POST["nom"]) && !empty($_POST["matricule"]) && !empty($_POST["prenom"])
@@ -33,6 +33,7 @@ if (!empty($_POST)) {
     $query->bindValue("quartier", $quartier, PDO::PARAM_STR);
 
     $query->execute();
+    
   } else {
     die('formulaire incomplet');
   }
