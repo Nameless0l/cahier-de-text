@@ -10,7 +10,7 @@ function Select_table(string $email, string $password): string
         // "parent",
     ];
     $passwordhash = '';
-
+    
     require 'config/database.php';
 
     foreach ($table as $table_name) {
@@ -19,7 +19,7 @@ function Select_table(string $email, string $password): string
 
         $query = $db->prepare($sql);
 
-        $query->bindValue(":email", $email, PDO::PARAM_STR);
+        $query->bindValue(":email", htmlentities($email), PDO::PARAM_STR);
 
         $query->execute();
         $user = $query->fetch();
