@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 
 <?php
 $title = "création cahier de texte";
@@ -10,8 +7,8 @@ include "partials/_sidebar_censeur.php";
 include "partials/_nav_censeur.php";
 ?>
 <?php
-$rec_classe = $bdd->query("SELECT * FROM classes WHERE matri_censeur_charge = 'pbc' ");
-$rec_eleve = $bdd->query("SELECT * FROM eleve WHERE matr_cens_charge = 'pbc' ");
+$rec_classe = $bdd->query("SELECT * FROM classes WHERE matri_censeur_charge = 'bgc' ");
+$rec_eleve = $bdd->query("SELECT * FROM eleve WHERE matr_cens_charge = 'bgc' ");
 $rec_enseignant = $bdd->query("SELECT * FROM ens_cens WHERE matri_censeur = 'abc'");
 ?>
 
