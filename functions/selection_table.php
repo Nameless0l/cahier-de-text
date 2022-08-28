@@ -4,10 +4,10 @@ function Select_table(string $email, string $password): string
 {
     $table = [
         "enseignant",
-        // "censeur",
-        // "inspecteur",
-        // "eleve",
-        // "parent",
+        "censeur",
+        "inspecteur",
+        "eleve",
+        "parent",
     ];
     $passwordhash = '';
     
@@ -37,7 +37,7 @@ function Select_table(string $email, string $password): string
                 "classes" => $user["classes"],
                 "ville" => $user["ville"],
                 "derniere_connexion" => $user["derniere_connexion"],
-                "table" => $table
+                "table" => $table_name
             ];
             $passwordhash = $_SESSION["user"]["mot_de_pass"];
             if (!password_verify($password, $passwordhash)) {

@@ -1,10 +1,11 @@
 
 <?php
 $title = "création cahier de texte";
-include "partials/_header.php";
+include 'partials/_header.php';
+include "partials/_sidebar.php";
+include "partials/_nav.php";
 include "functions/fonction_form.php";
-include "partials/_sidebar_censeur.php";
-include "partials/_nav_censeur.php";
+
 ?>
 <?php
 $rec_classe = $bdd->query("SELECT * FROM classes WHERE matri_censeur_charge = 'bgc' ");

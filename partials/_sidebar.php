@@ -20,13 +20,7 @@
                 <h6 class="mb-0 text-black"><?= $_SESSION["user"]["Nom"].' '.$_SESSION["user"]["Prenom"] ?></h6>
                 <span> 
                         <?php 
-                        echo  $_SESSION["user"]["table"];
-                        //   if($_SESSION["user"]["table"]==='censeur')echo " Censeur";
-                        //   elseif($_SESSION["user"]["table"]==="enseignant") echo "Enseignant";
-                        //   elseif($_SESSION["user"]["table"]==='eleve') echo "Eleve" ;  
-                        //   elseif($_SESSION["user"]["table"]==='parent') echo "Parent"; 
-                        //   elseif($_SESSION["user"]["table"]==='inspecteur') echo "Inspecteur";
-                        //   else echo " jfjrj";
+                        echo  strtoupper($_SESSION["user"]["table"]);
                         ?>
                 </span>
             

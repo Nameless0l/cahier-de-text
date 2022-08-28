@@ -42,8 +42,8 @@ if (!empty($_POST)) {
 <?php
 $title = 'Ajout d\'un Enseignant';
 include 'partials/_header.php';
-include "partials/_sidebar_censeur.php";
-include "partials/_nav_censeur.php";
+include "partials/_sidebar.php";
+include "partials/_nav.php";
 ?>
 
 <div class="container">
