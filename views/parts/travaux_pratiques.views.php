@@ -1,9 +1,9 @@
 <?php
 $title = "Remplissage travaux pratiques";
 include "partials/_header.php";
-include "fonctions/fonction_form.php";
-include "partials/_sidebar_censeur.php";
-include "partials/_nav_censeur.php";
+include "functions/fonction_form.php";
+// include "partials/_sidebar.php";
+// include "partials/_nav.php";
 ?>
 
 <p>TRAVAUX PRATIQUES</p>

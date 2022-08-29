@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 $_present_time = date("H:i:s-m/d/y");
 $expiry = 60*24*60*60 + time();
 setcookie("Lastvisit" , $_present_time,$expiry);
@@ -52,4 +52,4 @@ function last_seen($last_time) {
 
   return $last_seen;
 }
-?>
+?> -->

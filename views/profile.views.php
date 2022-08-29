@@ -1,6 +1,7 @@
 <?php
 session_start();
-
+$Nom_Prenom=$_SESSION["user"]["Nom"].' '.$_SESSION["user"]["Prenom"] ;
+$email =$_SESSION["user"]["email"]  ;
 $title = "Profil Utilisateur";
 include 'partials/_header.php';
 include "partials/_sidebar.php";
@@ -12,7 +13,7 @@ include "partials/_nav.php";
             <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
                     width="150px"
                     src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span
-                    class="font-weight-bold"><?=$_SESSION["user"]["Nom"].' '.$_SESSION["user"]["Prenom"] ?></span><span class="text-black-50"><?=$_SESSION["user"]["email"] ?></span><span>
+                    class="font-weight-bold"><?=$Nom_Prenom?></span><span class="text-black-50"><?=$email?></span><span>
                 </span></div>
         </div>
         <div class="col-md-9 border-right">
@@ -68,7 +69,7 @@ include "partials/_nav.php";
                                         <label class="form-label" for="basic-default-password12">Nom et Prenom</label>
                                         <div class="input-group">
                                             <input type="text" class="form-control " id="basic-default-password12"
-                                                value="AMOUGOU Olivier" aria-describedby="basic-default-text" />
+                                                value='<?= $Nom_Prenom ?>' aria-describedby="basic-default-text" />
                                             <!-- <span id="basic-default-password2"
                                                 class="input-group-text cursor-pointer"><i
                                                     class="fa fa-eye" aria-hidden="true"></i></span> -->
