@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
     <meta charset="utf-8">
@@ -36,7 +36,7 @@
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/table.css" rel="stylesheet">
     <link href="assets/css/stats_cours.css" rel="stylesheet">
-
+    <script src="assets/js/jquery.min.js"></script>
 </head>
 
 <body>

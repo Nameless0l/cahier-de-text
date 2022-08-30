@@ -2,7 +2,6 @@
 <!--  -->
 
 <div class="content">
-    <!-- Navbar Start -->
     <nav class="navbar navbar-expand bg-light navbar-light sticky-top px-4 py-0">
         <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
             <h2 class="text-primary mb-0"><i class="fa fa-hashtag"></i></h2>
@@ -41,18 +40,6 @@
                                     <a href="#" class="dropdown-item text-info">Tle</a>
                                 </div>
                             </div>
-
-                            <!-- <a href="classes.php" class="dropdown-item text-info">Tle A4 Esp2</a>
-                            <a href="#" class="dropdown-item text-info">Tle A4 All</a>
-                            <a href="#" class="dropdown-item text-info">Pre D</a>
-                            <a href="classes.php" class="dropdown-item text-info">Pre C</a>
-                            <a href="#" class="dropdown-item text-info">Pre A4 Esp1</a>
-                            <a href="#" class="dropdown-item text-info">Pre A4 Esp2</a>
-                            <a href="#" class="dropdown-item text-info">Pre A4 All</a>
-                            <a href="#" class="dropdown-item text-info">2nd C</a>
-                            <a href="#" class="dropdown-item text-info">2nd A4 Esp2</a>
-                            <a href="classes.php" class="dropdown-item text-info">2nd A4 Esp1</a>
-                            <a href="#" class="dropdown-item text-info">2nd A4 All</a> -->
                         </div>
                     </div>
                 </li>
@@ -61,11 +48,13 @@
                         Statistiques
                     </a>
                 </li>
+                <?php if($_SESSION["user"]["table"]==='censeur'): ?>
                 <li class="nav-item  d-none d-lg-flex">
                     <a class="nav-link" href="teacher.php">
                         Enseignants
                     </a>
                 </li>
+                <?php endif ?>
             </ul>
         </div>
         <div class="navbar-nav align-items-center ms-auto">

@@ -1,8 +1,13 @@
 <?php
 $title = "Classes";
-include "partials/_header.php";
-include "partials/_sidebar_censeur.php";
-include "partials/_nav_censeur.php";
+if(!isset($_SESSION["user"])){
+    header("Location: connexion.php");
+    die("Vous n'etes pas connectée");
+}
+
+include 'partials/_header.php';
+include "partials/_sidebar.php";
+include "partials/_nav.php";
 ?>
 
 <div>

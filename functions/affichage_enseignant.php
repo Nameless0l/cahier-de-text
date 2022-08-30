@@ -19,3 +19,29 @@ function enseignant($nom, $profession, $email){
             </div>
         ';
 }
+function enseig($nom ,$update){
+    echo '
+    <tr>
+    <td>
+        <div class="d-flex">
+            <img class="img-sm rounded-circle mb-md-0 mr-2" src="assets/images/user.jpg" alt="profile image">
+            <div>
+                <div class="font-weight-bold mt-1">'.$nom.'</div>
+            </div>
+        </div>
+    </td>
+    <td>
+        <div class="font-weight-bold text-danger  mt-1">Cahier de Texte '.$update.'
+        </div>
+    </td>
+    <td>
+        <div class="font-weight-bold  mt-1">07 Nov 2022</div>
+    </td>
+    <td>
+        <button type="button" class="btn btn-warning btn-secondary">Notifier</button>
+    </td>
+    </tr>
+        ';
+}
+
+

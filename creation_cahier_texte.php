@@ -1,7 +1,37 @@
 <?php
+session_start();
 include "config/database.php";
 ?>  
+<?php
+$title = "création cahier de texte";
+include "partials/_header.php";
+include "functions/fonction_form.php";
+include "partials/_sidebar_censeur.php";
+include "partials/_nav_censeur.php";
+?>
 <?php include "views/creation_cahier_texte.views.php"; ?>
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $('#classroom').on('change',function(){
+        var classeID = $(this).val();
+        if(classeID){
+            $.ajax({
+                type:'POST',
+                url:'views/ajaxFile.php',
+                data:'id='+classeID,
+                success:function(html){
+                    $('#student').html(html);
+                    
+                }
+            }); 
+        }else{
+            $('#student').html('<option value="">Select country first</option>');
+        }
+    });
+});
+</script>
 <?php
 
 
