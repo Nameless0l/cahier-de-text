@@ -8,9 +8,9 @@ include "functions/fonction_form.php";
 
 ?>
 <?php
-$rec_classe = $bdd->query("SELECT * FROM classes WHERE matri_censeur_charge = 'bgc' ");
+$rec_classe = $bdd->query("SELECT * FROM classes WHERE matri_censeur_charge = '21p340' ");
 $rec_eleve = $bdd->query("SELECT * FROM eleve WHERE matr_cens_charge = 'bgc' ");
-$rec_enseignant = $bdd->query("SELECT * FROM ens_cens WHERE matri_censeur = 'abc'");
+$rec_enseignant = $bdd->query("SELECT * FROM enseignant WHERE  	id_censeur = 'abc'");
 ?>
 
 <div class="hello">

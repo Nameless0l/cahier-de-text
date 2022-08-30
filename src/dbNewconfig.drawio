@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="qupTOumAMpj2-oVKTXfa" name="Page-1">
-        <mxGraphModel dx="2014" dy="2562" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
+        <mxGraphModel dx="1647" dy="2646" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -21,13 +21,13 @@
                 <mxCell id="99" value="Email" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;labelBorderColor=default;fontStyle=1;spacing=3;" parent="95" vertex="1">
                     <mxGeometry y="130" width="140" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="754" value="Telephone" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=bottom;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontStyle=1;spacing=3;" vertex="1" parent="95">
+                <mxCell id="754" value="Telephone" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=bottom;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontStyle=1;spacing=3;" parent="95" vertex="1">
                     <mxGeometry y="160" width="140" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="755" value="Mot de passe" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=bottom;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontStyle=1;spacing=3;" vertex="1" parent="95">
+                <mxCell id="755" value="Mot de passe" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=bottom;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontStyle=1;spacing=3;" parent="95" vertex="1">
                     <mxGeometry y="190" width="140" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="756" value="Matricule" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontStyle=1;spacing=3;" vertex="1" parent="95">
+                <mxCell id="756" value="Matricule" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontStyle=1;spacing=3;" parent="95" vertex="1">
                     <mxGeometry y="220" width="140" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="100" value="Censeur" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;spacing=3;" parent="1" vertex="1">
@@ -59,7 +59,7 @@
                 <mxCell id="113" value="Classe" style="text;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontStyle=1;spacing=3;" parent="110" vertex="1">
                     <mxGeometry y="100" width="140" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="753" value="Emploie_de_temps&#10;     de laclasse" style="text;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontStyle=1;spacing=3;" vertex="1" parent="110">
+                <mxCell id="753" value="Emploie_de_temps&#10;     de laclasse" style="text;align=left;verticalAlign=middle;spacingLeft=4;spacingRight=4;overflow=hidden;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;rotatable=0;fontStyle=1;spacing=3;" parent="110" vertex="1">
                     <mxGeometry y="130" width="140" height="30" as="geometry"/>
                 </mxCell>
                 <mxCell id="114" value="parent ou tuteur" style="swimlane;fontStyle=1;childLayout=stackLayout;horizontal=1;startSize=40;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;spacing=3;" parent="1" vertex="1">
@@ -146,7 +146,7 @@
                 <mxCell id="139" value="Id_enseignant" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontStyle=1;spacing=3;" parent="141" vertex="1">
                     <mxGeometry y="70" width="140" height="30" as="geometry"/>
                 </mxCell>
-                <mxCell id="148" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;endFill=0;fontStyle=1;spacing=3;entryX=0;entryY=0.433;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="96" edge="1" target="139">
+                <mxCell id="148" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=none;endFill=0;fontStyle=1;spacing=3;entryX=0;entryY=0.433;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="96" target="139" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="280" y="-630" as="targetPoint"/>
                     </mxGeometry>
