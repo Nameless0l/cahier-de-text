@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 29 août 2022 à 13:21
+-- Généré le : mar. 30 août 2022 à 08:35
 -- Version du serveur : 10.4.24-MariaDB
 -- Version de PHP : 8.1.6
 
@@ -52,7 +52,7 @@ CREATE TABLE `activite_integration` (
 CREATE TABLE `cahier` (
   `id` int(11) NOT NULL,
   `nom_classe` varchar(255) COLLATE utf8_bin NOT NULL,
-  `matricule_cens_en_charge` varchar(255) COLLATE utf8_bin NOT NULL
+  `matricule_cens_en_charge` varchar(12) COLLATE utf8_bin NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -63,6 +63,7 @@ INSERT INTO `cahier` (`id`, `nom_classe`, `matricule_cens_en_charge`) VALUES
 (0, 'Mbassi ewolo', '21p65656'),
 (1, 'sixieme', '21S2324'),
 (2, 'cinquieme', '21S2323');
+(3, 'cinquieme', '21S2323');
 
 -- --------------------------------------------------------
 
@@ -98,7 +99,7 @@ CREATE TABLE `censeur` (
   `id_cens` int(11) NOT NULL,
   `Nom` varchar(70) COLLATE utf8_bin NOT NULL,
   `Prenom` varchar(70) COLLATE utf8_bin NOT NULL,
-  `matricule_cens` varchar(255) COLLATE utf8_bin NOT NULL,
+  `matricule_cens` varchar(12) COLLATE utf8_bin NOT NULL,
   `email` varchar(255) COLLATE utf8_bin NOT NULL,
   `mot_de_pass` text COLLATE utf8_bin NOT NULL,
   `ville` varchar(50) COLLATE utf8_bin NOT NULL,
@@ -114,29 +115,17 @@ CREATE TABLE `censeur` (
 --
 
 INSERT INTO `censeur` (`id_cens`, `Nom`, `Prenom`, `matricule_cens`, `email`, `mot_de_pass`, `ville`, `quartier`, `classes`, `derniere_connexion`, `matieres`, `id_enseignant`) VALUES
-(1, '[Mbassi]', 'Loic', '21koi', 'loic@gmail.com', 'Nameless', '[Yaounde]', '[odza]', '6eme', '0000-00-00 00:00:00.000000', '', 0),
 (2, 'Maffo', 'Brenda', '21k270', 'natacha@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$OGlScVNqRmw0SUF3NVljMw$aYRp6jeBABloLqKFgRjCQivFW+fHs+rH7jdLmcXGFwo', 'Yaounde', 'Cite_rouge', 'TleC', '2022-08-28 00:37:50.829807', '', 0),
+(1, '[Mbassi]', 'Loic', '21koi', 'loic@gmail.com', 'Nameless', '[Yaounde]', '[odza]', '6eme', '0000-00-00 00:00:00.000000', '', 0),
 (3, 'Mbassi Ewolo', 'Loic', 'Yaounde', 'aronloic@gmail.com', '$argon2id$v=19$m=65536,t=4,p=1$OGlScVNqRmw0SUF3NVljMw$aYRp6jeBABloLqKFgRjCQivFW+fHs+rH7jdLmcXGFwo', 'Odza', 'Mathematques', '3eme', '2022-08-26 04:38:12.556456', 'Maths', 0);
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `censeur_cahier`
+-- Structure de la table `censeur_enseignant`
 --
 
-CREATE TABLE `censeur_cahier` (
-  `id_censeur` int(11) NOT NULL,
-  `id_cahier` int(11) NOT NULL,
-  `id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `censeur_enseigneur`
---
-
-CREATE TABLE `censeur_enseigneur` (
+CREATE TABLE `censeur_enseignant` (
   `id_enseignant` int(11) NOT NULL,
   `id_censeur` int(11) NOT NULL,
   `id` int(11) NOT NULL
@@ -164,10 +153,34 @@ CREATE TABLE `classes` (
 --
 
 INSERT INTO `classes` (`id`, `nom_classe`, `nbre_eleve`, `matri_censeur_charge`, `chef_classe`, `prof_principal`, `emploi_temps`, `fiche_progression`) VALUES
-(0, 'Mbassi ewolo', 50, 'Loic Aron', 'Nameless', 'Ras', 'CAHIER DE TEXTE ELECTRONIQUE.docx', 'CAHIER DE TEXTE ELECTRONIQUE.docx'),
-(1, 'sixieme', 0, '', 'mboudageorges', 'kamenibertrand', '1290.jpg', ''),
-(2, '', 2, '', '', '', '', ''),
-(3, 'cinquieme', 0, '', 'mbouda', 'kameni', '4884517.jpg', '');
+(1, 'Tle C', 20, '21p340', 'Mbassi', '', '', ''),
+(2, 'Tle D', 20, '20u2764', 'Mbassi', 'Aron', '', ''),
+(3, 'Tle A4 Esp1', 0, '21p340', '', '', '', ''),
+(4, 'Tle A4 Esp2', 0, '', '', '', '', ''),
+(5, 'Tle A4 All', 0, '', '', '', '', ''),
+(6, 'Pre D', 0, '', '', '', '', ''),
+(7, 'Pre C', 0, '', '', '', '', ''),
+(8, 'Pre A4 Esp2', 0, '', '', '', '', ''),
+(9, 'Pre A4 All', 0, '', '', '', '', ''),
+(10, '2nd C', 0, '', '', '', '', ''),
+(12, '2nd A4 Esp2', 0, '', '', '', '', ''),
+(13, '2nd A4 Esp1', 0, '', '', '', '', ''),
+(14, 'Pre A4 Esp2', 0, '', '', '', '', ''),
+(15, '2nd A4 All', 0, '', '', '', '', ''),
+(16, '3ème A4 Esp1', 0, '', '', '', '', ''),
+(17, '3ème A4 Esp1', 0, '', '', '', '', ''),
+(18, '3ème A4 Esp2', 0, '', '', '', '', ''),
+(19, '3ème A4 All', 0, '', '', '', '', ''),
+(20, '4ème A4 Esp1', 0, '', '', '', '', ''),
+(21, '4ème A4 Esp2', 0, '', '', '', '', ''),
+(22, '4ème A4 All', 0, '', '', '', '', ''),
+(23, '5ème I', 0, '', '', '', '', ''),
+(24, '5ème II', 0, '', '', '', '', ''),
+(25, '6ème I', 0, '', '', '', '', ''),
+(26, '6ème II', 0, '', '', '', '', ''),
+(27, '6ème III', 0, '', '', '', '', ''),
+(28, '6ème IV', 0, '', '', '', '', ''),
+(37, 'Pre A4 Esp1', 0, '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -321,7 +334,8 @@ ALTER TABLE `activite_integration`
 -- Index pour la table `cahier`
 --
 ALTER TABLE `cahier`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`) USING BTREE,
+  ADD UNIQUE KEY `matricule_cens_en_charge` (`matricule_cens_en_charge`) USING BTREE;
 
 --
 -- Index pour la table `cahier_matiere`
@@ -343,20 +357,13 @@ ALTER TABLE `cahier_parent`
 -- Index pour la table `censeur`
 --
 ALTER TABLE `censeur`
-  ADD PRIMARY KEY (`id_cens`);
+  ADD PRIMARY KEY (`matricule_cens`) USING BTREE,
+  ADD UNIQUE KEY `id_cens` (`id_cens`) USING BTREE;
 
 --
--- Index pour la table `censeur_cahier`
+-- Index pour la table `censeur_enseignant`
 --
-ALTER TABLE `censeur_cahier`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `id_cahier` (`id_cahier`),
-  ADD KEY `id_censeur` (`id_censeur`);
-
---
--- Index pour la table `censeur_enseigneur`
---
-ALTER TABLE `censeur_enseigneur`
+ALTER TABLE `censeur_enseignant`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_censeur` (`id_censeur`),
   ADD KEY `id_enseignant` (`id_enseignant`);
@@ -441,15 +448,9 @@ ALTER TABLE `censeur`
   MODIFY `id_cens` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
--- AUTO_INCREMENT pour la table `censeur_cahier`
+-- AUTO_INCREMENT pour la table `censeur_enseignant`
 --
-ALTER TABLE `censeur_cahier`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `censeur_enseigneur`
---
-ALTER TABLE `censeur_enseigneur`
+ALTER TABLE `censeur_enseignant`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -507,18 +508,11 @@ ALTER TABLE `cahier_parent`
   ADD CONSTRAINT `cahier_parent_ibfk_2` FOREIGN KEY (`id_parent`) REFERENCES `parent` (`id`);
 
 --
--- Contraintes pour la table `censeur_cahier`
+-- Contraintes pour la table `censeur_enseignant`
 --
-ALTER TABLE `censeur_cahier`
-  ADD CONSTRAINT `censeur_cahier_ibfk_1` FOREIGN KEY (`id_cahier`) REFERENCES `cahier` (`id`),
-  ADD CONSTRAINT `censeur_cahier_ibfk_2` FOREIGN KEY (`id_censeur`) REFERENCES `censeur` (`id_cens`);
-
---
--- Contraintes pour la table `censeur_enseigneur`
---
-ALTER TABLE `censeur_enseigneur`
-  ADD CONSTRAINT `censeur_enseigneur_ibfk_1` FOREIGN KEY (`id_censeur`) REFERENCES `censeur` (`id_cens`),
-  ADD CONSTRAINT `censeur_enseigneur_ibfk_2` FOREIGN KEY (`id_enseignant`) REFERENCES `enseignant` (`id`);
+ALTER TABLE `censeur_enseignant`
+  ADD CONSTRAINT `censeur_enseignant_ibfk_1` FOREIGN KEY (`id_censeur`) REFERENCES `censeur` (`id_cens`),
+  ADD CONSTRAINT `censeur_enseignant_ibfk_2` FOREIGN KEY (`id_enseignant`) REFERENCES `enseignant` (`id`);
 
 --
 -- Contraintes pour la table `eleve`
