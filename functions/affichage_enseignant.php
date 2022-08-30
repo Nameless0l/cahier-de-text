@@ -13,7 +13,7 @@ function enseignant($nom, $profession, $email){
                             <h4>'.$nom.'</h4>
                             <p class="text-muted">'.$profession.'<span>| </span><span><a href="#" class="text-pink">'.$email.'</a></span></p>
                         </div>
-                        <button type="button" class="btn btn-warning mt-3 btn-rounded waves-effect w-md waves-light">Notifier</button>
+                        <button type="button" class="btn btn-warning mt-3 btn-rounded waves-effect w-md waves-light col-md-6 mx-auto">Notifier</button>
                     </div>
                 </div>
             </div>
