@@ -1,19 +1,10 @@
-<?php
-session_start();
-?>
 
 <?php
-$title = "création cahier de texte";
-include "partials/_header.php";
-include "functions/fonction_form.php";
-include "partials/_sidebar_censeur.php";
-include "partials/_nav_censeur.php";
-?>
-<?php
-$rec_classe = $bdd->query("SELECT * FROM classes WHERE matri_censeur_charge = 'pbc' ");
-$rec_eleve = $bdd->query("SELECT * FROM eleve WHERE matr_cens_charge = 'pbc' ");
 $rec_enseignant = $bdd->query("SELECT * FROM ens_cens WHERE matri_censeur = 'abc'");
+$query = $bdd->query("SELECT * FROM classes ");
+    $run_query =  $query->rowCount();
 ?>
+  
 
 <div class="hello">
   <p align = "center">Veuiller remplir ces informations </p>
@@ -21,45 +12,59 @@ $rec_enseignant = $bdd->query("SELECT * FROM ens_cens WHERE matri_censeur = 'abc
        <table align="center">
          <tr>
            <td align= "left">Classe :</td>
-           <td><input list="choix_classe" name="classroom"><datalist id="choix_classe">
-         
+
+           <td>
+            <select name="classroom" id="classroom">
+            
+              <option value="">choisissez la classe beneficiaire</option>
+            
             <?php 
-            while($resultat = $rec_classe->fetch()){
+            if($run_query > 0){
+            while($resultat = $query->fetch()){?>
+  
+               <option value='<?= $resultat['id']; ?>'><?= $resultat['nom_classe']; ?></option>";
+          <?php    }
+            }else{?>
+
+                 <option value=""> <?php echo "Country not available"; ?></option>';
+                 <?php
+            }
             ?>
-              <option value="<?php echo $resultat['nom_classe'] ?>"></option>
-              <?php }?>
-              </datalist></td>
+            </select>
+          
+          </td>
          </tr>
 
           <tr>
-           <td align= "left">Nombre d'élève :</td>
-           <td>
-           <input list="nbreleves" name="nbrleve">
-            <datalist id="nbreleves">
-            <?php $nbre =0;
-            while($nbre <= 20){$nbre++; ?>
-            <option value="<?php echo $nbre;?>"></option>
+             <td align= "left">Nombre d'élève :</td>
+              <td>
+              <select id="nbreleves">
+              <?php 
+                $nbre = 0;
+                 while($nbre < 20)
+                 {
+                  $nbre++; ?>
+                    <option value="<?php echo $nbre; ?>"><?php echo $nbre; ?></option>
             <?php }?>
-           </datalist></td>
+               </select>
+               </td>
          </tr>  
 
         <tr>
+
           <td align= "left">Chef de classe :</td>
+          
           <td>
-          <input list="chefs" name="chefe">
-            <datalist id="chefs">
-          <?php
-          while($resultat = $rec_eleve->fetch()){
-            ?>
-              <option value="<?php echo $resultat['nom'] ?>"></option>
-              <?php }?>
-           </datalist></td>
+          <select name="student" id="student">
+            <option value="">Select one student</option>
+          </select>
+          </td>
+
         </tr>
 <tr>
 <td align="left">Enseignant principale:</td>
 <td>
-<input list="ens_principal" name="prof_principal">
-  <datalist id="ens_principal" >
+  <select id="ens_principal" >
   <?php
 while($result = $rec_enseignant->fetch())
 {
@@ -67,11 +72,11 @@ while($result = $rec_enseignant->fetch())
   $rec_e = $bdd->query("SELECT * FROM enseignant WHERE matricule = '$enseignant'");
   $display = $rec_e->fetch();
   ?>
-  <option value="<?php echo $display['nom']; ?>" ></option>
+  <option value="<?php echo $display['Nom']; ?>" ><?php echo $display['Nom']; ?></option>
   <?php
   
 }?>
-  </datalist>
+  </select>
 </td>
 
 </tr>
