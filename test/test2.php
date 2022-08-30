@@ -1,28 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <title>
+        Creating Search Bar using HTML
+        CSS and Javascript
+    </title>
+
+    <!-- linking the stylesheet(CSS) -->
+    <style>
+        #searchbar {
+            margin-left: 15%;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        input[type=text] {
+            width: 30%;
+            -webkit-transition: width 0.15s ease-in-out;
+            transition: width 0.15s ease-in-out;
+        }
+
+        /* When the input field gets focus,
+        change its width to 100% */
+        input[type=text]:focus {
+            width: 70%;
+        }
+
+        #list {
+            font-size: 1.5em;
+            margin-left: 90px;
+        }
+
+        .animals {
+            display: list-item;
+        }
+    </style>
 </head>
+
 <body>
 
-<div class="container mt-3">
-  <h3>Popover Example</h3>
-  
-  <button type="button" class="btn btn-primary" data-bs-toggle="popover" title="Popover Header" data-bs-content="Some content inside the popover">
-    Toggle popover
-  </button>
-</div>
+    <!-- input tag -->
+    <input id="searchbar" onkeyup="search_animal()" type="text" name="search" placeholder="Search animals..">
 
-<script>
-var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
-var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
-  return new bootstrap.Popover(popoverTriggerEl)
-})
-</script>
+    <!-- ordered list -->
+    <ol id='list'>
+        <li class="animals">Cat</li>
+        <li class="animals">Dog</li>
+        <li class="animals">Elephant</li>
+        <li class="animals">Fish</li>
+        <li class="animals">Gorilla</li>
+        <li class="animals">Monkey</li>
+        <li class="animals">Turtle</li>
+        <li class="animals">Whale</li>
+        <li class="animals">Aligator</li>
+        <li class="animals">Donkey</li>
+        <li class="animals">Horse</li>
+    </ol>
 
+    <!-- linking javascript -->
+    <script>
+        // JavaScript code
+        function search_animal() {
+            let input = document.getElementById('searchbar').value
+            input = input.toLowerCase();
+            let x = document.getElementsByClassName('animals');
+
+            for (i = 0; i < x.length; i++) {
+                if (!x[i].innerHTML.toLowerCase().includes(input)) {
+                    x[i].style.display = "none";
+                } else {
+                    x[i].style.display = "list-item";
+                }
+            }
+        }
+    </script>
+    <!-- <script>
+        $(document).ready(function() {
+            $('#search-user').keyup(function() {
+                $('#result-search').html('');
+
+                var utilisateur = $(this).val();
+
+                if (utilisateur != "") {
+                    $.ajax({
+                        type: 'GET',
+                        url: 'fonctions/recherche_utilisateur.php',
+                        data: 'user=' + encodeURIComponent(utilisateur),
+                        success: function(data) {
+                            if (data != "") {
+                                $('#result-search').append(data);
+                            } else {
+                                document.getElementById('result-search').innerHTML = "<div style='font-size: 20px; text-align: center; margin-top: 10px'>Aucun utilisateur</div>"
+                            }
+                        }
+                    });
+                }
+            });
+        });
+    </script> -->
 </body>
+
 </html>
