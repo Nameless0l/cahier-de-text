@@ -33,6 +33,23 @@ if (!empty($_POST)) {
     $query->bindValue("quartier", $quartier, PDO::PARAM_STR);
 
     $query->execute();
+
+     $sql2  = "SELECT * FROM enseignant WHERE email= :email";
+
+      $query = $db->prepare($sql2);
+
+      $query->bindValue(":email", htmlentities($email), PDO::PARAM_STR);
+      $query->execute();
+
+      $id = $query->fetch();
+      $id_enseignant=$id["id"];
+      if ($id_enseignant) {
+        //  die("Impossible d'acceder à l'id enseignant");
+      }
+      $id_censeur=$_SESSION["user"]["id"];
+      $sql3 = "INSERT INTO censeur_enseignant(id_enseignant,id_censeur) VALUES('$id_enseignant','$id_censeur')";
+      $query = $db->prepare($sql3);
+      $query->execute();
     
   } else {
     die('formulaire incomplet');

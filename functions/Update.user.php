@@ -16,39 +16,11 @@ class UpdateProfile
    public $avatar;
    public $table;
 
-   public function update()
-   {
-   }
-}
-
-class DbInteraction
-{
-   public $firstname;
-   public $lastname;
-   public $matricule;
-   public $id;
-   public $user;
-   public $email;
-   public $password;
-   public $table;
-
-   public function enseignant_censeur()
-   {
-      $db = '';
-   }
-
-   public function ajout_enseignant()
+   public function ajout_enseignant($id_censeur,$nom,$prenom,$matricule,$email,$ville,$quartier,$matieres)
    {
       require 'config/database.php';
 
-      $id_censeur = $_SESSION["user"]["id_cens"];
-      $nom = strip_tags($_POST["nom"]);
-      $prenom = strip_tags($_POST["prenom"]);
-      $matricule = strip_tags($_POST["matricule"]);
-      $email = strip_tags($_POST["email"]);
-      $ville = strip_tags($_POST["ville"]);
-      $quartier = strip_tags($_POST["quartier"]);
-      $matieres = strip_tags($_POST["matieres"]);
+     
 
       $pass = password_hash("Nameless", PASSWORD_ARGON2ID);
       $sql1 = "INSERT INTO enseignant (Nom,Prenom,matieres,matricule,ville,quartier,mot_de_pass,email) VALUES(
@@ -73,7 +45,8 @@ class DbInteraction
       $query->bindValue(":email", htmlentities($email), PDO::PARAM_STR);
       $query->execute();
 
-      $id_enseignant = $query->fetch();
+      $id = $query->fetch();
+      $id_enseignant=$id["id"];
       if ($id_enseignant) {
          die("Impossible d'acceder à l'id enseignant");
       }
@@ -81,6 +54,8 @@ class DbInteraction
       $query = $db->prepare($sql3);
       $query->execute();
    }
+
+
    public function ajout_cahier($matricule)
    {
    }
