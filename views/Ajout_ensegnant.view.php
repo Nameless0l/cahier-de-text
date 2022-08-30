@@ -1,7 +1,7 @@
 <?php
 
 if (!empty($_POST)) {
-
+  $error='Veillez remplir tout les champs';
   if (
     isset($_POST["nom"], $_POST["prenom"], $_POST["matricule"])
     && !empty($_POST["nom"]) && !empty($_POST["matricule"]) && !empty($_POST["prenom"])
@@ -33,6 +33,7 @@ if (!empty($_POST)) {
     $query->bindValue("quartier", $quartier, PDO::PARAM_STR);
 
     $query->execute();
+    
   } else {
     die('formulaire incomplet');
   }
@@ -41,90 +42,74 @@ if (!empty($_POST)) {
 <?php
 $title = 'Ajout d\'un Enseignant';
 include 'partials/_header.php';
-include "partials/_sidebar_censeur.php";
-include "partials/_nav_censeur.php";
+include "partials/_sidebar.php";
+include "partials/_nav.php";
 ?>
 
-<div>
+<div class="container">
 
-  <form class="row g-3 needs-validation" method="post">    
+  <form class="row g-3 needs-validation" method="post">
     <div class="col-md-4">
       <label for="validationCustom01" class="form-label">Matricule</label>
       <input type="text" name="matricule" class="form-control" id="validationCustom01" required="required" placeholder=" Matricule ici">
-      <div class="valid-feedback">
-        Looks good!
-      </div>
     </div>
     <div class="col-md-4">
       <label for="validationCustom01" class="form-label">Nom de l'enseignant</label>
       <input type="text" name="nom" class="form-control" id="validationCustom01" required="required" placeholder="Nom ici">
-      <div class="valid-feedback">
-        Looks good!
-      </div>
     </div>
     <div class="col-md-4">
       <label for="validationCustom02" class="form-label">Prenom de l'enseignant</label>
       <input type="text" name="prenom" class="form-control" id="validationCustom02" required="requilled" placeholder="son prenom ici">
-      <div class="valid-feedback">
-        Looks good!
-      </div>
     </div>
     <div class="col-md-6">
       <label for="validationCustom03" class="form-label">Ville</label>
       <input type="text" name="ville" class="form-control" id="validationCustom03" required="">
-      <div class="invalid-feedback">
-        Please provide a valid city.
-      </div>
     </div>
     <div class="col-md-6">
       <label for="quartier" class="form-label">Quartier</label>
       <input type="text" name="quartier" class="form-control" id="quartier" name="quartier" required="">
-      <div class="invalid-feedback">
-        Please provide a valid city.
-      </div>
     </div>
     <div class="col-md-6">
       <label for="validationCustom03" class="form-label">Email</label>
       <input type="email" name="email" class="form-control" id="validationCustom03" required="required">
-      <div class="invalid-feedback">
-        Please.
-      </div>
-    <fieldset class="col-md-3">
-      <legend>Matieres</legend>
+      <div class="row">
+      <fieldset class="col-md-3">
+        <legend>Matieres</legend>
 
-      <div>
-        <input type="checkbox" id="scales" name="matieres" value="Mathematques">
-        <label for="scales">Mathatiques</label>
-      </div>
-      <div>
-        <input type="checkbox" id="horns" name="matieres" value="Physiques">
-        <label for="horns">Physiques</label>
-      </div>
-      <div>
-        <input type="checkbox" id="horns" name="matieres" value="Chimie">
-        <label for="horns">Chimie</label>
-      </div>
-    </fieldset>
-    <fieldset class="col-md-3">
-      <legend>classes</legend>
+        <div>
+          <input type="checkbox" id="scales" name="matieres" value="Mathematques">
+          <label for="scales">Mathatiques</label>
+        </div>
+        <div>
+          <input type="checkbox" id="horns" name="matieres" value="Physiques">
+          <label for="horns">Physiques</label>
+        </div>
+        <div>
+          <input type="checkbox" id="horns" name="matieres" value="Chimie">
+          <label for="horns">Chimie</label>
+        </div>
+      </fieldset >
+      <fieldset class="col-md-3 pl-20">
+        <legend>classes</legend>
 
-      <div>
-        <input type="checkbox" id="scales">
-        <label for="scales">5eme</label>
-      </div>
+        <div>
+          <input type="checkbox" id="scales">
+          <label for="scales">5eme</label>
+        </div>
 
-      <div>
-        <input type="checkbox" id="horns">
-        <label for="horns">6eme</label>
+        <div>
+          <input type="checkbox" id="horns">
+          <label for="horns">6eme</label>
+        </div>
+        <div>
+          <input type="checkbox" id="horns">
+          <label for="horns">seconde</label>
+        </div>
+      </fieldset>
       </div>
-      <div>
-        <input type="checkbox" id="horns">
-        <label for="horns">seconde</label>
+      <div class="col-12 pt-4">
+        <button class="btn btn-primary" type="submit">Valider</button>
       </div>
-    </fieldset>
-    <div class="col-12">
-      <button class="btn btn-primary" type="submit">Valider</button>
-    </div>
   </form>
 </div>
 <?php

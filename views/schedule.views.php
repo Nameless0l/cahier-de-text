@@ -1,9 +1,9 @@
 <?php
 session_start();
 $title = "Emploi de temps";
-include "partials/_header.php";
-include "partials/_sidebar_censeur.php";
-include "partials/_nav_censeur.php";
+include 'partials/_header.php';
+include "partials/_sidebar.php";
+include "partials/_nav.php";
 include "functions/affichage_cahier.php";
 
 ?>

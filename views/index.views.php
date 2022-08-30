@@ -1,12 +1,14 @@
 <?php
 $title = "Accueil";
-if(!isset($_SESSION["user"])){
+if (!isset($_SESSION["user"])) {
     header("Location: connexion.php");
     die("Vous n'etes pas connectée");
 }
-include "partials/_header.php";
-include "partials/_sidebar_censeur.php";
-include "partials/_nav_censeur.php";
+include 'partials/_header.php';
+include "partials/_sidebar.php";
+include "partials/_nav.php";
+include "config/database.php";
+include 'functions/affichage_enseignant.php'
 
 
 ?>
@@ -14,8 +16,7 @@ include "partials/_nav_censeur.php";
 <div class="row mt-5">
     <div class="col-sm-6">
         <h3 class="mb-0 font-weight-bold"><?= $_SESSION["user"]["Nom"] ?></h3>
-        <p> Derniere connexion:<?= $_SESSION["user"]["derniere_connexion"]?></p>
-        <!-- <?php require_once 'functions/last.seen.php'; ?> -->
+        <p> Derniere connexion:<?= $_SESSION["user"]["derniere_connexion"] ?></p>
     </div>
     <div class="col-sm-6">
         <div class="d-flex align-items-center justify-content-md-end">
@@ -40,8 +41,8 @@ include "partials/_nav_censeur.php";
 </div>
 <div class="container" ?>
     <div class=" d-flex justify-content-around flex-wrap">
-        <div class="card col-md-5" style="border:none">
-            <div class="card-body " >
+        <div class="card col-md-6" style="border:none">
+            <div class="card-body ">
                 <div class="d-flex flex-wrap justify-content-between">
                     <h4 class="card-title mb-3"></h4>
                 </div>
@@ -62,104 +63,14 @@ include "partials/_nav_censeur.php";
                             </th>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <div class="d-flex">
-                                        <img class="img-sm rounded-circle mb-md-0 mr-2" src="assets/images/user.jpg" alt="profile image">
-                                        <div>
-                                            <div class="font-weight-bold mt-1">volkswagen</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold text-danger  mt-1">38% </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold  mt-1">07 Nov 2022</div>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-warning btn-secondary">Notifier</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex">
-                                        <img class="img-sm rounded-circle mb-md-0 mr-2" src="assets/images/user.jpg" alt="profile image">
-                                        <div>
-                                            <div class="font-weight-bold  mt-1">Land Rover</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold text-danger  mt-1">30% </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold  mt-1">08 Nov 2022</div>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-warning btn-secondary">Notifier</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex">
-                                        <img class="img-sm rounded-circle mb-md-0 mr-2" src="assets/images/user.jpg" alt="profile image">
-                                        <div>
-
-                                            <div class="font-weight-bold  mt-1">Bentley </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold text-danger  mt-1">25% </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold  mt-1">11 Jun 2022</div>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-warning btn-secondary">Notifier</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex">
-                                        <img class="img-sm rounded-circle mb-md-0 mr-2" src="assets/images/user.jpg" alt="profile image">
-                                        <div>
-
-                                            <div class="font-weight-bold  mt-1">Morgan </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold text-danger  mt-1">15% </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold  mt-1">26 Oct 2022</div>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-warning btn-secondary">Notifier</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex">
-                                        <img class="img-sm rounded-circle mb-md-0 mr-2" src="assets/images/user.jpg" alt="profile image">
-                                        <div>
-
-                                            <div class="font-weight-bold  mt-1">volkswagen</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold text-danger mt-1">08% </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold  mt-1">07 Nov 2022</div>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-warning btn-secondary">Notifier</button>
-                                </td>
-                            </tr>
+                            <?php
+                            $sql = $db->prepare('SELECT * FROM enseignant');
+                            $result = $sql->execute();
+                            $enseignants = $sql->fetchAll(PDO::FETCH_ASSOC);
+                            foreach ($enseignants as $enseignant) {
+                                enseig($enseignant['Nom'], "à jour");
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>
@@ -187,106 +98,14 @@ include "partials/_nav_censeur.php";
                             </th>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <div class="d-flex">
-                                        <img class="img-sm rounded-circle mb-md-0 mr-2" src="assets/images/user.jpg" alt="profile image">
-                                        <div>
-                                            <div class="font-weight-bold mt-1">volkswagen</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold text-danger  mt-1">Cahier de Texte Pas a jour
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold  mt-1">07 Nov 2022</div>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-warning btn-secondary">Notifier</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex">
-                                        <img class="img-sm rounded-circle mb-md-0 mr-2" src="assets/images/user.jpg" alt="profile image">
-                                        <div>
-                                            <div class="font-weight-bold  mt-1">Land Rover</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold text-danger  mt-1">Cahier de Texte Pas a jour
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold  mt-1">08 Nov 2022</div>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-warning btn-secondary">Notifier</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex">
-                                        <img class="img-sm rounded-circle mb-md-0 mr-2" src="assets/images/user.jpg" alt="profile image">
-                                        <div>
-                                            <div class="font-weight-bold  mt-1">Bentley </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold text-danger  mt-1">Cahier de Texte Pas a jour
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold  mt-1">11 Jun 2022</div>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-warning btn-secondary">Notifier</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex">
-                                        <img class="img-sm rounded-circle mb-md-0 mr-2" src="assets/images/user.jpg" alt="profile image">
-                                        <div>
-
-                                            <div class="font-weight-bold  mt-1">Morgan </div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold text-danger  mt-1">Cahier de Texte Pas a jour</div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold  mt-1">26 Oct 2022</div>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-warning btn-secondary">Notifier</button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div class="d-flex">
-                                        <img class="img-sm rounded-circle mb-md-0 mr-2" src="assets/images/user.jpg" alt="profile image">
-                                        <div>
-
-                                            <div class="font-weight-bold  mt-1">volkswagen</div>
-                                        </div>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold text-danger mt-1">Cahier de Texte Pas a jour </div>
-                                </td>
-                                <td>
-                                    <div class="font-weight-bold  mt-1">07 Nov 2022</div>
-                                </td>
-                                <td>
-                                    <button type="button" class="btn btn-warning btn-secondary">Notifier</button>
-                                </td>
-                            </tr>
+                            <?php
+                            $sql = $db->prepare('SELECT * FROM enseignant');
+                            $result = $sql->execute();
+                            $enseignants = $sql->fetchAll(PDO::FETCH_ASSOC);
+                            foreach ($enseignants as $enseignant) {
+                                enseig($enseignant['Nom'], " Pas à jour");
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>
