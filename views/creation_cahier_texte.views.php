@@ -1,10 +1,8 @@
 
 <?php
-$title = "création cahier de texte";
-include 'partials/_header.php';
-include "partials/_sidebar.php";
-include "partials/_nav.php";
-include "functions/fonction_form.php";
+$rec_enseignant = $bdd->query("SELECT * FROM ens_cens WHERE matri_censeur = 'abc'");
+$query = $bdd->query("SELECT * FROM classes ");
+    $run_query =  $query->rowCount();
 
 ?>
 <?php
@@ -38,7 +36,8 @@ $rec_enseignant = $bdd->query("SELECT * FROM enseignant WHERE  	id = 'abc'");
             while($nbre <= 20){$nbre++; ?>
             <option value="<?php echo $nbre;?>"></option>
             <?php }?>
-           </datalist></td>
+               </select>
+               </td>
          </tr>  
 
         <tr>

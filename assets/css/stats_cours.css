@@ -1,5 +1,5 @@
 .stats_cours{
-
+background-color: rgb(243, 243, 243);
 }
 .stats_cours:hover{
     transform: scale(1.02, 1.02);
