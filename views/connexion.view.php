@@ -50,14 +50,28 @@ include 'config/constants.php';
                             <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com">
                             <label for="floatingInput">Adresse Mail</label>
                         </div>
-                        <div class="form-floating mb-4">
-                            <input type="password" name="pass" class="form-control" id="floatingPassword" placeholder="Password">
+                        <div class="input-group form-floating mb-4">
+                            <input type="password" name="pass" class="form-control" id="floatingPassword" placeholder="Password"><span id="basic-default-password2" class="input-group-text cursor-pointer"><i class="fa fa-eye-slash" id="togglePassword"></i></span>
                             <label for="floatingPassword">Mot de Passe</label>
                         </div>
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">se connecter</button>
+                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Se connecter</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+<script>
+    const togglePassword = document.querySelector("#togglePassword");
+    const password = document.querySelector("#floatingPassword");
+
+    togglePassword.addEventListener("click", function () {
+  // toggle the type attribute
+    const type =
+    password.getAttribute("type") === "password" ? "text" : "password";
+  password.setAttribute("type", type);
+
+  // toggle the icon
+  this.classList.toggle("fa-eye");
+});
+</script>

@@ -26,25 +26,51 @@ function Select_table(string $email, string $password): string
 
         if ($user) {
             session_start();
-            $_SESSION["user"] = [
-                "id_enseignant" => $user["id_enseignant"],
-                "email" => $_POST["email"],
-                "Nom" => $user["Nom"],
-                "Prenom" => $user["Prenom"],
-                "quartier" => $user["quartier"],
-                "mot_de_pass" => $user["mot_de_pass"],
-                "matieres" => $user["matieres"],
-                "classes" => $user["classes"],
-                "ville" => $user["ville"],
-                "derniere_connexion" => $user["derniere_connexion"],
-                "table" => $table_name
-            ];
+            
             $passwordhash = $_SESSION["user"]["mot_de_pass"];
             if (!password_verify($password, $passwordhash)) {
                 var_dump(password_verify($password, $passwordhash));
                 var_dump($passwordhash);
                 return 'isEmpty';
-            }else return $table_name;
+            }else {
+                
+                switch ($table_name) {
+                    case 'enseignant':
+                        $_SESSION["user"] = [
+                            "id_enseignant" => $user["id_enseignant"],
+                            "email" => $_POST["email"],
+                            "Nom" => $user["Nom"],
+                            "Prenom" => $user["Prenom"],
+                            "quartier" => $user["quartier"],
+                            "mot_de_pass" => $user["mot_de_pass"],
+                            "matieres" => $user["matieres"],
+                            "classes" => $user["classes"],
+                            "ville" => $user["ville"],
+                            "derniere_connexion" => $user["derniere_connexion"],
+                            "table" => $table_name
+                        ];
+                        break;
+                    case 'censeur':
+                        $_SESSION["user"] = [
+                            "id_cens" => $user["id_enseignant"],
+                            "email" => $_POST["email"],
+                            "Nom" => $user["Nom"],
+                            "Prenom" => $user["Prenom"],
+                            "quartier" => $user["quartier"],
+                            "mot_de_pass" => $user["mot_de_pass"],
+                            "matieres" => $user["matieres"],
+                            "classes" => $user["classes"],
+                            "ville" => $user["ville"],
+                            "derniere_connexion" => $user["derniere_connexion"],
+                            "table" => $table_name
+                        ];
+                        break ;
+                    default:
+                        # code...
+                        break;
+                }
+                return $table_name;
+            }
         }
     }
     return 'isEmpty';
