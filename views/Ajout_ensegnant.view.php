@@ -16,41 +16,45 @@ if (!empty($_POST)) {
     $pass = password_hash("Nameless", PASSWORD_ARGON2ID);
     //hashons le mot de prenom
     require_once 'config/database.php';
+    require_once 'functions/Update.user.php';
 
-    // controles souhaités sur l'unicité des matricules
+    // // controles souhaités sur l'unicité des matricules
 
 
-    $sql = "INSERT INTO enseignant (Nom,Prenom,matieres,matricule,ville,quartier,mot_de_pass,email) VALUES(
-      :nom, :prenom,:matieres,:matricule,:ville,:quartier,'$pass',:email)";
-    $query = $db->prepare($sql);
+    // $sql = "INSERT INTO enseignant (Nom,Prenom,matieres,matricule,ville,quartier,mot_de_pass,email) VALUES(
+    //   :nom, :prenom,:matieres,:matricule,:ville,:quartier,'$pass',:email)";
+    // $query = $db->prepare($sql);
 
-    $query->bindValue(":nom", $nom, PDO::PARAM_STR);
-    $query->bindValue(":prenom", $prenom, PDO::PARAM_STR);
-    $query->bindValue(":matieres", $matieres, PDO::PARAM_STR);
-    $query->bindValue(":matricule", $matricule, PDO::PARAM_STR);
-    $query->bindValue(":email", $email, PDO::PARAM_STR);
-    $query->bindValue(":ville", $ville, PDO::PARAM_STR);
-    $query->bindValue("quartier", $quartier, PDO::PARAM_STR);
+    // $query->bindValue(":nom", $nom, PDO::PARAM_STR);
+    // $query->bindValue(":prenom", $prenom, PDO::PARAM_STR);
+    // $query->bindValue(":matieres", $matieres, PDO::PARAM_STR);
+    // $query->bindValue(":matricule", $matricule, PDO::PARAM_STR);
+    // $query->bindValue(":email", $email, PDO::PARAM_STR);
+    // $query->bindValue(":ville", $ville, PDO::PARAM_STR);
+    // $query->bindValue("quartier", $quartier, PDO::PARAM_STR);
 
-    $query->execute();
+    // $query->execute();
 
-     $sql2  = "SELECT * FROM enseignant WHERE email= :email";
+    //  $sql2  = "SELECT * FROM enseignant WHERE email= :email";
 
-      $query = $db->prepare($sql2);
+    //   $query = $db->prepare($sql2);
 
-      $query->bindValue(":email", htmlentities($email), PDO::PARAM_STR);
-      $query->execute();
+    //   $query->bindValue(":email", htmlentities($email), PDO::PARAM_STR);
+    //   $query->execute();
 
-      $id = $query->fetch();
-      $id_enseignant=$id["id"];
-      if ($id_enseignant) {
-        //  die("Impossible d'acceder à l'id enseignant");
-      }
-      $id_censeur=$_SESSION["user"]["id"];
-      $sql3 = "INSERT INTO censeur_enseignant(id_enseignant,id_censeur) VALUES('$id_enseignant','$id_censeur')";
-      $query = $db->prepare($sql3);
-      $query->execute();
+    //   $id = $query->fetch();
+    //   $id_enseignant=$id["id"];
+    //   if ($id_enseignant) {
+    //     //  die("Impossible d'acceder à l'id enseignant");
+    //   }
+    //   $id_censeur=$_SESSION["user"]["id"];
+    //   $sql3 = "INSERT INTO censeur_enseignant(id_enseignant,id_censeur) VALUES('$id_enseignant','$id_censeur')";
+    //   $query = $db->prepare($sql3);
+    //   $query->execute();
     
+    $ab = new UpdateProfile();
+    $mm = $ab->ajout_enseignant($_SESSION["user"]["id"], $nom ,$prenom, $matricule, $email, $ville, $quartier, $matieres);
+
   } else {
     die('formulaire incomplet');
   }

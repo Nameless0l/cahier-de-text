@@ -7,23 +7,23 @@ include "functions/affichage_enseignant.php";
 
 ?>
 
-<div class="col-sm-4"><a  onclick="openForm()" href="#custom-modal" class="btn btn-custom waves-effect waves-light mb-4" data-animation="fadein" data-plugin="custommodal" data-overlayspeed="200" data-overlaycolor="#36404a"><i class="mdi mdi-plus"></i>Membre</a></div>
+<div class="col-sm-4"><a onclick="openForm()" href="#custom-modal" class="btn btn-custom waves-effect waves-light mb-4" data-animation="fadein" data-plugin="custommodal" data-overlayspeed="200" data-overlaycolor="#36404a"><i class="mdi mdi-plus"></i>Membre</a></div>
 
 <div class="form-popup" id="myForm">
     <div class="container">
         <div class="row">
-                <?php
-                    $sql = $db->prepare('SELECT * FROM enseignant');
-                    $result = $sql->execute();
-                    $enseignants = $sql->fetchAll(PDO::FETCH_ASSOC);
-                    foreach($enseignants as $enseignant){
-                        enseignant($enseignant['Nom'], $enseignant['Statut'], $enseignant['email'] );
-                    }
-                 ?>
+            <?php
+            $sql = $db->prepare('SELECT * FROM enseignant');
+            $result = $sql->execute();
+            $enseignants = $sql->fetchAll(PDO::FETCH_ASSOC);
+            foreach ($enseignants as $enseignant) {
+                enseignant($enseignant['Nom'], $enseignant['Statut'], $enseignant['email']);
+            }
+            ?>
             <!-- end col -->
         </div>
         <!-- end row -->
-        <div class="row">      
+        <div class="row">
         </div>
         <!-- end row -->
         <div class="row">
@@ -47,11 +47,12 @@ include "functions/affichage_enseignant.php";
     <!-- container -->
 </div>
 <script>
-function openForm() {
-  document.getElementById("myForm").style.display = "block";
-}
-function closeForm() {
-  document.getElementById("myForm").style.display = "none";
-}
+    function openForm() {
+        document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
 </script>
 <?php include "partials/_footer.php" ?>

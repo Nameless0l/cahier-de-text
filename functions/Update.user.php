@@ -1,9 +1,3 @@
-<!-- <?php
-      require 'config/database.php';
-      $rec_classe = $bdd->query("SELECT * FROM classes WHERE matri_censeur_charge = '21p340' ");
-      $rec_eleve = $bdd->query("SELECT * FROM eleve WHERE matr_cens_charge = 'bgc' ");
-      $rec_enseignant = $bdd->query("SELECT * FROM enseignant WHERE  	id_censeur = 'abc'");
-      ?> -->
 <?php
 class UpdateProfile
 {
@@ -16,11 +10,11 @@ class UpdateProfile
    public $avatar;
    public $table;
 
-   public function ajout_enseignant($id_censeur,$nom,$prenom,$matricule,$email,$ville,$quartier,$matieres)
+   public function ajout_enseignant($id_censeur, $nom, $prenom, $matricule, $email, $ville, $quartier, $matieres)
    {
       require 'config/database.php';
 
-     
+
 
       $pass = password_hash("Nameless", PASSWORD_ARGON2ID);
       $sql1 = "INSERT INTO enseignant (Nom,Prenom,matieres,matricule,ville,quartier,mot_de_pass,email) VALUES(
@@ -44,28 +38,38 @@ class UpdateProfile
 
       $query->bindValue(":email", htmlentities($email), PDO::PARAM_STR);
       $query->execute();
-
       $id = $query->fetch();
-      $id_enseignant=$id["id"];
-      if ($id_enseignant) {
-         die("Impossible d'acceder à l'id enseignant");
-      }
-      $sql3 = "INSERT INTO censeur_enseignant(id_enseignant,id_censeur) VALUES('$id_enseignant','$id_censeur')";
+
+      if(!$id) die("acces impossible");
+      $id_enseignant = $id["id"];
+
+      $sql3 = "INSERT INTO censeur_enseignant(id_enseignant,id_censeur) VALUES($id_enseignant,$id_censeur)";
       $query = $db->prepare($sql3);
       $query->execute();
+
+      
    }
 
+   function print_teacher_of_censor($id_censor)
+   {
+      include "config/database.php";
+      $sql = "SELECT * FROM censeur_enseignant WHERE id_censeur=$id_censor";
+
+      $query = $db->prepare($sql);
+      $query->execute();
+      $id_censeur_table = $query->fetchAll();
+      // die($id_censeur_table);
+      var_dump($id_censeur_table);
+   }
 
    public function ajout_cahier($matricule)
-   {
-   }
-
-   public function affiche_enseignant($matricule_censeur, $id_enseignant)
    {
    }
 }
 
 
-//  INSERT iNTO enseignant (Nom ,Prenom,class,)
+$ab = new UpdateProfile();
+$mm = $ab->ajout_enseignant(3, "", "", "", "", "", "", "");
 
-?>
+
+//  INSERT iNTO enseignant (Nom ,Prenom,class,)
