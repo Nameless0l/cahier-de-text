@@ -26,19 +26,6 @@ $query = $db->query("SELECT * FROM classes WHERE id_censeur_charge = '$id_censeu
             
          </tr>
 
-          <tr>
-
-           <td align= "left">Nombre d'élève :</td>
-           <td>
-            <select id="nbreleve">
-            <?php $nbre =0;
-            while($nbre < 20){$nbre++; ?>
-            <option value="<?php echo $nbre;?>"><?php echo $nbre;?></option>
-
-            <?php }?>
-               </select>
-               </td>
-         </tr>  
 
         <tr>
           <td align= "left">Chef de classe :</td>
@@ -69,10 +56,10 @@ $query = $db->query("SELECT * FROM classes WHERE id_censeur_charge = '$id_censeu
           <td><input type="file" name="emploidetemps" id="emploidetemps"></td>
        </tr>
 
-      <tr>
+      <!-- <tr>
           <td align= "left"><label for="fichedeprogression">Fiche de progression :</label></td>
           <td><input type="file" name="fichedeprogression" id="fichedeprogression"></td>
-       </tr>
+       </tr> -->
 
     <tr>
       <td></td>

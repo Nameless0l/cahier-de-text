@@ -57,22 +57,23 @@ if(isset($_POST["retour"]))
 {
   $classe = intval($_POST["classroom"]);
 
-  $nbreleve = intval($_POST["nbreleve"]);
-
   $chef_classe = intval($_POST["student"]);
 
   $prof_principal = intval($_POST["ens_principal"]);
   if(!empty($_FILES))
   {
     $emploidetemps = uploade_files_pdf("emploidetemps");
-    $fichedeprogression = uploade_files_pdf("fichedeprogression");
+    // $fichedeprogression = uploade_files_pdf("fichedeprogression");
   }  
 
-  if(!empty($_POST["classroom"]) AND !empty($_POST["student"]) AND !empty($_POST["ens_principal"]) AND !empty($_POST["nbreleve"]))
+  if(!empty($_POST["classroom"]) AND !empty($_POST["student"]) AND !empty($_POST["ens_principal"]))
   {
-        $ins_enseignant = $db -> prepare("INSERT INTO cahierdetexte(id_classe,id_cens_en_charge, nbre_eleve, id_chef_classe, id_prof_principal, emploi_temps,fiche_progression) VALUES(?,?,?,?,?,?)");
-        $ins_enseignant -> execute(array($classe,$_SESSION['user']['id'],$nbreleve,$chef_classe,$prof_principal,$emploidetemps,$fichedeprogression));
+        $ins_enseignant = $db -> prepare("INSERT INTO cahierdetexte(id_classe,id_cens_en_charge, id_chef_classe, id_prof_principal) VALUES(?,?,?,?)");
+        $ins_enseignant -> execute(array($classe,$_SESSION['user']['id'],$chef_classe,$prof_principal));
 
+        
+        $ins_emploitemps = $db -> prepare("INSERT INTO emploi_de_temps(id_classe,Nom) VALUES(?,?)");
+        $ins_emploitemps->execute(array($classe,$emploidetemps));
         $error = "Le cahier a été créé";
   }
   else

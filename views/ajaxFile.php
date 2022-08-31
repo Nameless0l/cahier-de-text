@@ -7,7 +7,7 @@
 
 if(isset($_POST["id"])){
     $classroom_id = $_POST['id'];
-    $query = $bdd ->query("SELECT * FROM eleve WHERE id_classe_charge = '$classroom_id'");
+    $query = $bdd ->query("SELECT * FROM eleve WHERE id_classe = '$classroom_id'");
     $count =  $query->rowCount();
 	 
 
@@ -42,19 +42,15 @@ if(isset($_POST["id_eleve"])){
         echo "<option value=''>Select teacher</option>";
         $getidclasse = $query->fetch();
         
-        $recidclasse = $getidclasse['id_classe_charge'];
-        
-        $untourdansclasse = $bdd ->query("SELECT nom_classe FROM classes WHERE id = '$recidclasse' ");
-        $recnom = $untourdansclasse->fetch();
-        $obtnom =  $recnom['nom_classe'];
+        $recidclasse = $getidclasse['id_classe'];
 
-        $rec_enseignant = $bdd->query("SELECT * FROM ens_class WHERE nom_classe = '$obtnom'");
+        $rec_enseignant = $bdd->query("SELECT * FROM enseignant_classe WHERE id_classe = '$recidclasse'");
 
        
         while($result = $rec_enseignant->fetch())
 {
-  $enseignant = $result['matricule_ens']; 
-  $rec_e = $bdd->query("SELECT * FROM enseignant WHERE matricule = '$enseignant'");
+  $enseignant = $result['id_enseignant']; 
+  $rec_e = $bdd->query("SELECT * FROM enseignant WHERE id = '$enseignant'");
   $display = $rec_e->fetch();
   $ensid = $display["id"];
   $nom = $display["Nom"];
