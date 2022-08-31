@@ -1,4 +1,5 @@
 <?php
+
 $id_censeur = $_SESSION['user']['id'];
 $query = $db->query("SELECT * FROM classes WHERE id_censeur_charge = '$id_censeur'");
     $run_query =  $query->rowCount();
