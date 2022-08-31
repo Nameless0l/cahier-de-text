@@ -11,3 +11,20 @@ require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR 
 // SELECT * FROM `cahier_de_texte`.`enseignant` WHERE `id` = 42 
 ?>
 
+<?php 
+     function UpdateInfoProfile($data, $table_name){
+
+        global $db;
+        $datas = [];
+
+        foreach ($data as $key => $value) {
+            $datas[] = $value;
+        }
+
+        $req = $db->prepare("UPDATE $table_name SET email = :email, mot_de_pass = :password, ville = :ville, quartier = :quartier, nom  ");
+
+        $req->execute($data);
+
+        $req->closeCursor();
+     }
+?>

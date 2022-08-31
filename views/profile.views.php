@@ -1,8 +1,18 @@
 <?php
 session_start();
-$Nom_Prenom=$_SESSION["user"]["Nom"].' '.$_SESSION["user"]["Prenom"] ;
+$Nom = $_SESSION["user"]["Nom"];
+$Prenom = $_SESSION["user"]["Prenom"] ;
+
 $email =$_SESSION["user"]["email"]  ;
+$password = $_SESSION["user"]["mot_de_pass"];
+
+$matricule = $_SESSION["user"]["matricule"];
+$ville = $_SESSION["user"]["ville"];
+$quartier = $_SESSION["user"]["quartier"];
+
 $title = "Profil Utilisateur";
+
+
 include 'partials/_header.php';
 include "partials/_sidebar.php";
 include "partials/_nav.php";
@@ -13,7 +23,7 @@ include "partials/_nav.php";
             <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5"
                     width="150px"
                     src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span
-                    class="font-weight-bold"><?=$Nom_Prenom?></span><span class="text-black-50"><?=$email?></span><span>
+                    class="font-weight-bold"><?=$Nom.' '.$Prenom?></span><span class="text-black-50"><?=$email?></span><span>
                 </span></div>
         </div>
         <div class="col-md-9 border-right">
@@ -27,9 +37,8 @@ include "partials/_nav.php";
                             Modifier votre Profil
                         </button>
                         <div class="col-md-8 " id='infoProfil'>
-                            <form class=" mb-4">
+                            <form class=" mb-4" method = 'post'>
                                 <!-- <h5 class="card-header">Basic</h5> -->
-
 
                                 <div class="card-body demo-vertical-spacing demo-only-element py-4">
                                     <div class='row'>
@@ -37,7 +46,7 @@ include "partials/_nav.php";
                                             <label class="form-label" for="basic-default-password12">Matricule</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control " id="basic-default-password12"
-                                                    value="21P485" aria-describedby="basic-default-text" disabled />
+                                                    value="<?=$matricule?>" aria-describedby="basic-default-text" disabled />
                                                 <!-- <span id="basic-default-password2"
                                                 class="input-group-text cursor-pointer"><i
                                                     class="fa fa-eye" aria-hidden="true"></i></span> -->
@@ -59,29 +68,44 @@ include "partials/_nav.php";
                                         </div>
                                     </div>
 
-                                    <div class="input-group">
-                                        <span class="input-group-text " id="basic-addon11">@</span>
-                                        <input type="text" class="form-control" value="maffonatacha@gmail.com" aria-label="Username"
-                                            aria-describedby="basic-addon11" />
-                                    </div>
-
-                                    <div class="form-text-toggle py-3">
-                                        <label class="form-label" for="basic-default-password12">Nom et Prenom</label>
-                                        <div class="input-group">
-                                            <input type="text" class="form-control " id="basic-default-password12"
-                                                value='<?= $Nom_Prenom ?>' aria-describedby="basic-default-text" />
-                                            <!-- <span id="basic-default-password2"
+                                    <div class='row mb-3'>
+                                        <div class="form-text-toggle col-md-6">
+                                            <label class="form-label" for="basic-default-password12">Nom</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control " id="basic-default-password12"
+                                                    value="<?=$Nom?>" aria-describedby="basic-default-text" disabled />
+                                                <!-- <span id="basic-default-password2"
                                                 class="input-group-text cursor-pointer"><i
                                                     class="fa fa-eye" aria-hidden="true"></i></span> -->
 
+                                            </div>
+                                        </div>
+
+                                        <div class="form-text-toggle  col-md-6">
+                                            <label class="form-label" for="basic-default-password12">Prenom</label>
+                                            <div class="input-group">
+                                                <input type="text" class="form-control " id="basic-default-password12"
+                                                    value="<?=$Prenom?>" aria-describedby="basic-default-text" />
+                                                <!-- <span id="basic-default-password2"
+                                                class="input-group-text cursor-pointer"><i
+                                                    class="fa fa-eye" aria-hidden="true"></i></span> -->
+
+                                            </div>
                                         </div>
                                     </div>
+
+                                    <div class="input-group py-3 pt-3">
+                                        <span class="input-group-text " id="basic-addon11">@</span>
+                                        <input type="text" class="form-control" value="<?=$email?>" aria-label="Username"
+                                            aria-describedby="basic-addon11" />
+                                    </div>
+
 
                                     <div class="form-password-toggle py-2">
                                         <label class="form-label" for="basic-default-password12">Mot de Passe</label>
                                         <div class="input-group">
                                             <input type="password" class="form-control" id="password"
-                                                value="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
+                                                value='<?=$password?>'
                                                 aria-describedby="basic-default-password2" />
                                             <span id="basic-default-password2"
                                                 class="input-group-text cursor-pointer"><i class="fa fa-eye-slash"
@@ -97,7 +121,7 @@ include "partials/_nav.php";
                                             <label class="form-label" for="basic-default-password12">Ville</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control " id="basic-default-password12"
-                                                    value="Yaounde" aria-describedby="basic-default-text" />
+                                                    value="<?=$ville?>" aria-describedby="basic-default-text" />
                                                 <!-- <span id="basic-default-password2"
                                                 class="input-group-text cursor-pointer"><i
                                                     class="fa fa-eye" aria-hidden="true"></i></span> -->
@@ -109,7 +133,7 @@ include "partials/_nav.php";
                                             <label class="form-label" for="basic-default-password12">Quartier</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control " id="basic-default-password12"
-                                                    value="Bastos" aria-describedby="basic-default-text" />
+                                                    value="<?=$quartier?>" aria-describedby="basic-default-text" />
                                                 <!-- <span id="basic-default-password2"
                                                 class="input-group-text cursor-pointer"><i
                                                     class="fa fa-eye" aria-hidden="true"></i></span> -->
@@ -118,7 +142,7 @@ include "partials/_nav.php";
                                         </div>
                                     </div>
 
-                                    <button class="btn btn-outline-success my-3">
+                                    <button class="btn btn-outline-success my-3" name = 'updateProfile'>
                                         Enregistrer les Modifications
                                     </button>
                                 </div>
