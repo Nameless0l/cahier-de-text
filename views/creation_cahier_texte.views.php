@@ -1,9 +1,8 @@
 <?php
-$query = $bdd->query("SELECT * FROM classes ");
+$query = $db->query("SELECT * FROM classes ");
     $run_query =  $query->rowCount();
-
 ?>
-  
+
 
 <div class="hello">
   <p align = "center">Veuiller remplir ces informations </p>
@@ -11,54 +10,44 @@ $query = $bdd->query("SELECT * FROM classes ");
        <table align="center">
          <tr>
            <td align= "left">Classe :</td>
-
-           <td>
-            <select name="classroom" id="classroom">
-            
-              <option value="">choisissez la classe beneficiaire</option>
-            
+           <td><select name="classroom" id="classroom">
+         
             <?php 
-            if($run_query > 0){
-            while($resultat = $query->fetch()){?>
-  
-               <option value='<?= $resultat['id']; ?>'><?= $resultat['nom_classe']; ?></option>";
-          <?php    }
-            }else{?>
 
-                 <option value=""> <?php echo "Classe manquante"; ?></option>';
-                 <?php
+            if($run_query > 0){
+            while($resultat = $query->fetch()){ ?>
+            <option value="<?php echo $resultat['id'];?>"> <?php echo $resultat['nom_classe'];?> </option>
+            <?php
             }
-            ?>
-            </select>
-          
-          </td>
+          }
+          ?>  
+          </select>
+            
          </tr>
 
           <tr>
-             <td align= "left">Nombre d'élève :</td>
-              <td>
-              <select id="nbreleves" name="nbreleve">
-              <?php 
-                $nbre = 0;
-                 while($nbre < 20)
-                 {
-                  $nbre++; ?>
-                    <option value="<?php echo $nbre; ?>"><?php echo $nbre; ?></option>
+
+           <td align= "left">Nombre d'élève :</td>
+           <td>
+            <select id="nbreleve">
+            <?php $nbre =0;
+            while($nbre < 20){$nbre++; ?>
+            <option value="<?php echo $nbre;?>"><?php echo $nbre;?></option>
+
             <?php }?>
                </select>
                </td>
          </tr>  
 
         <tr>
-
           <td align= "left">Chef de classe :</td>
-          
           <td>
           <select name="student" id="student">
-            <option value="">Select one student</option>
-          </select>
-          </td>
-
+          
+              <option value="">selectionner le chef de classe</option>
+              
+              </select>
+            </td>
         </tr>
 
         <tr>
@@ -93,7 +82,4 @@ $query = $bdd->query("SELECT * FROM classes ");
 </form>
 </div>
 
-
-
 <?php include "partials/_footer.php"; ?>
-

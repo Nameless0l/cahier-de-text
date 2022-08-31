@@ -1,6 +1,4 @@
-<?php
-	$bdd = new PDO("mysql:host=127.0.0.1;dbname=cahier_de_texte;charset=utf8", "root", "");
-?>
+
 <?php
 ignore_user_abort(true);
 	if(!defined('DB_HOST'))define('DB_HOST', 'localhost');
@@ -9,7 +7,7 @@ ignore_user_abort(true);
 	if(!defined('DB_PASSWORD'))define('DB_PASSWORD', '');	
 
 	try{
-	
+		global $db ;
 		$db = new PDO("mysql: host =".DB_HOST."; dbname=".DB_NAME, DB_USERNAME, DB_PASSWORD);
 		
 		$db ->exec("SET NAMES utf8");
@@ -21,5 +19,6 @@ ignore_user_abort(true);
 		die('Erreur: '. $e->getMessage());
 		
 	}
-	?>
+	
+?>
 	
