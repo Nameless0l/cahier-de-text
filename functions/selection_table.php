@@ -25,8 +25,10 @@ function Select_table(string $email, string $password): string
         $user = $query->fetch();
 
         if ($user) {
-            session_start();
             
+           
+
+            session_start();
             // $passwordhash = $_SESSION["user"]["mot_de_pass"];
             $passwordhash =  $user["mot_de_pass"];
             if (!password_verify($password, $passwordhash)) {
@@ -34,7 +36,12 @@ function Select_table(string $email, string $password): string
                 var_dump($passwordhash);
                 return 'isEmpty';
             }else {
-                
+
+                $dte="UPDATE $table_name  SET derniere_connexion = CURRENT_TIMESTAMP WHERE email= '$email'" ;
+                // $query1->bindValue(":email", htmlentities($email), PDO::PARAM_STR);
+    
+                $query1= $db->prepare($dte);
+                $query1->execute();
                 switch ($table_name) {
                     case 'enseignant':
                         $_SESSION["user"] = [

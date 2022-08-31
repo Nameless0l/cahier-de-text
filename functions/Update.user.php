@@ -64,12 +64,10 @@ class UpdateProfile
 
    public function ajout_cahier($matricule)
    {
+
    }
 }
 
-
-$ab = new UpdateProfile();
-$mm = $ab->ajout_enseignant(3, "", "", "", "", "", "", "");
 
 
 //  INSERT iNTO enseignant (Nom ,Prenom,class,)
