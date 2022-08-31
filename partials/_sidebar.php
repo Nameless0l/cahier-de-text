@@ -6,7 +6,7 @@
 
 <div class="sidebar  pe-4 pb-3">
     <nav class="navbar  navbar-light">
-        <a href="#" class="navbar-brand mx-4 mb-3">
+        <a href="index.php" class="navbar-brand mx-4 mb-3">
             <h3 class="text-primary"></i>LOGO</h3>
         </a>
         <div class="d-flex align-items-center ms-4 mb-4">
