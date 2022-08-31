@@ -6,8 +6,8 @@ include "config/database.php";
 $title = "création cahier de texte";
 include "partials/_header.php";
 include "functions/fonction_form.php";
-include "partials/_sidebar_censeur.php";
-include "partials/_nav_censeur.php";
+include "partials/_sidebar.php";
+include "partials/_nav.php";
 ?>
 <?php include "views/creation_cahier_texte.views.php"; ?>
 
@@ -28,8 +28,26 @@ $(document).ready(function(){
             }); 
         }else{
             $('#student').html('<option value="">Select country first</option>');
+           
         }
     });
+
+    $('#student').on('change',function(){
+        var studentID = $(this).val();
+        if(studentID){
+            $.ajax({
+                type:'POST',
+                url:'views/ajaxFile.php',
+                data:'id_eleve='+studentID,
+                success:function(html){
+                    $('#ens_principal').html(html);
+                }
+            }); 
+        }else{
+            $('#ens_principal').html('<option value="">Select student first</option>'); 
+        }
+    }); 
+
 });
 </script>
 <?php
@@ -39,18 +57,18 @@ if(isset($_POST["retour"]))
 {
   $classe = htmlspecialchars($_POST["classroom"]);
 
-  $nbreleve = htmlspecialchars($_POST["nbrleve"]);
+  $nbreleve = htmlspecialchars($_POST["nbreleve"]);
 
-  $chef_classe = htmlspecialchars($_POST["chefe"]);
+  $chef_classe = htmlspecialchars($_POST["student"]);
 
-  $prof_principal = htmlspecialchars($_POST["prof_principal"]);
+  $prof_principal = htmlspecialchars($_POST["ens_principal"]);
   if(!empty($_FILES))
   {
     $emploidetemps = uploade_files_pdf("emploidetemps");
     $fichedeprogression = uploade_files_pdf("fichedeprogression");
   }  
 
-  if(!empty($_POST["classroom"]) AND !empty($_POST["chefe"]) AND !empty($_POST["prof_principal"]) AND !empty($_POST["nbrleve"]))
+  if(!empty($_POST["classroom"]) AND !empty($_POST["student"]) AND !empty($_POST["ens_principal"]) AND !empty($_POST["nbreleve"]))
   {
         $ins_enseignant = $db -> prepare("INSERT INTO cahierdetexte(nom_classe, nbre_eleve, chef_classe, prof_principal, emploi_temps,fiche_progression) VALUES(?,?,?,?,?,?)");
         $ins_enseignant -> execute(array($classe,$nbreleve,$chef_classe,$prof_principal,$emploidetemps,$fichedeprogression));

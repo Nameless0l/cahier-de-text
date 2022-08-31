@@ -1,14 +1,6 @@
-
 <?php
-$rec_enseignant = $bdd->query("SELECT * FROM ens_cens WHERE matri_censeur = 'abc'");
 $query = $bdd->query("SELECT * FROM classes ");
     $run_query =  $query->rowCount();
-
-?>
-<?php
-$rec_classe = $bdd->query("SELECT * FROM classes WHERE matri_censeur_charge = '21p340' ");
-$rec_eleve = $bdd->query("SELECT * FROM eleve WHERE matr_cens_charge = 'bgc' ");
-$rec_enseignant = $bdd->query("SELECT * FROM enseignant WHERE  	id_censeur = 'abc'");
 
 ?>
   
@@ -33,7 +25,7 @@ $rec_enseignant = $bdd->query("SELECT * FROM enseignant WHERE  	id_censeur = 'ab
           <?php    }
             }else{?>
 
-                 <option value=""> <?php echo "Country not available"; ?></option>';
+                 <option value=""> <?php echo "Classe manquante"; ?></option>';
                  <?php
             }
             ?>
@@ -45,7 +37,7 @@ $rec_enseignant = $bdd->query("SELECT * FROM enseignant WHERE  	id_censeur = 'ab
           <tr>
              <td align= "left">Nombre d'élève :</td>
               <td>
-              <select id="nbreleves">
+              <select id="nbreleves" name="nbreleve">
               <?php 
                 $nbre = 0;
                  while($nbre < 20)
@@ -68,25 +60,19 @@ $rec_enseignant = $bdd->query("SELECT * FROM enseignant WHERE  	id_censeur = 'ab
           </td>
 
         </tr>
-<tr>
-<td align="left">Enseignant principale:</td>
-<td>
-  <select id="ens_principal" >
-  <?php
-while($result = $rec_enseignant->fetch())
-{
-  $enseignant = $result['matricule_ens']; 
-  $rec_e = $bdd->query("SELECT * FROM enseignant WHERE matricule = '$enseignant'");
-  $display = $rec_e->fetch();
-  ?>
-  <option value="<?php echo $display['Nom']; ?>" ><?php echo $display['Nom']; ?></option>
-  <?php
-  
-}?>
-  </select>
-</td>
 
-</tr>
+        <tr>
+
+          <td align= "left">Enseignant principal :</td>
+          
+          <td>
+          <select name="ens_principal" id="ens_principal">
+            <option value="">Désigner un enseignant comme principal </option>
+          </select>
+          </td>
+
+        </tr>
+
 
         <tr>
           <td align= "left"><label for="emploidetemps">Emploi de temps :</label></td>
