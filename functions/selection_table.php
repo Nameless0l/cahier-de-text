@@ -36,7 +36,8 @@ function Select_table(string $email, string $password): string
                 var_dump($passwordhash);
                 return 'isEmpty';
             }else {
-                          $dte="UPDATE $table_name  SET derniere_connexion = CURRENT_TIMESTAMP WHERE email= '$email'" ;
+                
+                $dte="UPDATE $table_name  SET derniere_connexion = CURRENT_TIMESTAMP WHERE email= '$email'" ;
                 // $query1->bindValue(":email", htmlentities($email), PDO::PARAM_STR);
     
                 $query1= $db->prepare($dte);
@@ -50,7 +51,7 @@ function Select_table(string $email, string $password): string
                             "Prenom" => $user["Prenom"],
                             "matricule"=>$user["matricule"],
                             "quartier" => $user["quartier"],
-                            "mot_de_pass" => $user["mot_de_pass"],
+                            "mot_de_pass" => $password,
                             "matieres" => $user["matieres"],
                             "classes" => $user["classes"],
                             "ville" => $user["ville"],
@@ -66,7 +67,7 @@ function Select_table(string $email, string $password): string
                             "Prenom" => $user["Prenom"],
                             "matricule"=>$user["matricule_cens"],
                             "quartier" => $user["quartier"],
-                            "mot_de_pass" => $user["mot_de_pass"],
+                            "mot_de_pass" => $password,
                             "matieres" => $user["matieres"],
                             "classes" => $user["classes"],
                             "ville" => $user["ville"],
@@ -80,7 +81,7 @@ function Select_table(string $email, string $password): string
                                 "email" => $_POST["email"],
                                 "Nom" => $user["Nom"],
                                 "Prenom" => $user["Prenom"],
-                                "mot_de_pass" => $user["mot_de_pass"],
+                                "mot_de_pass" => $password,
                                 "matricule"=>$user["matricule"],
                                 "matieres" => $user["matieres"],
                                 "derniere_connexion" => $user["derniere_connexion"],
@@ -94,7 +95,7 @@ function Select_table(string $email, string $password): string
                                     "Nom" => $user["Nom"],
                                     "Prenom" => $user["Prenom"],
                                     "quartier" => $user["quartier"],
-                                    "mot_de_pass" => $user["mot_de_pass"],
+                                    "mot_de_pass" => $password,
                                     "matieres" => $user["matieres"],
                                     "classes" => $user["classes"],
                                     "ville" => $user["ville"],
@@ -109,7 +110,7 @@ function Select_table(string $email, string $password): string
                                         "Nom" => $user["Nom"],
                                         "Prenom" => $user["Prenom"],
                                         "quartier" => $user["quartier"],
-                                        "mot_de_pass" => $user["mot_de_pass"],
+                                        "mot_de_pass" => $password,
                                         "matieres" => $user["matieres"],
                                         "classes" => $user["classes"],
                                         "ville" => $user["ville"],
