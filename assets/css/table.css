@@ -15,7 +15,6 @@
    /* margin-left: -30px;  */
    cursor: pointer;
  }
-
  .disabledbutton {
    pointer-events: none;
    opacity: 0.4;
