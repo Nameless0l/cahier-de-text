@@ -8,7 +8,8 @@ include 'partials/_header.php';
 include "partials/_sidebar.php";
 include "partials/_nav.php";
 include "config/database.php";
-include 'functions/affichage_enseignant.php'
+include 'functions/affichage_enseignant.php';
+include 'functions/Update.user.php';
 
 
 ?>
@@ -16,7 +17,11 @@ include 'functions/affichage_enseignant.php'
 <div class="row mt-5">
     <div class="col-sm-6">
         <h3 class="mb-0 font-weight-bold"><?= $_SESSION["user"]["Nom"] ?></h3>
-        <p> Derniere connexion:<?= $_SESSION["user"]["derniere_connexion"] ?></p>
+        <p> Derniere connexion:<?php 
+        echo $_SESSION["user"]["derniere_connexion"] ;
+        // print_teacher_of_censor($_SESSION["user"]["id"]);
+
+        ?></p>
     </div>
     <div class="col-sm-6">
         <div class="d-flex align-items-center justify-content-md-end">

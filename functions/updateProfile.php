@@ -8,3 +8,6 @@ require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR 
 //     ]);
 // }
 
+// SELECT * FROM `cahier_de_texte`.`enseignant` WHERE `id` = 42 
+?>
+
