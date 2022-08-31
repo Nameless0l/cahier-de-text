@@ -15,9 +15,11 @@ if(isset($_POST["id"])){
 
      <option value=""><?= "Select state"; ?></option>
      <?php
-        while($resultat = $query->fetch()){?>
+        while($resultat = $query->fetch()){
+            $name = $resultat['Nom'];
+            $surname = $resultat['Prenom'];?>
 
-        <option value='<?= $resultat['id_eleve']; ?>'><?= $resultat['Nom']; ?></option>
+        <option value='<?= $resultat['id_eleve']; ?>'><?= "$name  $surname"; ?></option>
         <?php
         }
     }else{?>
@@ -58,7 +60,7 @@ if(isset($_POST["id_eleve"])){
   $nom = $display["Nom"];
   $prenom = $display["Prenom"];
   ?>
-  <option value="<?php echo "$ensid"; ?>" ><?php echo "$nom. .$prenom"; ?></option>
+  <option value="<?php echo "$ensid"; ?>" ><?php echo "$nom $prenom"; ?></option>
   <?php
   
 }
