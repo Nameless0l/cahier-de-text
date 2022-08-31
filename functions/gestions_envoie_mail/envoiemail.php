@@ -17,6 +17,6 @@ $message=
 '
 ;
 
-mail("wwwmbassiloic@gmail.com","Salut test",$message,$header);
+mail("mbassiloic@yahoo.com","Sjkshhskfrjeekj",$message,$header);
 
 ?>

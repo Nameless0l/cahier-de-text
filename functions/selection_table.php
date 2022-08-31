@@ -36,8 +36,7 @@ function Select_table(string $email, string $password): string
                 var_dump($passwordhash);
                 return 'isEmpty';
             }else {
-
-                $dte="UPDATE $table_name  SET derniere_connexion = CURRENT_TIMESTAMP WHERE email= '$email'" ;
+                          $dte="UPDATE $table_name  SET derniere_connexion = CURRENT_TIMESTAMP WHERE email= '$email'" ;
                 // $query1->bindValue(":email", htmlentities($email), PDO::PARAM_STR);
     
                 $query1= $db->prepare($dte);
