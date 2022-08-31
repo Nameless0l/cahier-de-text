@@ -9,21 +9,21 @@ require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR 
 // }
 
 // SELECT * FROM `cahier_de_texte`.`enseignant` WHERE `id` = 42 
-?>
 
-<?php 
      function UpdateInfoProfile($data, $table_name){
 
-        global $db;
-        $datas = [];
 
-        foreach ($data as $key => $value) {
-            $datas[] = $value;
-        }
+        $req = $db->prepare("UPDATE $table_name SET email = ?, mot_de_pass = ?, ville = ?, quartier = ?, nom = ?, prenom = ?  WHERE matricule = ? ");
 
-        $req = $db->prepare("UPDATE $table_name SET email = :email, mot_de_pass = :password, ville = :ville, quartier = :quartier, nom  ");
+        $req->bindParam(1, $data['email'], PDO::PARAM_STR);
+        $req->bindParam(2, $data['password'], PDO::PARAM_STR);
+        $req->bindParam(3, $data['ville'], PDO::PARAM_STR);
+        $req->bindParam(4, $data['quartier'], PDO::PARAM_STR);
+        $req->bindParam(5, $data['nom'], PDO::PARAM_STR);
+        $req->bindParam(6, $data['prenom'], PDO::PARAM_STR);
+        $req->bindParam(7, $data['matricule'], PDO::PARAM_STR);
 
-        $req->execute($data);
+        $req->execute();
 
         $req->closeCursor();
      }

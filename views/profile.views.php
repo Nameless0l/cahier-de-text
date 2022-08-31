@@ -46,7 +46,7 @@ include "partials/_nav.php";
                                             <label class="form-label" for="basic-default-password12">Matricule</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control " id="basic-default-password12"
-                                                    value="<?=$matricule?>" aria-describedby="basic-default-text" disabled />
+                                                    value="<?=$matricule?>" aria-describedby="basic-default-text" name='matricule' disabled />
                                                 <!-- <span id="basic-default-password2"
                                                 class="input-group-text cursor-pointer"><i
                                                     class="fa fa-eye" aria-hidden="true"></i></span> -->
@@ -59,7 +59,7 @@ include "partials/_nav.php";
                                                 Telephone</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control " id="basic-default-password12"
-                                                    value="6 99 99 99 99" aria-describedby="basic-default-text" />
+                                                    value="6 99 99 99 99" aria-describedby="basic-default-text" name='telephone' />
                                                 <!-- <span id="basic-default-password2"
                                                 class="input-group-text cursor-pointer"><i
                                                     class="fa fa-eye" aria-hidden="true"></i></span> -->
@@ -73,7 +73,7 @@ include "partials/_nav.php";
                                             <label class="form-label" for="basic-default-password12">Nom</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control " id="basic-default-password12"
-                                                    value="<?=$Nom?>" aria-describedby="basic-default-text" disabled />
+                                                    value="<?=$Nom?>" aria-describedby="basic-default-text" disabled name='nom'/>
                                                 <!-- <span id="basic-default-password2"
                                                 class="input-group-text cursor-pointer"><i
                                                     class="fa fa-eye" aria-hidden="true"></i></span> -->
@@ -85,7 +85,7 @@ include "partials/_nav.php";
                                             <label class="form-label" for="basic-default-password12">Prenom</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control " id="basic-default-password12"
-                                                    value="<?=$Prenom?>" aria-describedby="basic-default-text" />
+                                                    value="<?=$Prenom?>" aria-describedby="basic-default-text" name='prenom' />
                                                 <!-- <span id="basic-default-password2"
                                                 class="input-group-text cursor-pointer"><i
                                                     class="fa fa-eye" aria-hidden="true"></i></span> -->
@@ -97,7 +97,7 @@ include "partials/_nav.php";
                                     <div class="input-group py-3 pt-3">
                                         <span class="input-group-text " id="basic-addon11">@</span>
                                         <input type="text" class="form-control" value="<?=$email?>" aria-label="Username"
-                                            aria-describedby="basic-addon11" />
+                                            aria-describedby="basic-addon11" name='email' />
                                     </div>
 
 
@@ -106,7 +106,7 @@ include "partials/_nav.php";
                                         <div class="input-group">
                                             <input type="password" class="form-control" id="password"
                                                 value='<?=$password?>'
-                                                aria-describedby="basic-default-password2" />
+                                                aria-describedby="basic-default-password2" name='password'/>
                                             <span id="basic-default-password2"
                                                 class="input-group-text cursor-pointer"><i class="fa fa-eye-slash"
                                                     id="togglePassword"></i></span>
@@ -121,7 +121,7 @@ include "partials/_nav.php";
                                             <label class="form-label" for="basic-default-password12">Ville</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control " id="basic-default-password12"
-                                                    value="<?=$ville?>" aria-describedby="basic-default-text" />
+                                                    value="<?=$ville?>" aria-describedby="basic-default-text" name='ville' />
                                                 <!-- <span id="basic-default-password2"
                                                 class="input-group-text cursor-pointer"><i
                                                     class="fa fa-eye" aria-hidden="true"></i></span> -->
@@ -133,7 +133,7 @@ include "partials/_nav.php";
                                             <label class="form-label" for="basic-default-password12">Quartier</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control " id="basic-default-password12"
-                                                    value="<?=$quartier?>" aria-describedby="basic-default-text" />
+                                                    value="<?=$quartier?>" aria-describedby="basic-default-text" name='quartier' />
                                                 <!-- <span id="basic-default-password2"
                                                 class="input-group-text cursor-pointer"><i
                                                     class="fa fa-eye" aria-hidden="true"></i></span> -->
