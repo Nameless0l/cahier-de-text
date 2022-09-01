@@ -35,6 +35,7 @@
     <!-- Template Stylesheet -->
     <link href="assets/css/style.css" rel="stylesheet">
     <link href="assets/css/table.css" rel="stylesheet">
+    <link href="assets/css/nav.css" rel="stylesheet">
     <link href="assets/css/stats_cours.css" rel="stylesheet">
     <script src="assets/js/jquery.min.js"></script>
 </head>

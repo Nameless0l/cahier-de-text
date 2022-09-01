@@ -10,51 +10,75 @@
     <title>Blog Template · Bootstrap</title>
 
 
-    <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-    <!-- Custom styles for this template -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+    .dropright {
+        position: relative;
+    }
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/css/bootstrap-select.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.8.1/js/bootstrap-select.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    .dropright .dropdown-menu {
+        top: 0;
+        left: 100%;
+        margin-top: -1px;
+    }
+    </style>
+
 </head>
 
 <body>
-
-
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    Dropdown link
-                </a>
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Dropdown link</a>
                 <div class="dropdown-menu">
                     <span class="dropdown-header" href="#">header</span>
                     <a class="dropdown-item" href="#">Link 1</a>
                     <a class="dropdown-item" href="#">Link 2</a>
                     <span class="dropdown-header">header</span>
-                    <div class="dropdown dropright">
-                        <button class="btn btn-light dropdown-toggle" data-toggle="dropdown">
-                            Dropright button
-                        </button>
+                    <div class="dropright">
+                        <button class="btn btn-light dropdown-toggle" data-toggle="dropdown">Dropright button</button>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#">Link 1</a>
                             <a class="dropdown-item" href="#">Link 2</a>
                             <a class="dropdown-item" href="#">Link 3</a>
                         </div>
                     </div>
-
+                    <div class="dropright">
+                        <button class="btn btn-light dropdown-toggle" data-toggle="dropdown">Dropright button</button>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#">Link 1</a>
+                            <a class="dropdown-item" href="#">Link 2</a>
+                            <a class="dropdown-item" href="#">Link 3</a>
+                        </div>
+                    </div>
                 </div>
-
+            </li>
+            <li>
+                <a>Test </a>
             </li>
         </ul>
     </nav>
 
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $('.dropright button').on("click", function(e) {
+            e.stopPropagation();
+            e.preventDefault();
 
+            if (!$(this).next('div').hasClass('show')) {
+                $(this).next('div').addClass('show');
+            } else {
+                $(this).next('div').removeClass('show');
+            }
+
+        });
+    });
+    </script>
 
 </body>
+
 
 </html>
