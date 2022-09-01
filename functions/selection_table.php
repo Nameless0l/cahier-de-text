@@ -26,8 +26,6 @@ function Select_table(string $email, string $password): string
 
         if ($user) {
             
-           
-
             session_start();
             // $passwordhash = $_SESSION["user"]["mot_de_pass"];
             $passwordhash =  $user["mot_de_pass"];
