@@ -6,7 +6,7 @@
 
 <div class="sidebar  pe-4 pb-3">
     <nav class="navbar  navbar-light">
-        <a href="#" class="navbar-brand mx-4 mb-3">
+        <a href="index.php" class="navbar-brand mx-4 mb-3">
             <h3 class="text-primary"></i>LOGO</h3>
         </a>
         <div class="d-flex align-items-center ms-4 mb-4">
@@ -71,8 +71,8 @@
 
 
 
-            <a href="#" class="nav-item nav-link text-info"><i class="fa fa-th me-2"></i>Emploi de temps</a>
-            <a href="#" class="nav-item nav-link text-info"><i class="fa fa-chart-bar me-2"></i>Stats - Evaluations</a>
+            <a href="schedule.php" class="nav-item nav-link text-info"><i class="fa fa-th me-2"></i>Emploi de temps</a>
+            <a href="stats_evaluations.php" class="nav-item nav-link text-info"><i class="fa fa-chart-bar me-2"></i>Stats - Evaluations</a>
             <a href="profile.php" class="nav-item nav-link text-info"><i class="fa fa-user me-2"></i>Profil</a>
 
         </div>
