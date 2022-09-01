@@ -6,8 +6,8 @@ include "config/database.php";
 $title = "création cahier de texte";
 include "partials/_header.php";
 include "functions/fonction_form.php";
-include "partials/_sidebar_censeur.php";
-include "partials/_nav_censeur.php";
+include "partials/_sidebar.php";
+include "partials/_nav.php";
 ?>
 <?php include "views/creation_cahier_texte.views.php"; ?>
 

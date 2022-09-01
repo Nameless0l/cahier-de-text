@@ -1,6 +1,6 @@
 <?php
 $title = "Classes";
-if(!isset($_SESSION["user"])){
+if (!isset($_SESSION["user"])) {
     header("Location: connexion.php");
     die("Vous n'etes pas connectée");
 }
@@ -15,19 +15,13 @@ include "partials/_nav.php";
         <div class="bg-light rounded h-100 p-4">
             <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home"
-                        aria-selected="true"><span><i class="fa fa-book mr-2"></i> Cahier de texte</span></button>
+                    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true"><span><i class="fa fa-book mr-2"></i> Cahier de texte</span></button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile"
-                        aria-selected="false"><i class="fa fa-chart-line me-2"></i>Statistiques Evaluations</button>
+                    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fa fa-chart-line me-2"></i>Statistiques Evaluations</button>
                 </li>
                 <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill"
-                        data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact"
-                        aria-selected="false">Commentaires</button>
+                    <button class="nav-link" id="pills-contact-tab" data-bs-toggle="pill" data-bs-target="#pills-contact" type="button" role="tab" aria-controls="pills-contact" aria-selected="false">Commentaires</button>
                 </li>
             </ul>
             <div class="tab-content" id="pills-tabContent">
@@ -35,46 +29,42 @@ include "partials/_nav.php";
                     <div class="bg-light rounded h-100 p-4">
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
-                                    aria-selected="true">Mathematiques</button>
-                                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile"
-                                    aria-selected="false">Physique</button>
-                                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
-                                    aria-selected="false">Informatique</button>
-                                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact"
-                                    aria-selected="false">SVT</button>
+                                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Mathematiques</button>
+                                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Physique</button>
+                                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Informatique</button>
+                                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">SVT</button>
                             </div>
                         </nav>
                         <div class="tab-content pt-3" id="nav-tabContent">
-                            <div class="tab-pane fade active show" id="nav-home" role="tabpanel"
-                                aria-labelledby="nav-home-tab">
+                            <div class="tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                 <div class="col-sm-12 col-xl-12">
                                     <div class="bg-light rounded h-100 p-4">
                                         <div class="accordion accordion-flush" id="accordionFlushExample">
                                             <div class="accordion-item">
-                                                <h2 class="accordion-header" id="flush-headingOne">
-                                                    <button class="accordion-button" type="button"
-                                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseOne"
-                                                        aria-expanded="true" aria-controls="flush-collapseOne">
+                                            <?php include 'affichage_cahier_de_texte.php'?>
+                                                <!-- <h2 class="accordion-header" id="flush-headingOne">
+                                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
                                                         Visualiser le cahier
-                                                    </button>
-                                                </h2>
-                                                <div id="flush-collapseOne" class="accordion-collapse collapse show"
-                                                    aria-labelledby="flush-headingOne"
-                                                    data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body">
-                                                        <div class="col-sm-12 col-xl-6">
-                                                            <div class="bg-light rounded h-100 p-4">
-                                                                <!-- <h6 class="mb-4">Vertical Navs & Tabs</h6> -->
-                                                                <div class="d-flex align-items-start">
-                                                                    <div class="nav flex-column nav-pills me-3"
-                                                                        id="v-pills-tab" role="tablist"
-                                                                        aria-orientation="vertical">
-                                                                        <button class="nav-link active"
+                                                    </button> 
+                                                </h2> -->
+                                                <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
+                                                    <!--<div class="accordion-body">
+                                                        <div class="col-sm-12 col-xl-6"> -->
+                                                    <!-- <div class="bg-light rounded h-100 p-4"> -->
+                                                    <div class="d-flex align-items-start">
+                                                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+
+
+
+                                                            <!-- Right Sidebar -->
+                                                            <!-- /Right-bar -->
+
+                                                            <!-- Right bar overlay-->
+
+                                                            <!-- JAVASCRIPT -->
+
+
+                                                            <!-- <button class="nav-link active"
                                                                             id="v-pills-home-tab" data-bs-toggle="pill"
                                                                             data-bs-target="#v-pills-home" type="button"
                                                                             role="tab" aria-controls="v-pills-home"
@@ -99,10 +89,10 @@ include "partials/_nav.php";
                                                                             data-bs-target="#v-pills-settings"
                                                                             type="button" role="tab"
                                                                             aria-controls="v-pills-settings"
-                                                                            aria-selected="false">Annee</button>
+                                                                            aria-selected="false">Annee</button> 
                                                                     </div>
                                                                     <div class="tab-content" id="v-pills-tabContent">
-                                                                        <div class="tab-pane fade show active"
+                                                                         <div class="tab-pane fade show active"
                                                                             id="v-pills-home" role="tabpanel"
                                                                             aria-labelledby="v-pills-home-tab">
                                                                             Consetetur at sit est sit ut ipsum clita at.
@@ -146,52 +136,39 @@ include "partials/_nav.php";
                                                                             dolor ipsum nonumy, accusam clita sadipscing
                                                                             ut et labore labore est, dolore accusam vero
                                                                             at est sit. Invidunt.
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
+                                                                        </div> -->
                                                         </div>
                                                     </div>
+                                                    <!-- </div> -->
+                                                    <!-- </div> -->
+                                                    <!-- </div> -->
                                                 </div>
                                             </div>
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header" id="flush-headingTwo">
-                                                    <button class="accordion-button collapsed" type="button"
-                                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo"
-                                                        aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
                                                         Autres
                                                     </button>
                                                 </h2>
-                                                <div id="flush-collapseTwo" class="accordion-collapse collapse"
-                                                    aria-labelledby="flush-headingTwo"
-                                                    data-bs-parent="#accordionFlushExample">
+                                                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
                                                     <div class="accordion-body">
                                                         <div class="pr-1 mb-3 mr-2 mb-xl-0">
-                                                            <button type="button"
-                                                                class="btn btn-warning bg-white btn-icon-text border"><i
-                                                                    class="fa-solid fa-arrow-up-from-bracket"
-                                                                    aria-hidden="true"></i>Importer votre
+                                                            <button type="button" class="btn btn-warning bg-white btn-icon-text border"><i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i>Importer votre
                                                                 signature</button>
                                                         </div>
                                                         <div class="pr-1 mb-3 mb-xl-0">
-                                                            <button type="button"
-                                                                class="btn btn-warning bg-white btn-icon-text border"><i
-                                                                    class="typcn typcn-info-large-outline mr-2"></i>Info</button>
+                                                            <button type="button" class="btn btn-warning bg-white btn-icon-text border"><i class="typcn typcn-info-large-outline mr-2"></i>Info</button>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header" id="flush-headingThree">
-                                                    <button class="accordion-button collapsed" type="button"
-                                                        data-bs-toggle="collapse" data-bs-target="#flush-collapseThree"
-                                                        aria-expanded="false" aria-controls="flush-collapseThree">
+                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
                                                         Accordion Item #3
                                                     </button>
                                                 </h2>
-                                                <div id="flush-collapseThree" class="accordion-collapse collapse"
-                                                    aria-labelledby="flush-headingThree"
-                                                    data-bs-parent="#accordionFlushExample">
+                                                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                                                     <div class="accordion-body">
                                                         Sea sea sit sanctus magna gubergren kasd, magna justo ea lorem
                                                         lorem. Elitr aliquyam ipsum clita consetetur duo at nonumy
@@ -205,19 +182,10 @@ include "partials/_nav.php";
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel"
-                                aria-labelledby="nav-profile-tab">
-                                Sanctus vero sit kasd sea gubergren takimata consetetur elitr elitr, consetetur
-                                sadipscing takimata
-                                ipsum
-                                dolores. Accusam duo accusam et labore ea elitr ipsum tempor sit, dolore aliquyam ipsum
-                                sit amet sit. Et
-                                dolore ipsum labore invidunt rebum. Sed dolore gubergren sanctus vero diam lorem rebum
-                                elitr, erat diam
-                                dolor clita.
+                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                                <?php include 'affichage_cahier_de_texte.php'?>
                             </div>
-                            <div class="tab-pane fade" id="nav-contact" role="tabpanel"
-                                aria-labelledby="nav-contact-tab">
+                            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                                 Sit consetetur eirmod lorem ea magna sadipscing ipsum elitr invidunt, dolores lorem erat
                                 ipsum ut
                                 aliquyam
@@ -248,6 +216,28 @@ include "partials/_nav.php";
 <div>
 
 </div>
+
+<script src="assets/lib/jquery/jquery.min.js"></script>
+<script src="assets/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/lib/metismenu/metisMenu.min.js"></script>
+<script src="assets/lib/simplebar/simplebar.min.js"></script>
+<script src="assets/lib/node-waves/waves.min.js"></script>
+<script src="assets/lib/feather-icons/feather.min.js"></script>
+<!-- pace js -->
+<script src="assets/lib/pace-js/pace.min.js"></script>
+
+<script src="assets/lib/%40fullcalendar/core/main.min.js"></script>
+<script src="assets/lib/%40fullcalendar/bootstrap/main.min.js"></script>
+<script src="assets/lib/%40fullcalendar/daygrid/main.min.js"></script>
+<script src="assets/lib/%40fullcalendar/timegrid/main.min.js"></script>
+<script src="assets/lib/%40fullcalendar/interaction/main.min.js"></script>
+
+<!-- Calendar init -->
+<script src="assets/js/calendar.init.js"></script>
+
+<!-- App js -->
+<script src="assets/js/app.js"></script>
+
 
 
 <?php include "partials/_footer.php" ?>
