@@ -112,5 +112,8 @@ include "partials/_nav.php";
         </div>
     </div>
 
-
 </div>
+
+<?php 
+include "partials/_footer.php";
+?>
