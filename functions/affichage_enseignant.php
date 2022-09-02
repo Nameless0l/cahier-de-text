@@ -63,7 +63,7 @@ function enseig($nom, $update)
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <form class="row g-3 needs-validation" method="post">
+        <form class="row g-3 needs-validation" method="post" action="index.php">
           <div class="mb-3">
             <label for="recipient-name" class="col-form-label">Entrer l\'id de l\'enseignant:</label>
             <input type="number" name="id" class="form-control" id="recipient-name">
@@ -76,7 +76,7 @@ function enseig($nom, $update)
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">fermer</button>
-        <button type="submit" class="btn btn-primary">Envoyer le message</button>
+        <button type="submit" name="notifier" class="btn btn-primary">Envoyer le message</button>
       </div>
     </div>
   </div>

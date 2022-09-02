@@ -6,20 +6,7 @@ include "partials/_nav.php";
 include "functions/affichage_enseignant.php";
 
 ?>
-<?php
-if (!empty($_POST)) {
-  $error='Veillez remplir tout les champs';
-  if (
-    isset($_POST["nom"], $_POST["prenom"], $_POST["matricule"])
-    && !empty($_POST["nom"]) && !empty($_POST["matricule"]) && !empty($_POST["prenom"])
-  ) {
-    SendMesg((int)$_SESSION["user"]["id"],(int)$_POST["id"],$_SESSION["user"]["Nom"],$_POST["message"],$_SESSION["user"]["table"]);
-   
-  } else {
-    die('formulaire incomplet');
-  }
-}
-?>
+
 <div class="col-sm-4"><a onclick="openForm()" href="#custom-modal" class="btn btn-custom waves-effect waves-light mb-4" data-animation="fadein" data-plugin="custommodal" data-overlayspeed="200" data-overlaycolor="#36404a"><i class="mdi mdi-plus"></i>Membre</a></div>
 
 <div class="form-popup" id="myForm">
