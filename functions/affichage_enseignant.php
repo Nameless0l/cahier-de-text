@@ -10,20 +10,20 @@ function enseignant($nom, $profession, $email)
                 <div class="text-center card-box">
                     <div class="card pt-2 pb-2">
                         <div class="thumb-lg member-thumb mx-auto"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
-                        <div class="">
-                            <h4>' . $nom . '</h4>
-                            <p class="text-muted">' . $profession . '<span>| </span><span><a href="#" class="text-pink">' . $email . '</a></span></p>
-                        </div>
-                        <form method="post">
-                        
-                        <button type="button" class="btn btn-warning mt-3 btn-rounded waves-effect w-md waves-light col-md-6 mx-auto" type="submit">Notifier</button>
-                        <form>
+                            <div class="">
+                                <h4>' . $nom . '</h4>
+                                <p class="text-muted">' . $profession . '<span>| </span><span><a href="#" class="text-pink">' . $email . '</a></span></p>
+                            </div>
+                            <button  class="btn btn-warning mt-3 btn-rounded waves-effect w-md waves-light col-md-6 mx-auto">Notifier</button>
                         </div>
                 </div>
             </div>
         ';
 }
-function enseig($nom, $update, $id_reciver)
+
+
+
+function enseig($nom, $update)
 {
     echo '
     <tr>
@@ -39,13 +39,23 @@ function enseig($nom, $update, $id_reciver)
         <div class="font-weight-bold text-danger  mt-1">Cahier de Texte ' . $update . '
         </div>
     </td>
-    <td>
+    <td>    
         <div class="font-weight-bold  mt-1">07 Nov 2022</div>
     </td>
-    <td>
-    <form method="post">              
-    <button type="button" class="btn btn-warning mt-3 btn-rounded waves-effect w-md waves-light col-md-6 mx-auto" type="submit">Notifier</button>
-    <form>
+    <td> 
+      
+    <button onclick="openForm()" type="button" class="btn btn-warning mt-3 btn-rounded waves-effect w-md waves-light mx-auto" type="submit">Notifier</button>
+    <form id="myForm" method="post" class="hidden">
+    <div class="col-md-3">
+    <label for="validationCustom01" class="form-label">Matricule</label>
+    <input type="text" name="matricule" class="form-control" id="validationCustom01" required="required" placeholder=" Matricule ici">
+  </div>
+  <div class="col-md-4">
+    <label for="validationCustom01" class="form-label">Nom de l\'enseignant</label>
+    <input type="text" name="nom" class="form-control" id="validationCustom01" required="required" placeholder="Nom ici">
+  </div>
+  <button  type="submit" class="btn btn-warning mt-3 btn-rounded waves-effect w-md waves-light col-md-6 mx-auto" type="submit">Envpyer</button>
+    </form>   
     </td>
     </tr>
 ';

@@ -74,7 +74,7 @@ include 'functions/Update.user.php';
                             $result = $sql->execute();
                             $enseignants = $sql->fetchAll(PDO::FETCH_ASSOC);
                             foreach ($enseignants as $enseignant) {
-                                enseig($enseignant['Nom'], "à jour",$_enseignant['id']);
+                                enseig($enseignant['Nom'], "à jour",$enseignant['id']);
                             }
                             ?>
                         </tbody>
@@ -109,7 +109,7 @@ include 'functions/Update.user.php';
                             $result = $sql->execute();
                             $enseignants = $sql->fetchAll(PDO::FETCH_ASSOC);
                             foreach ($enseignants as $enseignant) {
-                                enseig($enseignant['Nom'], " Pas à jour",$enseignant['id']);
+                                enseig($enseignant['Nom'], " Pas à jour");
                             }
                             ?>
                         </tbody>
@@ -190,5 +190,20 @@ include 'functions/Update.user.php';
         </div>
     </div>
 </div>
+<script>
+    function openForm() {
 
+  if (document.getElementById("myForm").style.display == 'none')
+
+  { document.getElementById("myForm").style.display = 'block'; }
+
+  else
+
+  { document.getElementById("myForm").style.display = 'none'; }
+
+}
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+</script>
 <?php include "partials/_footer.php"; ?>
