@@ -20,7 +20,7 @@ $sql = $db->prepare('SELECT * FROM enseignant');
                     $table
                 ];
                 $i++;
-                // SendMesg(3,(int)$table["id_reciever"],"Mbassi","Notificationdd","Censeur");
+                SendMesg(3,(int)$table["id_reciever"],"Mbassi","Notificationdd","Censeur");
                 // var_dump((int)$table["id_reciever"]);
 }           
 var_dump($ydh);

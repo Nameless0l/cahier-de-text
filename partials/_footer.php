@@ -63,7 +63,7 @@ CKEDITOR.replace('ISLPD');
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
 
 <script src="assets/lib/easing/easing.min.js"></script>
 <script src="assets/lib/waypoints/waypoints.min.js"></script>
@@ -77,7 +77,8 @@ CKEDITOR.replace('ISLPD');
 
 <!-- Template Javascript -->
 <script src="assets/js/nav.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/nav.js"></script>
+<script src="assets/js/index.js"></script>
 <script src="assets/js/editor.js"></script>
 <script src="assets/js/eye_visibility.js"></script>
 <script src="assets/js/stats_cours.js"></script>
