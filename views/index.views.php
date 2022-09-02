@@ -44,6 +44,7 @@ include 'functions/Update.user.php';
         </div>
     </div>
 </div>
+
 <div class="container" ?>
     <div class=" d-flex justify-content-around flex-wrap">
         <div class="card col-md-6" style="border:none">
@@ -73,7 +74,7 @@ include 'functions/Update.user.php';
                             $result = $sql->execute();
                             $enseignants = $sql->fetchAll(PDO::FETCH_ASSOC);
                             foreach ($enseignants as $enseignant) {
-                                enseig($enseignant['Nom'], "à jour");
+                                enseig($enseignant['Nom'], "à jour",$_enseignant['id']);
                             }
                             ?>
                         </tbody>
@@ -108,7 +109,7 @@ include 'functions/Update.user.php';
                             $result = $sql->execute();
                             $enseignants = $sql->fetchAll(PDO::FETCH_ASSOC);
                             foreach ($enseignants as $enseignant) {
-                                enseig($enseignant['Nom'], " Pas à jour");
+                                enseig($enseignant['Nom'], " Pas à jour",$enseignant['id']);
                             }
                             ?>
                         </tbody>
