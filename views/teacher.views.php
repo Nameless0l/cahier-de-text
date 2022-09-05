@@ -23,10 +23,7 @@ include "functions/affichage_enseignant.php";
             <!-- end col -->
         </div>
         <!-- end row -->
-        <div class="row">
-        </div>
-        <!-- end row -->
-        <div class="row">
+        <!-- <div class="row">
             <div class="col-12">
                 <div class="text-right">
                     <ul class="pagination pagination-split mt-0 float-right">
@@ -41,7 +38,7 @@ include "functions/affichage_enseignant.php";
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> -->
         <!-- end row -->
     </div>
     <!-- container -->
