@@ -84,5 +84,9 @@ class UpdateProfile
 }
 
 
+// $abb= new UpdateProfile ;
+
+// $dd = $abb->print_teacher_of_censor(3);
+
 
 //  INSERT iNTO enseignant (Nom ,Prenom,class,)
