@@ -42,15 +42,7 @@ include "partials/_nav.php";
                                         <div class="accordion accordion-flush" id="accordionFlushExample">
                                             <div class="accordion-item">
                                             <?php include 'affichage_cahier_de_texte.php'?>
-                                                <!-- <h2 class="accordion-header" id="flush-headingOne">
-                                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseOne" aria-expanded="true" aria-controls="flush-collapseOne">
-                                                        Visualiser le cahier
-                                                    </button> 
-                                                </h2> -->
                                                 <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                                    <!--<div class="accordion-body">
-                                                        <div class="col-sm-12 col-xl-6"> -->
-                                                    <!-- <div class="bg-light rounded h-100 p-4"> -->
                                                     <div class="d-flex align-items-start">
                                                         <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
 
