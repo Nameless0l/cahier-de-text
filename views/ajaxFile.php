@@ -10,7 +10,6 @@ if(isset($_POST["id"])){
     $query = $bdd ->query("SELECT * FROM eleve WHERE id_classe = '$classroom_id'");
     $count =  $query->rowCount();
 	 
-
     if($count > 0){?>
 
      <option value=""><?= "Select state"; ?></option>
