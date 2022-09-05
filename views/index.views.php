@@ -10,6 +10,7 @@ include "partials/_nav.php";
 include "config/database.php";
 include 'functions/affichage_enseignant.php';
 include 'functions/Update.user.php';
+// include 'functions/gestions_envoie_mail/index.php'
 
 
 ?>
@@ -44,150 +45,48 @@ include 'functions/Update.user.php';
         </div>
     </div>
 </div>
-<div class="container" ?>
-    <div class=" d-flex justify-content-around flex-wrap">
-        <div class="card col-md-6" style="border:none">
-            <div class="card-body ">
-                <div class="d-flex flex-wrap justify-content-between">
-                    <h4 class="card-title mb-3"></h4>
-                </div>
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <th>
-                                Nom
-                            </th>
-                            <th>
-                                Progress
-                            </th>
-                            <th>
-                                Deadline
-                            </th>
-                            <th>
-                                Actions
-                            </th>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $sql = $db->prepare('SELECT * FROM enseignant');
-                            $result = $sql->execute();
-                            $enseignants = $sql->fetchAll(PDO::FETCH_ASSOC);
-                            foreach ($enseignants as $enseignant) {
-                                enseig($enseignant['Nom'], "à jour");
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="card col-md-6 ml-3" style="border:none">
-            <div class="card-body">
-                <div class="d-flex flex-wrap justify-content-between">
-                    <h4 class="card-title mb-3"></h4>
-                </div>
-                <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                            <th>
-                                Nom
-                            </th>
-                            <th>
-                                Description
-                            </th>
-                            <th>
-                                Deadline
-                            </th>
-                            <th>
-                                Actions
-                            </th>
-                        </thead>
-                        <tbody>
-                            <?php
-                            $sql = $db->prepare('SELECT * FROM enseignant');
-                            $result = $sql->execute();
-                            $enseignants = $sql->fetchAll(PDO::FETCH_ASSOC);
-                            foreach ($enseignants as $enseignant) {
-                                enseig($enseignant['Nom'], " Pas à jour");
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<?php if($_SESSION["user"]["table"]==='censeur'): ?>
+    <?php require 'index.views.censeur.php'; ?>
+<?php endif ?>
+<?php if($_SESSION["user"]["table"]==='enseignant'): ?>
+    <?php require 'index.views.enseignant.php'; ?>
+<?php endif ?>
+<?php if($_SESSION["user"]["table"]==='parent'): ?>
+    <?php require 'index.views.parent.php'; ?>
+<?php endif ?>
 
-<div class="container d-flex justify-content-around flex-wrap">
-    <div class="card col-md-5 mt-3 " style="border:none">
-        <div class="d-flex flex-wrap justify-content-between ">
-            <h4 class="card-title mb-1"> Tle D </h4>
-            <a href="stats_cours.php#tled" class="mb-1">Voir Tout </a>
-        </div>
-        <div class="mt-3">
-            <label for="">Mathematiques</label>
-            <div class="progress ">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
-                </div>
-            </div>
-        </div>
-        <div class="mt-3">
-            <label for="">SVT</label>
-            <div class="progress ">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
-                </div>
-            </div>
-        </div>
-        <div class="mt-3">
-            <label for="">Informatique</label>
-            <div class="progress ">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
-                </div>
-            </div>
-        </div>
-        <div class="mt-3">
-            <label for="">Physique</label>
-            <div class="progress ">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="card col-md-5 mt-3 " style="border:none">
-        <div class="d-flex flex-wrap justify-content-between ">
-            <h4 class="card-title mb-1"> Tle C </h4>
-            <a href="stats_cours.php#tlec" class="mb-1">Voir Tout </a>
-        </div>
-        <div class="mt-3">
-            <label for="">Mathematiques</label>
-            <div class="progress ">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-info" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%
-                </div>
-            </div>
-        </div>
-        <div class="mt-3">
-            <label for="">SVT</label>
-            <div class="progress ">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%
-                </div>
-            </div>
-        </div>
-        <div class="mt-3">
-            <label for="">Informatique</label>
-            <div class="progress ">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%
-                </div>
-            </div>
-        </div>
-        <div class="mt-3">
-            <label for="">Physique</label>
-            <div class="progress ">
-                <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<script>
+    function openForm() {
 
+  if (document.getElementById("myForm").style.display == 'none')
+
+  { document.getElementById("myForm").style.display = 'block'; }
+
+  else
+
+  { document.getElementById("myForm").style.display = 'none'; }
+
+}
+const exampleModal = document.getElementById('exampleModal')
+exampleModal.addEventListener('show.bs.modal', event => {
+  // Button that triggered the modal
+  const button = event.relatedTarget
+  // Extract info from data-bs-* attributes
+  const recipient = button.getAttribute('data-bs-whatever')
+  // If necessary, you could initiate an AJAX request here
+  // and then do the updating in a callback.
+  //
+  // Update the modal's content.
+  const modalTitle = exampleModal.querySelector('.modal-title')
+  const modalBodyInput = exampleModal.querySelector('.modal-body input')
+
+  modalTitle.textContent = `New message to ${recipient}`
+  modalBodyInput.value = recipient
+})
+
+    function closeForm() {
+        document.getElementById("myForm").style.display = "none";
+    }
+</script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script> -->
 <?php include "partials/_footer.php"; ?>

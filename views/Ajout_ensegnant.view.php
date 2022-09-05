@@ -13,53 +13,21 @@ if (!empty($_POST)) {
     $ville = strip_tags($_POST["ville"]);
     $quartier = strip_tags($_POST["quartier"]);
     $matieres = strip_tags($_POST["matieres"]);
+    $classes=strip_tags($_POST["classes"]);
     $pass = password_hash("Nameless", PASSWORD_ARGON2ID);
     //hashons le mot de prenom
     require_once 'config/database.php';
     require_once 'functions/Update.user.php';
 
-    // // controles souhaités sur l'unicité des matricules
-
-
-    // $sql = "INSERT INTO enseignant (Nom,Prenom,matieres,matricule,ville,quartier,mot_de_pass,email) VALUES(
-    //   :nom, :prenom,:matieres,:matricule,:ville,:quartier,'$pass',:email)";
-    // $query = $db->prepare($sql);
-
-    // $query->bindValue(":nom", $nom, PDO::PARAM_STR);
-    // $query->bindValue(":prenom", $prenom, PDO::PARAM_STR);
-    // $query->bindValue(":matieres", $matieres, PDO::PARAM_STR);
-    // $query->bindValue(":matricule", $matricule, PDO::PARAM_STR);
-    // $query->bindValue(":email", $email, PDO::PARAM_STR);
-    // $query->bindValue(":ville", $ville, PDO::PARAM_STR);
-    // $query->bindValue("quartier", $quartier, PDO::PARAM_STR);
-
-    // $query->execute();
-
-    //  $sql2  = "SELECT * FROM enseignant WHERE email= :email";
-
-    //   $query = $db->prepare($sql2);
-
-    //   $query->bindValue(":email", htmlentities($email), PDO::PARAM_STR);
-    //   $query->execute();
-
-    //   $id = $query->fetch();
-    //   $id_enseignant=$id["id"];
-    //   if ($id_enseignant) {
-    //     //  die("Impossible d'acceder à l'id enseignant");
-    //   }
-    //   $id_censeur=$_SESSION["user"]["id"];
-    //   $sql3 = "INSERT INTO censeur_enseignant(id_enseignant,id_censeur) VALUES('$id_enseignant','$id_censeur')";
-    //   $query = $db->prepare($sql3);
-    //   $query->execute();
-    
     $ab = new UpdateProfile();
-    $mm = $ab->ajout_enseignant($_SESSION["user"]["id"], $nom ,$prenom, $matricule, $email, $ville, $quartier, $matieres);
+    $mm = $ab->ajout_enseignant($_SESSION["user"]["id"], $nom ,$prenom, $matricule, $email, $ville, $quartier, $matieres,$classes);
 
   } else {
     die('formulaire incomplet');
   }
 }
 ?>
+
 <?php
 $title = 'Ajout d\'un Enseignant';
 include 'partials/_header.php';
@@ -114,16 +82,16 @@ include "partials/_nav.php";
         <legend>classes</legend>
 
         <div>
-          <input type="checkbox" id="scales">
+          <input type="checkbox" name="classes" value="5eme" id="scales">
           <label for="scales">5eme</label>
         </div>
 
         <div>
-          <input type="checkbox" id="horns">
+          <input type="checkbox" name="classes" value="6eme" id="horns">
           <label for="horns">6eme</label>
         </div>
         <div>
-          <input type="checkbox" id="horns">
+          <input type="checkbox" name="classes" value="seconde" id="horns">
           <label for="horns">seconde</label>
         </div>
       </fieldset>
