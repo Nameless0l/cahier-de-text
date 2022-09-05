@@ -9,7 +9,7 @@ function Matieres ($id){
     $query =$db-> prepare($sql);
     
     $query->execute();
-    
+
     $enseignant_matieres = $query->fetchAll();
    
 }

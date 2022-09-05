@@ -17,6 +17,7 @@ $query = $db->query("SELECT * FROM classes WHERE id_censeur_charge = '$id_censeu
             <?php 
 
             if($run_query > 0){
+              echo"<option value=''>Select</option>";
             while($resultat = $query->fetch()){ ?>
             <option value="<?php echo $resultat['id'];?>"> <?php echo $resultat['nom_classe'];?> </option>
             <?php
