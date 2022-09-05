@@ -4,6 +4,12 @@
 
 <!-- Sidebar Start -->
 
+
+<!-- <div class="container-xxl position-relative bg-info d-flex p-0"> -->
+
+
+<!-- Sidebar Start -->
+
 <div class="sidebar  pe-4 pb-3">
     <nav class="navbar  navbar-light">
         <a href="index.php" class="navbar-brand mx-4 mb-3">
@@ -71,8 +77,8 @@
 
 
 
-            <a href="#" class="nav-item nav-link text-info"><i class="fa fa-th me-2"></i>Emploi de temps</a>
-            <a href="#" class="nav-item nav-link text-info"><i class="fa fa-chart-bar me-2"></i>Stats - Evaluations</a>
+            <a href="schedule.php" class="nav-item nav-link text-info"><i class="fa fa-th me-2"></i>Emploi de temps</a>
+            <a href="stats_evaluations.php" class="nav-item nav-link text-info"><i class="fa fa-chart-bar me-2"></i>Stats - Evaluations</a>
             <a href="profile.php" class="nav-item nav-link text-info"><i class="fa fa-user me-2"></i>Profil</a>
 
         </div>

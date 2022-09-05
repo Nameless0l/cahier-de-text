@@ -9,54 +9,49 @@
         <a href="#" class="sidebar-toggler flex-shrink-0">
             <i class="fa fa-bars"></i>
         </a>
-        <div>
-            <ul class="navbar-nav mr-lg-2">
-                <li class="nav-item  d-none d-lg-flex">
-                    <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Emploi de Temps</a>
-                        <div class="dropdown-menu bg-transparent border-0">
-
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Niveau 1</a>
-                                <div class="dropdown-menu bg-transparent border-0">
-                                    <a href="classes.php" class="dropdown-item text-info">6ieme</a>
-                                    <a href="#" class="dropdown-item text-info">5ieme</a>
-                                </div>
-                            </div>
-
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Niveau 2</a>
-                                <div class="dropdown-menu bg-transparent border-0">
-                                    <a href="classes.php" class="dropdown-item text-info">4ieme</a>
-                                    <a href="#" class="dropdown-item text-info">3ieme</a>
-                                </div>
-                            </div>
-
-                            <div class="nav-item dropdown">
-                                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Niveau 3</a>
-                                <div class="dropdown-menu bg-transparent border-0">
-                                    <a href="classes.php" class="dropdown-item text-info">2nde</a>
-                                    <a href="#" class="dropdown-item text-info">1ere</a>
-                                    <a href="#" class="dropdown-item text-info">Tle</a>
-                                </div>
-                            </div>
+        <ul class="navbar-nav">
+            <div class="nav-item dropdown d-none d-lg-flex">
+                <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Emploi de Temps</a>
+                <div class="dropdown-menu bg-transparent border-0 p-auto">
+                    <div class="dropright ">
+                        <button class="btn btn-light bg-white dropdown-toggle border-0" data-toggle="dropdown">Niveau 1</button>
+                        <div class="dropdown-menu bg-transparent border-0 ">
+                            <a class="dropdown-item" href="schedule.php">6ieme</a>
+                            <a class="dropdown-item" href="#">5ieme</a>
                         </div>
                     </div>
-                </li>
-                <li class="nav-item  d-none d-lg-flex">
-                    <a class="nav-link" href="stats_cours.php">
-                        Statistiques
-                    </a>
-                </li>
-                <?php if($_SESSION["user"]["table"]==='censeur'): ?>
-                <li class="nav-item  d-none d-lg-flex">
-                    <a class="nav-link" href="teacher.php">
-                        Enseignants
-                    </a>
-                </li>
-                <?php endif ?>
-            </ul>
-        </div>
+                    <div class="dropright">
+                        <button class="btn btn-light bg-white dropdown-toggle border-0" data-toggle="dropdown" aria-expanded="false">Niveau 2</button>
+                        <div class="dropdown-menu bg-transparent border-0 ">
+                            <a class="dropdown-item" href="#">4ieme</a>
+                            <a class="dropdown-item" href="#">3ieme</a>
+                        </div>
+                    </div>
+                    <div class="dropright">
+                        <button class="btn btn-light bg-white dropdown-toggle border-0" data-toggle="dropdown">Niveau 3</button>
+                        <div class="dropdown-menu bg-transparent border-0 ">
+                            <a class="dropdown-item" href="#">2nde</a>
+                            <a class="dropdown-item" href="#">1ere</a>
+                            <a class="dropdown-item" href="#">Tle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <li class="nav-item  d-none d-lg-flex">
+                <a class="nav-link" href="stats_cours.php">
+                    Statistiques
+                </a>
+            </li>
+            <?php if($_SESSION["user"]["table"]==='censeur'): ?>
+            <li class="nav-item  d-none d-lg-flex">
+                <a class="nav-link" href="teacher.php">
+                    Enseignants
+                </a>
+            </li>
+            <?php endif ?>
+        </ul>
+
+
         <div class="navbar-nav align-items-center ms-auto">
             <div class="nav-item dropdown">
                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">

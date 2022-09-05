@@ -25,45 +25,46 @@
 <!-- Javascript ckeditor-->
 <script src="vendor/ckeditor/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace('objectifs');
+CKEDITOR.replace('objectifs');
 </script>
 <script>
-     CKEDITOR.replace('plan');
- </script> 
- <script>
-     CKEDITOR.replace('corpus');
- </script>
+CKEDITOR.replace('plan');
+</script>
+<script>
+CKEDITOR.replace('corpus');
+</script>
 
- <script>
-    CKEDITOR.replace('evaluation_diag');
+<script>
+CKEDITOR.replace('evaluation_diag');
 </script>
 <script>
-     CKEDITOR.replace('exo_dapp');
- </script> 
- <script>
-     CKEDITOR.replace('dafalm');
- </script>
- <script>
-     CKEDITOR.replace('obj_vise');
- </script> 
- <script>
-     CKEDITOR.replace('ref_enon');
- </script> 
-  <script>
-     CKEDITOR.replace('epreuve');
- </script>
- <script>
-     CKEDITOR.replace('correction');
- </script> 
- <script>
-     CKEDITOR.replace('ISLPD');
- </script>
+CKEDITOR.replace('exo_dapp');
+</script>
+<script>
+CKEDITOR.replace('dafalm');
+</script>
+<script>
+CKEDITOR.replace('obj_vise');
+</script>
+<script>
+CKEDITOR.replace('ref_enon');
+</script>
+<script>
+CKEDITOR.replace('epreuve');
+</script>
+<script>
+CKEDITOR.replace('correction');
+</script>
+<script>
+CKEDITOR.replace('ISLPD');
+</script>
 <!-- Javascript ckeditor-->
 
 <!-- JavaScript Libraries -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/lib/chart/chart.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>
+
 <script src="assets/lib/easing/easing.min.js"></script>
 <script src="assets/lib/waypoints/waypoints.min.js"></script>
 <script src="assets/lib/owlcarousel/owl.carousel.min.js"></script>
@@ -75,10 +76,13 @@
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
 <!-- Template Javascript -->
+<script src="assets/js/nav.js"></script>
 <script src="assets/js/main.js"></script>
 <script src="assets/js/editor.js"></script>
 <script src="assets/js/eye_visibility.js"></script>
 <script src="assets/js/stats_cours.js"></script>
+<script src="assets/js/charts_config.js"></script>
+<script src="assets/js/charts_setup.js"></script>
 </body>
 
 </html>
