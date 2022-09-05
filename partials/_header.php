@@ -30,8 +30,10 @@
 
     <link href="/assets/css/bootstrao_version_5.2/bootstrap.min.css" rel="stylesheet">
     <link href="assets/css/table.css" rel="stylesheet">
+
     <link href="assets/css/enseignant.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/teacher.css">
+
 
     <!-- Template Stylesheet -->
     <link href="assets/css/style.css" rel="stylesheet">
@@ -43,6 +45,7 @@
     <link href="assets/lib/%40fullcalendar/bootstrap/main.min.css" rel="stylesheet" type="text/css" />
     <link href="assets/lib/%40fullcalendar/timegrid/main.min.css" rel="stylesheet" type="text/css" />
 
+
      <link rel="stylesheet" href="assets/css/preloader.min.css" type="text/css" />
     
     <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
@@ -53,5 +56,14 @@
     <script src="assets/js/jquery.min.js"></script>
 </head>
 
+
+     <link rel="stylesheet" href="assets/css/preloader.min.css" type="text/css" />
+    
+    <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css" />
+    
+    <link href="assets/css/app.min.css" id="app-style" rel="stylesheet" type="text/css" /> 
+
+
+</head>
 <body>
     <div class="container-xxl position-relative bg-white d-flex p-0">

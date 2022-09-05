@@ -24,6 +24,7 @@
 </div>
 <!-- Javascript ckeditor-->
 <script src="vendor/ckeditor/ckeditor.js"></script>
+
 <script>
 CKEDITOR.replace('objectifs');
 </script>
@@ -58,9 +59,36 @@ CKEDITOR.replace('correction');
 <script>
 CKEDITOR.replace('ISLPD');
 </script>
+
+<script src="assets/js/jquery.min.js" defer></script>
+
+<script>CKEDITOR.replace('objectifs');</script>
+<script>CKEDITOR.replace('plan');
+</script>
+<script>CKEDITOR.replace('corpus');
+</script>
+
+<script>CKEDITOR.replace('evaluation_diag');
+</script>
+<script>CKEDITOR.replace('exo_dapp');
+</script>
+<script>CKEDITOR.replace('dafalm');
+</script>
+<script>CKEDITOR.replace('obj_vise');
+</script>
+<script>CKEDITOR.replace('ref_enon');
+</script>
+<script>CKEDITOR.replace('epreuve');
+</script>
+<script>CKEDITOR.replace('correction');
+</script>
+<script>CKEDITOR.replace('ISLPD');
+</script>
+
 <!-- Javascript ckeditor-->
 
 <!-- JavaScript Libraries -->
+<script src="assets/js/jquery.min.js" defer></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.1/Chart.min.js"></script>

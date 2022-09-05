@@ -20,8 +20,10 @@ function UpdateInfoProfile($data, $table_name){
 
         $req = $db->prepare("UPDATE $table_name SET email = ?, mot_de_pass = ?, ville = ?, quartier = ?, nom = ?, prenom = ?  WHERE email = ? ");
 
+        $password_hash = password_hash($data['password'], PASSWORD_ARGON2ID);
+        
         $req->bindParam(1, $data['email'], PDO::PARAM_STR);
-        $req->bindParam(2, $data['password'], PDO::PARAM_STR);
+        $req->bindParam(2, $password_hash, PDO::PARAM_STR);
         $req->bindParam(3, $data['ville'], PDO::PARAM_STR);
         $req->bindParam(4, $data['quartier'], PDO::PARAM_STR);
         $req->bindParam(5, $data['nom'], PDO::PARAM_STR);
