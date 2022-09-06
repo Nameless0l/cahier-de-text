@@ -1,10 +1,5 @@
 <?php
 $title = "Classes";
-if (!isset($_SESSION["user"])) {
-    header("Location: connexion.php");
-    die("Vous n'etes pas connectée");
-}
-
 include 'partials/_header.php';
 include "partials/_sidebar.php";
 include "partials/_nav.php";
@@ -41,7 +36,7 @@ include "partials/_nav.php";
                                     <div class="bg-light rounded h-100 p-4">
                                         <div class="accordion accordion-flush" id="accordionFlushExample">
                                             <div class="accordion-item">
-                                            <?php include 'affichage_cahier_de_texte.php'?>
+                                                <?php include 'cours.php' ?>
                                                 <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
                                                     <div class="d-flex align-items-start">
                                                         <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
@@ -175,8 +170,8 @@ include "partials/_nav.php";
                                 </div>
                             </div>
                             <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                <?php include 'affichage_cahier_de_texte.php'?>
-                            </div>
+                            <?php include 'cours.php' ?>
+                        </div>
                             <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
                                 Sit consetetur eirmod lorem ea magna sadipscing ipsum elitr invidunt, dolores lorem erat
                                 ipsum ut
