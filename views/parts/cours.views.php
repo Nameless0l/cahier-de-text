@@ -1,9 +1,7 @@
 <?php
 $title = "Remplissage cours";
-include "partials/_header.php";
+
 include "functions/fonction_form.php";
-include "partials/_sidebar.php";
-include "partials/_nav.php";
 ?>
 
 <p>COURS</p>
@@ -136,4 +134,3 @@ include "partials/_nav.php";
     </form> 
     </div>
     
-    <?php include "partials/_footer.php"; ?>

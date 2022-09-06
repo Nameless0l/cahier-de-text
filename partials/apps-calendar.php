@@ -104,6 +104,7 @@
                                                         </div>
                                                         <div class="col-12">
                                                             <div class="mb-3">
+                                                        
                                                                 <label class="form-label">Catégorie</label>
                                                                 <select class="form-control form-select" name="category" id="event-category">
                                                                     <option  selected> --Select-- </option>
@@ -113,7 +114,9 @@
                                                                     <option value="bg-info">Info</option>
                                                                     <option value="bg-dark">Dark</option>
                                                                     <option value="bg-warning">Warning</option>
+                                                            
                                                                 </select>
+                                             
                                                                 <div class="invalid-feedback">Veuillez sélectionner une catégorie d'événement valide</div>
                                                             </div>
                                                         </div>
@@ -158,7 +161,7 @@
 
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
-
+       
         <!-- JAVASCRIPT -->
         <script src="assets/libs/jquery/jquery.min.js"></script>
         <script src="assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>

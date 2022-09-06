@@ -46,13 +46,13 @@ include "partials/_nav.php";
                                     <div class="bg-light rounded h-100 p-4">
                                         <div class="accordion accordion-flush" id="accordionFlushExample">
                                             <div class="accordion-item">
-                                            <?php include 'affichage_cahier_de_texte.php'?>
+                                        
                                                 <div id="flush-collapseOne" class="accordion-collapse collapse show" aria-labelledby="flush-headingOne" data-bs-parent="#accordionFlushExample">
-                                                    <div class="d-flex align-items-start">
-                                                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                                    <!-- <div class="d-flex align-items-start">
+                                                        <div class="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical"> -->
 
 
-
+                                                           <?php include "views/affichage_cahier.views.php"; ?>
                                                             <!-- Right Sidebar -->
                                                             <!-- /Right-bar -->
 
@@ -134,8 +134,8 @@ include "partials/_nav.php";
                                                                             ut et labore labore est, dolore accusam vero
                                                                             at est sit. Invidunt.
                                                                         </div> -->
-                                                        </div>
-                                                    </div>
+                                                        <!-- </div>
+                                                    </div> -->
                                                     <!-- </div> -->
                                                     <!-- </div> -->
                                                     <!-- </div> -->
