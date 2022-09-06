@@ -43,7 +43,7 @@ function Select_table(string $email, string $password): string
                 switch ($table_name) {
                     case 'enseignant':
                         $_SESSION["user"] = [
-                            "id" => $user["id_enseignant"],
+                            "id" => $user["id"],
                             "email" => $_POST["email"],
                             "Nom" => $user["Nom"],
                             "Prenom" => $user["Prenom"],
