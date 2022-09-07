@@ -1,4 +1,6 @@
 <?php
-session_start();
+
 include "config/database.php";
+
+include "views/affichage_cahier.views.php"; 
 ?>

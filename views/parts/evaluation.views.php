@@ -1,10 +1,5 @@
-<?php
-$title = "Remplissage evaluation";
-include "partials/_header.php";
-include "functions/fonction_form.php";
-include "partials/_sidebar.php";
-include "partials/_nav.php";
-?>
+
+
 <p>Evaluation</p>
     <p> journée du: (DATE)</p>
     <form>
