@@ -25,7 +25,7 @@ function Ajoutcours($id_enseignant, $id_matiere, $id_classe, $trimestre, $id_cha
 
 function VU($id){
     require 'config/database.php';
-    $sql = "UPDATE lecon SET vu=true WERE id_enseignant = $id" ;
+    $sql = "UPDATE lecon SET vu=1 WERE id_enseignant = $id" ;
     $query = $db -> prepare($sql);
     $query -> execute();
 }

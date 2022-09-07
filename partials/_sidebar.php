@@ -52,6 +52,7 @@ include 'config/database.php';
                 <div class="dropdown-menu bg-transparent border-0">
                     <a href="creation_cahier_texte.php" class="dropdown-item text-info">Cahier de texte</a>
                     <a href="Ajout_enseignant.php" class="dropdown-item text-info">Compte enseignant</a>
+                    <a href="Ajout_matiere.php" class="dropdown-item text-info">Attribuer des matieres a vos enseignant</a>
                 </div>
             </div>
             <?php endif ?>
@@ -74,28 +75,8 @@ include 'config/database.php';
                         echo '<a href="classes.php?id='.$num.'" class="dropdown-item text-info">'.$classe['nom_classe'].'</a>' ;
                     
                     } ?>
-                    <!-- <a href="classes.php" class="dropdown-item text-info">Tle C</a>
-                    <a href="#" class="dropdown-item text-info">Tle D</a>
-                    <a href="#" class="dropdown-item text-info">Tle A4 Esp1</a>
-                    <a href="classes.php" class="dropdown-item text-info">Tle A4 Esp2</a>
-                    <a href="#" class="dropdown-item text-info">Tle A4 All</a>
-                    <a href="#" class="dropdown-item text-info">Pre D</a>
-                    <a href="classes.php" class="dropdown-item text-info">Pre C</a>
-                    <a href="#" class="dropdown-item text-info">Pre A4 Esp1</a>
-                    <a href="#" class="dropdown-item text-info">Pre A4 Esp2</a>
-                    <a href="#" class="dropdown-item text-info">Pre A4 All</a>
-                    <a href="#" class="dropdown-item text-info">2nd C</a>
-                    <a href="#" class="dropdown-item text-info">2nd A4 Esp2</a>
-                    <a href="classes.php" class="dropdown-item text-info">2nd A4 Esp1</a>
-                    <a href="#" class="dropdown-item text-info">2nd A4 All</a> -->
                 </div>
             </div>
-
-
-
-
-
-
             <a href="schedule.php" class="nav-item nav-link text-info"><i class="fa fa-th me-2"></i>Emploi de temps</a>
             <a href="stats_evaluations.php" class="nav-item nav-link text-info"><i class="fa fa-chart-bar me-2"></i>Stats - Evaluations</a>
             <a href="profile.php" class="nav-item nav-link text-info"><i class="fa fa-user me-2"></i>Profil</a>
