@@ -4,9 +4,17 @@
 
 <!-- Sidebar Start -->
 
+
+
+<!-- <div class="container-xxl position-relative bg-info d-flex p-0"> -->
+
+
+<!-- Sidebar Start -->
+
 <?php 
 include 'config/database.php';
 ?>
+
 
 <div class="sidebar  pe-4 pb-3">
     <nav class="navbar  navbar-light">

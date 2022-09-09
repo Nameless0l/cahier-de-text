@@ -1,6 +1,9 @@
 <?php
+
+
 require 'functions/ajout_cours.php';
 $date = date("Y/m/d");
+
 ?>
 <p>COURS</p>
 <?php
@@ -37,6 +40,7 @@ Ajoutcours($id_enseignant, $id_matiere, $id_classe, $trimestre, $id_chapitre, $t
     }
 }
 ?>
+
 <p> journée du: <?= $date ?></p>
 <form method="POST" enctype="multipart/form-data">
     <table>
@@ -82,14 +86,14 @@ Ajoutcours($id_enseignant, $id_matiere, $id_classe, $trimestre, $id_chapitre, $t
 
             <tr>
                 <td colspan="3">
-                    <textarea name="opjectif_lecon"></textarea>
+                    <textarea name="objectifs"></textarea>
                 </td>
             </tr>
             <tr>
                 <td colspan="3">Plan de la leçon</td>
             </tr>
             <tr>
-                <td colspan="3"> <textarea name="plan_lecon"></textarea> </td>
+                <td colspan="3"> <textarea name="plan"></textarea> </td>
             </tr>
             <tr>
                 <td colspan="3">Corpus ou situation problême </td>
@@ -157,6 +161,22 @@ Ajoutcours($id_enseignant, $id_matiere, $id_classe, $trimestre, $id_chapitre, $t
                 <td> <textarea name="objectifs"></textarea> </td>
             </tr>
 
+
+        <tr>
+        <td><input type="file"></td>
+        <td><input type="file"></td>
+        </tr>
+        
+        <tr>
+            <td></td>
+            <td></td>
+            <td align="right"><input type="submit" name="envoyer" value="publier"></td>
+        </tr>
+    </table> 
+    </form> 
+    </div>
+    
+
             <tr>
                 <td><input type="file"></td>
                 <td><input type="file"></td>
@@ -172,3 +192,4 @@ Ajoutcours($id_enseignant, $id_matiere, $id_classe, $trimestre, $id_chapitre, $t
 </div>
 
 <?php include "partials/_footer.php"; ?>
+
