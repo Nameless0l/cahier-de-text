@@ -1,5 +1,8 @@
 <?php
 
+$title = "Remplissage cours";
+
+include "functions/fonction_form.php";
 
 require 'functions/ajout_cours.php';
 $date = date("Y/m/d");
@@ -40,7 +43,6 @@ Ajoutcours($id_enseignant, $id_matiere, $id_classe, $trimestre, $id_chapitre, $t
     }
 }
 ?>
-
 <p> journée du: <?= $date ?></p>
 <form method="POST" enctype="multipart/form-data">
     <table>
