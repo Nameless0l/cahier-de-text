@@ -63,7 +63,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 $spreadsheet = new Spreadsheet();
 
 // Retrieve the current active worksheet
-$sheet = $spreadsheet------->getActiveSheet();
+$sheet = $spreadsheet->getActiveSheet();
 
 /**
  * Loop through 'Column A - D'.

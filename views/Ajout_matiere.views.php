@@ -2,6 +2,7 @@
 require_once 'config/database.php';
 require_once 'functions/attribution_matiere.php';
 
+$id_classe = null;
 $sql = $db->prepare("SELECT *FROM listeue ");
 $result = $sql->execute();
 $matieres =  $sql->fetchAll(PDO::FETCH_ASSOC);
@@ -21,12 +22,18 @@ if (!empty($_POST)) {
         && !empty($_POST["Nom"]) && !empty($_POST["nom_matiere"]) && !empty($_POST["nom_classe"])
     ) {
         $id_enseignant = strip_tags($_POST["Nom"]);
-        $id_classe = strip_tags($_POST["id_classe"]);
         $nom_matiere = strip_tags($_POST["nom_matiere"]);
         $nom_classe = strip_tags($_POST["nom_classe"]);
         $heure = strip_tags($_POST["horaire"]);
-        $classes = strip_tags($_POST["classes"]);
-        // attribuer($id_enseignant, $id_classe, $cycle, $nom_matiere, $nom_classe, $heure);
+        $cycle = strip_tags($_POST['cycle']);
+        foreach ($classes as $element) {
+            if ($element["nom_classe"] === $nom_classe) {
+                $id_classe = (int)$element['id'];
+                break;
+            }
+        }
+        attribuer($id_enseignant, $id_classe, $cycle, $nom_matiere, $nom_classe, $heure);
+        echo 'REUSSITE DE LA SOIMISSION DES ELEMENTS';
     } else {
         die('formulaire incomplet');
     }
@@ -41,10 +48,9 @@ include "partials/_nav.php";
 <div style="margin-top: 3rem ;" class="container mt-10">
 
     <form class="row g-6 needs-validation" method="post">
-        <div  class="col-md-6 row g-6">
-            <label  for="nom_matiere"> Matiere</label>
+        <div class="col-md-6 row g-6">
+            <label for="nom_matiere"> Matiere</label>
             <select class="p-2 bg-light border" name="nom_matiere" id="nom_matiere">
-
                 <?php
                 foreach ($matieres as $matiere) {
                 ?>
@@ -68,12 +74,19 @@ include "partials/_nav.php";
                 <?php
                 foreach ($classes as $classe) {
                 ?>
-                    <option value="<?php echo $classe["nom_classe"]; ?>"> <?php echo $classe["nom_classe"];$id_classe=$classe['id'] ?> </option>;
+                    <option value="<?php echo $classe["nom_classe"]; ?>"> <?php echo $classe["nom_classe"]; ?> </option>;
                 <?php             }
                 ?>
             </select>
             <label for="horaire"> Entrer la plage horaire pour cette matiere </label>
             <input type="text" class="p-2 bg-light border" id="horaire" name="horaire" placeholder="Entrer le jour puis l'heure exemple(lundi:8h30-10h30)">
+        </div>
+        <div class="col-md-6 row g-6">
+            <label for="cycle"> Cycle </label>
+            <select class="p-2 bg-light border" name="cycle" id="cycle">
+                <option value="Premier cycle">Premier cycle</option>
+                <option value="Second cycle">Second cycle</option>
+            </select>
         </div>
         <div class="col-12 pt-4">
             <button class="btn btn-primary" type="submit">Valider</button>
