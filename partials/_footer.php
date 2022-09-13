@@ -99,9 +99,9 @@ CKEDITOR.replace('ISLPD');
 <script src="assets/lib/tempusdominus/js/moment.min.js"></script>
 <script src="assets/lib/tempusdominus/js/moment-timezone.min.js"></script>
 <script src="assets/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
-<script src=" https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.1.2/tinymce.min.js"
+<!-- <script src=" https://cdnjs.cloudflare.com/ajax/libs/tinymce/6.1.2/tinymce.min.js"
     integrity="sha512-cJ2vUNryvHzgNJfmFTtZ2VX5EMT5JOU1i8nm+L1kwoHQ9bSqSYdswxyk++9Gi27p3BG2rXZXLMsTsluY4RZSSw=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
 
 <!-- Template Javascript -->
 <script src="assets/js/nav.js"></script>

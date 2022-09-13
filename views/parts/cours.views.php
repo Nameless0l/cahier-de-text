@@ -1,7 +1,7 @@
 <?php
 
 
-require 'functions/ajout_cours.php';
+require_once 'functions/ajout_cours.php';
 $date = date("Y/m/d");
 
 ?>
@@ -24,14 +24,17 @@ $id_matiere = $id;
 $id_classe = strip_tags($_GET['id']);
 $trimestre = strip_tags($_POST['trimestre']);
 $id_chapitre = 1;
-$titre_module = "Les Pst";
+$titre_module = "Les maths";
 $titre_lecon = strip_tags($_POST['titre_lecon']);
 $numero_du_module = 12/*$_POST['numero_du_module']*/;
 $exo_application = strip_tags($_POST['exo_application']);
 $corpus = strip_tags($_POST['corpus']);
 $activiteApprentissage = strip_tags($_POST['activitesApprentissage']);
-$opjectif_leçon = strip_tags($_POST['opjectif_lecon']);
-$plan_leçon  = strip_tags($_POST['plan_lecon']);
+if(!empty($_POST['plan_lecon'])) {$plan_leçon  = strip_tags($_POST['plan_lecon']);}
+else $plan_leçon =null ;
+if(!empty($_POST['opjectif_lecon'])){
+    $opjectif_leçon  = strip_tags($_POST['opjectif_lecon']);
+     }else  $opjectif_leçon =null ;
 $homework = strip_tags($_POST['homework']);
 
 Ajoutcours($id_enseignant, $id_matiere, $id_classe, $trimestre, $id_chapitre, $titre_module, $titre_lecon, $numero_du_module, $exo_application,  $corpus,  $activiteApprentissage, $opjectif_leçon, $plan_leçon, $homework,$vu);
@@ -182,14 +185,8 @@ Ajoutcours($id_enseignant, $id_matiere, $id_classe, $trimestre, $id_chapitre, $t
                 <td><input type="file"></td>
             </tr>
 
-            <tr>
-                <td></td>
-                <td></td>
-                <td align="right"><button type="submit" >Enregistrer</button></td>
-            </tr>
         </table>
 </form>
 </div>
 
-<?php include "partials/_footer.php"; ?>
 

@@ -1,23 +1,12 @@
-
-<!-- <div class="container-xxl position-relative bg-info d-flex p-0"> -->
-
-
-<!-- Sidebar Start -->
-
-
-
-<!-- <div class="container-xxl position-relative bg-info d-flex p-0"> -->
-
-
-<!-- Sidebar Start -->
-
 <?php 
 include 'config/database.php';
+require_once 'functions/ajout_cours.php';
+$elements = matiere_et_heure($_SESSION["user"]["id"]);
 ?>
 
 
-<div class="sidebar  pe-4 pb-3">
-    <nav class="navbar  navbar-light">
+<div class="sidebar bg-dark  pe-4 pb-3">
+    <nav class="navbar  navbar-dark">
         <a href="index.php" class="navbar-brand mx-4 mb-3">
             <h3 class="text-primary"></i>LOGO</h3>
         </a>
@@ -29,7 +18,7 @@ include 'config/database.php';
                 </div>
             </div>
             <div class="ms-3">
-                <h6 class="mb-0 text-black"><?= $_SESSION["user"]["Nom"].' '.$_SESSION["user"]["Prenom"] ?></h6>
+                <h6 class="mb-0 text-info"><?= $_SESSION["user"]["Nom"].' '.$_SESSION["user"]["Prenom"] ?></h6>
                 <span> 
                         <?php 
                         echo  strtoupper($_SESSION["user"]["table"]);
@@ -42,7 +31,7 @@ include 'config/database.php';
             <form class="d-none d-md-flex mb-4">
                     <input class="form-control border-0" type="search" placeholder="Search">
                 </form>
-            <a href="index.php" class="nav-item nav-link"><i class="fa fa-tachometer-alt me-2 text-info"></i>Tableau de Bord</a>
+            <a href="index.php" class="nav-item nav-link text-success"><i class="fa fa-tachometer-alt me-2 text-success"></i>Tableau de Bord</a>
 
 
             <?php if($_SESSION["user"]["table"]==='censeur'): ?>
@@ -50,8 +39,8 @@ include 'config/database.php';
             <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i
                         class="fa fa-laptop me-2 text-info"></i><span class="text-info">Créer</span></a>
                 <div class="dropdown-menu bg-transparent border-0">
-                    <a href="creation_cahier_texte.php" class="dropdown-item text-info">Cahier de texte</a>
-                    <a href="Ajout_enseignant.php" class="dropdown-item text-info">Compte enseignant</a>
+                    <a href="creation_cahier_texte.php" class="dropdown-item">Cahier de texte</a>
+                    <a href="Ajout_enseignant.php" class="dropdown-item">Compte enseignant</a>
                     <a href="Ajout_matiere.php" class="dropdown-item text-info">Attribuer des matieres a vos enseignant</a>
                 </div>
             </div>
@@ -70,7 +59,7 @@ include 'config/database.php';
                         class="fa fa-laptop me-2 text-info"></i><span class="text-info">Classes</span></a>
                 <div class="dropdown-menu bg-transparent border-0">
                     <?php
-                     foreach($classes as $classe){ $num = $classe['id'];
+                     foreach($elements as $classe){ $num = $classe['id_classe'];
 
                         echo '<a href="classes.php?id='.$num.'" class="dropdown-item text-info">'.$classe['nom_classe'].'</a>' ;
                     

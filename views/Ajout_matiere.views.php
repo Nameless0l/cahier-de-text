@@ -21,7 +21,7 @@ if (!empty($_POST)) {
         isset($_POST["Nom"], $_POST["nom_matiere"], $_POST["nom_classe"])
         && !empty($_POST["Nom"]) && !empty($_POST["nom_matiere"]) && !empty($_POST["nom_classe"])
     ) {
-        $id_enseignant = strip_tags($_POST["Nom"]);
+        $id_enseignant =(int) strip_tags($_POST["Nom"]);
         $nom_matiere = strip_tags($_POST["nom_matiere"]);
         $nom_classe = strip_tags($_POST["nom_classe"]);
         $heure = strip_tags($_POST["horaire"]);
@@ -32,7 +32,8 @@ if (!empty($_POST)) {
                 break;
             }
         }
-        attribuer($id_enseignant, $id_classe, $cycle, $nom_matiere, $nom_classe, $heure);
+
+        attribuer((int)$id_enseignant, $id_classe, $cycle, $nom_matiere, $nom_classe, $heure);
         echo 'REUSSITE DE LA SOIMISSION DES ELEMENTS';
     } else {
         die('formulaire incomplet');

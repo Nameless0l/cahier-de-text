@@ -3,7 +3,11 @@ $title = "Classes";
 include 'partials/_header.php';
 include "partials/_sidebar.php";
 include "partials/_nav.php";
+require_once 'functions/ajout_cours.php';
+$elements = matiere_et_heure($_SESSION["user"]["id"]);
+
 ?>
+
 
 <div>
     <div class="col-sm-12 col-xl-12">
@@ -29,11 +33,9 @@ include "partials/_nav.php";
                     <div class="bg-light rounded h-100 p-4">
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Mathematiques</button>
-                                <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Physique</button>
-                                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Informatique</button>
-                                <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact" type="button" role="tab" aria-controls="nav-contact" aria-selected="false">SVT</button>
-                            </div>
+                                
+                                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><?=$elements[$num]['nom_matiere'].' |' .$elements[$num]['nom_classe']?></button>
+                                </div>
                         </nav>
                         <div class="tab-content pt-3" id="nav-tabContent">
                             <div class="tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">

@@ -39,7 +39,7 @@ function enseig($nom, $update)
     <tr>
     <td>
         <div class="d-flex">
-            <img class="img-sm rounded-circle mb-md-0 mr-2" src="assets/images/user.jpg" alt="profile image">
+            <img class="img-sm rounded-circle mb-md-0 mr-2" src="" alt="profile image">
             <div>
                 <div class="font-weight-bold mt-1">' . $nom . '</div>
             </div>

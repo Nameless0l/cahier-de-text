@@ -1,2 +1,3 @@
 <?php 
-include "views/parts/cours.views.php"; ?>
+include "views/parts/cours.views.php"; 
+?>
