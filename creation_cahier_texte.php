@@ -68,7 +68,7 @@ if(isset($_POST["retour"]))
 
   if(!empty($_POST["classroom"]) AND !empty($_POST["student"]) AND !empty($_POST["ens_principal"]))
   {
-        $ins_enseignant = $db -> prepare("INSERT INTO cahierdetexte(id_classe,id_cens_en_charge, id_chef_classe, id_prof_principal) VALUES(?,?,?,?)");
+        $ins_enseignant = $db -> prepare("INSERT INTO cahier(id_classe,id_cens_en_charge, id_chef_classe, id_prof_principal) VALUES(?,?,?,?)");
         $ins_enseignant -> execute(array($classe,$_SESSION['user']['id'],$chef_classe,$prof_principal));
 
         
