@@ -19,7 +19,7 @@ $table_name = $_SESSION["user"]["table"];
 
         $data = $_POST;
 
-        UpdateInfoProfile($data, $table_name);
+        UpdateInfoProfile($data, 'censeur');
     }
 ?>
 

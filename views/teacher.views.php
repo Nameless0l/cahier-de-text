@@ -8,18 +8,21 @@ include "functions/affichage_enseignant.php";
 ?>
 
 <div class="col-sm-4"><a onclick="openForm()" href="#custom-modal" class="btn btn-custom waves-effect waves-light mb-4" data-animation="fadein" data-plugin="custommodal" data-overlayspeed="200" data-overlaycolor="#36404a"><i class="mdi mdi-plus"></i>Membre</a></div>
-
+<!-- <a href="modification_form.php">modifier</a> -->
 <div class="form-popup" id="myForm">
     <div class="container">
         <div class="row">
+        
+
             <?php
             $sql = $db->prepare('SELECT * FROM enseignant');
             $result = $sql->execute();
             $enseignants = $sql->fetchAll(PDO::FETCH_ASSOC);
             foreach ($enseignants as $enseignant) {
-                enseignant($enseignant['Nom'], $enseignant['Statut'], $enseignant['email']);
+                enseignant($enseignant['Nom'], $enseignant['Statut'], $enseignant['email'],$enseignant['matieres'],$enseignant['matricule']);
             }
             ?>
+
             <!-- end col -->
         </div>
         <!-- end row -->

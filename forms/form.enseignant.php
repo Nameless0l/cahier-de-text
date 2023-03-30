@@ -86,7 +86,7 @@ include "../partials/_nav_censeur.php";
 
       <div>
         <input type="checkbox" id="scales" name="matieres" value="Mathematques">
-        <label for="scales">Mathatiques</label>
+        <label for="scales">Mathematiques</label>
       </div>
       <div>
         <input type="checkbox" id="horns">

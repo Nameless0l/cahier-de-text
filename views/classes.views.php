@@ -3,8 +3,8 @@ $title = "Classes";
 include 'partials/_header.php';
 include "partials/_sidebar.php";
 include "partials/_nav.php";
-require_once 'functions/ajout_cours.php';
-$elements = matiere_et_heure($_SESSION["user"]["id"]);
+//require_once 'functions/ajout_cours.php';
+//$elements = matiere_et_heure($_SESSION["user"]["id"]);
 
 ?>
 
@@ -33,119 +33,17 @@ $elements = matiere_et_heure($_SESSION["user"]["id"]);
                     <div class="bg-light rounded h-100 p-4">
                         <nav>
                             <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                
-                                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true"><?=$elements[$num]['nom_matiere'].' |' .$elements[$num]['nom_classe']?></button>
-                                </div>
+
+                                <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">
+                                    <!--?=$elements[$num]['nom_matiere'].' |' .$elements[$num]['nom_classe']?></button>-->
+                            </div>
                         </nav>
                         <div class="tab-content pt-3" id="nav-tabContent">
                             <div class="tab-pane fade active show" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
                                 <div class="col-sm-12 col-xl-12">
                                     <div class="bg-light rounded h-100 p-4">
                                         <div class="accordion accordion-flush" id="accordionFlushExample">
-                                          <?php include "affichage_cahier.php";?>
-                                            <div class="accordion-item">
-                                                <h2 class="accordion-header" id="flush-headingTwo">
-                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
-                                                        Autres
-                                                    </button>
-                                                </h2>
-                                                <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body">
-                                                        <div class="pr-1 mb-3 mr-2 mb-xl-0">
-                                                            <button type="button" class="btn btn-warning bg-white btn-icon-text border"><i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i>Importer votre
-                                                                signature</button>
-                                                        </div>
-                                                        <div class="pr-1 mb-3 mb-xl-0">
-                                                            <button type="button" class="btn btn-warning bg-white btn-icon-text border"><i class="typcn typcn-info-large-outline mr-2"></i>Info</button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="accordion-item">
-                                                <h2 class="accordion-header" id="flush-headingThree">
-                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                                  Evaluation
-                                                    </button>
-                                                </h2>
-                                                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body">
-                                                        Sea sea sit sanctus magna gubergren kasd, magna justo ea lorem
-                                                        lorem. Elitr aliquyam ipsum clita consetetur duo at nonumy
-                                                        invidunt, invidunt eos dolore vero sit amet amet magna tempor
-                                                        clita, takimata diam justo stet erat et vero erat. Sit ipsum
-                                                        eirmod sea ut vero dolores sea clita nonumy, no.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="accordion-item">
-                                                <h2 class="accordion-header" id="flush-headingThree">
-                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                                       Travaux dirigés
-                                                    </button>
-                                                </h2>
-                                                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body">
-                                                        Sea sea sit sanctus magna gubergren kasd, magna justo ea lorem
-                                                        lorem. Elitr aliquyam ipsum clita consetetur duo at nonumy
-                                                        invidunt, invidunt eos dolore vero sit amet amet magna tempor
-                                                        clita, takimata diam justo stet erat et vero erat. Sit ipsum
-                                                        eirmod sea ut vero dolores sea clita nonumy, no.
-                                                    </div>
-                                                </div>
-                                                <div class="accordion-item">
-                                                <h2 class="accordion-header" id="flush-headingThree">
-                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                                        Activités d'intégration
-                                                    </button>
-                                                </h2>
-                                                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body">
-                                                        Sea sea sit sanctus magna gubergren kasd, magna justo ea lorem
-                                                        lorem. Elitr aliquyam ipsum clita consetetur duo at nonumy
-                                                        invidunt, invidunt eos dolore vero sit amet amet magna tempor
-                                                        clita, takimata diam justo stet erat et vero erat. Sit ipsum
-                                                        eirmod sea ut vero dolores sea clita nonumy, no.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            </div>
-                                    </div>
-                                </div>
-                            </div>
-               
-                            <div class="tab-pane fade " id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                Sit consetetur eirmod lorem ea magna sadipscing ipsum elitr invidunt, dolores lorem erat
-                                ipsum ut
-                                aliquyam
-                                eos lorem sed. Nonumy aliquyam ea justo eos dolores dolores duo dolores. Aliquyam dolor
-                                sea dolores sit
-                                takimata no erat vero. At lorem justo tempor lorem duo, stet kasd aliquyam ipsum
-                                voluptua labore at.
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                    Invidunt rebum voluptua lorem eirmod dolore. Amet no sed sanctus lorem ea. Nonumy sit stet sit
-                    magna. Rebum rebum ipsum clita erat consetetur, sit dolor sit clita et amet. Est et clita dolore
-                    takimata, sea dolores tempor erat consetetur lorem. Consetetur sea sadipscing dolor et dolores et
-                    stet, tempor elitr.
-                </div>
-                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
-                    <div class="col-md-12 mt-5">
-                        <span class="label label-info">Commentaires</span>
-                        <textarea id="basic-example"></textarea>
-                    </div>
-                </div>
-                <div class="tab-pane fade " id="pills-saisie" role="tabpanel" aria-labelledby="pills-saisie-tab">
-         <?php include "cours.php";?>
-         <div class="tab-pane fade active show" id="nav-saisie" role="tabpanel" aria-labelledby="nav-saisie-tab">
-                                <div class="col-sm-12 col-xl-12">
-                                    <div class="bg-light rounded h-100 p-4">
-                                        <div class="accordion accordion-flush" id="accordionFlushExample">
-                                          
+                                            <?php include "affichage_cahier.php"; ?>
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header" id="flush-headingTwo">
                                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
@@ -172,30 +70,30 @@ $elements = matiere_et_heure($_SESSION["user"]["id"]);
                                                 </h2>
                                                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
                                                     <div class="accordion-body">
-                                             <?php include "evaluation.php";?>
+                                                        <?php include "display_evaluation.php" ?>
                                                     </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="accordion-item">
+                                            <h2 class="accordion-header" id="flush-headingThree">
+                                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                                    Travaux dirigés
+                                                </button>
+                                            </h2>
+                                            <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                                <div class="accordion-body">
+                                                    Sea sea sit sanctus magna gubergren kasd, magna justo ea lorem
+                                                    lorem. Elitr aliquyam ipsum clita consetetur duo at nonumy
+                                                    invidunt, invidunt eos dolore vero sit amet amet magna tempor
+                                                    clita, takimata diam justo stet erat et vero erat. Sit ipsum
+                                                    eirmod sea ut vero dolores sea clita nonumy, no.
                                                 </div>
                                             </div>
                                             <div class="accordion-item">
                                                 <h2 class="accordion-header" id="flush-headingThree">
                                                     <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                                        Travaux dirigés
-                                                    </button>
-                                                </h2>
-                                                <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
-                                                    <div class="accordion-body">
-                                                        Sea sea sit sanctus magna gubergren kasd, magna justo ea lorem
-                                                        lorem. Elitr aliquyam ipsum clita consetetur duo at nonumy
-                                                        invidunt, invidunt eos dolore vero sit amet amet magna tempor
-                                                        clita, takimata diam justo stet erat et vero erat. Sit ipsum
-                                                        eirmod sea ut vero dolores sea clita nonumy, no.
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="accordion-item">
-                                                <h2 class="accordion-header" id="flush-headingThree">
-                                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
-                                                        Activités d'intégrations
+                                                        Activités d'intégration
                                                     </button>
                                                 </h2>
                                                 <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
@@ -212,9 +110,114 @@ $elements = matiere_et_heure($_SESSION["user"]["id"]);
                                     </div>
                                 </div>
                             </div>
-                            
+
+                            <div class="tab-pane fade " id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                                Sit consetetur eirmod lorem ea magna sadipscing ipsum elitr invidunt, dolores lorem erat
+                                ipsum ut
+                                aliquyam
+                                eos lorem sed. Nonumy aliquyam ea justo eos dolores dolores duo dolores. Aliquyam dolor
+                                sea dolores sit
+                                takimata no erat vero. At lorem justo tempor lorem duo, stet kasd aliquyam ipsum
+                                voluptua labore at.
+                            </div>
+                        </div>
+                    </div>
                 </div>
-        
+
+                <div class="tab-pane fade " id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                    Invidunt rebum voluptua lorem eirmod dolore. Amet no sed sanctus lorem ea. Nonumy sit stet sit
+                    magna. Rebum rebum ipsum clita erat consetetur, sit dolor sit clita et amet. Est et clita dolore
+                    takimata, sea dolores tempor erat consetetur lorem. Consetetur sea sadipscing dolor et dolores et
+                    stet, tempor elitr.
+                </div>
+                <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                    <div class="col-md-12 mt-5">
+                        <span class="label label-info">Commentaires</span>
+                        <textarea id="basic-example"></textarea>
+                    </div>
+                </div>
+                <div class="tab-pane fade " id="pills-saisie" role="tabpanel" aria-labelledby="pills-saisie-tab">
+                    <?php include "cours.php"; ?>
+                    <div class="tab-pane fade active show" id="nav-saisie" role="tabpanel" aria-labelledby="nav-saisie-tab">
+                        <div class="col-sm-12 col-xl-12">
+                            <div class="bg-light rounded h-100 p-4">
+                                <div class="accordion accordion-flush" id="accordionFlushExample">
+
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingTwo">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseTwo" aria-expanded="false" aria-controls="flush-collapseTwo">
+                                                Autres
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseTwo" class="accordion-collapse collapse" aria-labelledby="flush-headingTwo" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <div class="pr-1 mb-3 mr-2 mb-xl-0">
+                                                    <button type="button" class="btn btn-warning bg-white btn-icon-text border"><i class="fa-solid fa-arrow-up-from-bracket" aria-hidden="true"></i>Importer votre
+                                                        signature</button>
+                                                </div>
+                                                <div class="pr-1 mb-3 mb-xl-0">
+                                                    <button type="button" class="btn btn-warning bg-white btn-icon-text border"><i class="typcn typcn-info-large-outline mr-2"></i>Info</button>
+                                                </div>
+                                            </div>
+                                            <p>
+                                                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                                                Alias distinctio maiores dolor at praesent
+                                                ium illum natus,
+                                                culpa quae repellendus atque vero ea rerum aliquam, deleniti, perferendis et aperiam soluta voluptas.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingThree">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                                Evaluation
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                <?php include "evaluation.php"; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingThree">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                                Travaux dirigés
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                Sea sea sit sanctus magna gubergren kasd, magna justo ea lorem
+                                                lorem. Elitr aliquyam ipsum clita consetetur duo at nonumy
+                                                invidunt, invidunt eos dolore vero sit amet amet magna tempor
+                                                clita, takimata diam justo stet erat et vero erat. Sit ipsum
+                                                eirmod sea ut vero dolores sea clita nonumy, no.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="flush-headingThree">
+                                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapseThree" aria-expanded="false" aria-controls="flush-collapseThree">
+                                                Activités d'intégrations
+                                            </button>
+                                        </h2>
+                                        <div id="flush-collapseThree" class="accordion-collapse collapse" aria-labelledby="flush-headingThree" data-bs-parent="#accordionFlushExample">
+                                            <div class="accordion-body">
+                                                Sea sea sit sanctus magna gubergren kasd, magna justo ea lorem
+                                                lorem. Elitr aliquyam ipsum clita consetetur duo at nonumy
+                                                invidunt, invidunt eos dolore vero sit amet amet magna tempor
+                                                clita, takimata diam justo stet erat et vero erat. Sit ipsum
+                                                eirmod sea ut vero dolores sea clita nonumy, no.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
             </div>
 
 

@@ -13,25 +13,35 @@
 
 <?php 
 require 'config/database.php';
+$data=[
+        "email"=>"aronloic@gmail.com",
+        "password" => "prunelle",
+        "quartier"=>"test",
+        "ville"=>"ville test",
+        "nom"=>"Ch",
+        "prenom"=>"Chantal",
+];
+
 
 function UpdateInfoProfile($data, $table_name){
 
         global $db ;
 
-        $req = $db->prepare("UPDATE $table_name SET email = ?, mot_de_pass = ?, ville = ?, quartier = ?, nom = ?, prenom = ?  WHERE email = ? ");
+        $req = $db->prepare("UPDATE $table_name SET mot_de_pass = ?, ville = ?, quartier = ?, nom = ?, prenom = ?  WHERE email = ? ");
 
         $password_hash = password_hash($data['password'], PASSWORD_ARGON2ID);
         
-        $req->bindParam(1, $data['email'], PDO::PARAM_STR);
-        $req->bindParam(2, $password_hash, PDO::PARAM_STR);
-        $req->bindParam(3, $data['ville'], PDO::PARAM_STR);
-        $req->bindParam(4, $data['quartier'], PDO::PARAM_STR);
-        $req->bindParam(5, $data['nom'], PDO::PARAM_STR);
-        $req->bindParam(6, $data['prenom'], PDO::PARAM_STR);
-        $req->bindParam(7, $data['email'], PDO::PARAM_STR);
+        $req->bindParam(1, $password_hash, PDO::PARAM_STR);
+        $req->bindParam(2, $data['ville'], PDO::PARAM_STR);
+        $req->bindParam(3, $data['quartier'], PDO::PARAM_STR);
+        $req->bindParam(4, $data['nom'], PDO::PARAM_STR);
+        $req->bindParam(5, $data['prenom'], PDO::PARAM_STR);
+        $req->bindParam(6, $data['email'], PDO::PARAM_STR);
 
         $req->execute();
 
         $req->closeCursor();
      }
+
+//      UpdateInfoProfile($data,'censeur');
 ?>

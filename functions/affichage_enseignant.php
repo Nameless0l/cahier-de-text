@@ -1,33 +1,86 @@
 <?php
 include 'config/database.php';
 
-function enseignant($nom, $profession, $email)
+
+function enseignant($nom, $profession, $email, $matiere, $matricule)
 {
-    echo '
+
+  echo ' 
+             
             <div class="col-lg-4">
                 <div class="text-center card-box">
                     <div class="card pt-2 pb-2 enseignants">
                         <div class="thumb-lg member-thumb mx-auto"><img src="https://bootdey.com/img/Content/avatar/avatar3.png" class="rounded-circle img-thumbnail" alt="profile-image"></div>
                             <div class="">
                                 <h4>' . $nom . '</h4>
-                                <p class="text-muted">' . $profession . '<span>| </span><span><a href="#" class="text-pink">' . $email . '</a></span></p>
+                                <p class="text-muted">' . $profession . '<span>| </span><span><a href="#" class="text-pink">' . $email . '| </span><span><a href="#" class="text-pink">' . $matiere . '</a></span></p>
                             </div>
                             <button  class="btn btn-warning mt-3 btn-rounded waves-effect w-md waves-light col-md-6 mx-auto">Notifier</button>
-                        </div>
+                            <button  class="btn btn-warning mt-3 btn-rounded waves-effect w-md waves-light col-md-6 mx-auto"><a href="modification_form.php?matricule=' . $matricule . '">modifier</a></button>
+                            <button  class="btn btn-warning mt-3 btn-rounded waves-effect w-md waves-light col-md-6 mx-auto"><a href="suppression_form.php?matricule=' . $matricule . '">supprimer</a></button>
+
+                            </div>
                 </div>
             </div>
         ';
 }
 
 
+
+function affichelecon($trimestre, $numeroModule, $titremodule, $matiere, $journee, $titrelecon, $nom, $statut, $id)
+{
+  
+  echo '
+    <tbody>
+    <tr>
+    <td>' . $trimestre . '</td>
+    <td>' . $numeroModule . '</td>
+    <td>' . $titremodule . '</td>
+    <td>' . $matiere . '</td>
+    <td>' . $journee . '</td>
+    
+    <td><a href="update_lecon.php?id=' . $id . '">' . $titrelecon . '</a></td>
+    <td>' . $nom . '</td>
+    <td>' . $statut . '</td>
+    <td><?php if(!$signature){?>
+      <div class="form-check">
+          <input type="checkbox" class="form-check-input" name="matiere1" id="exampleCheck1" disabled
+            <?php
+              if(($signature==0)){
+                echo checked 
+
+                  
+         
+         
+        <?php } ?>
+    </td> 
+    
+    </tr>
+    
+    </tbody>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    ';
+}
+
+
+
+
+
 if (!empty($_POST)) {
-  $error='Veillez remplir tout les champs';
+  $error = 'Veillez remplir tout les champs';
   if (
     isset($_POST["nom"], $_POST["prenom"], $_POST["matricule"])
     && !empty($_POST["nom"]) && !empty($_POST["matricule"]) && !empty($_POST["prenom"])
   ) {
-    SendMesg((int)$_SESSION["user"]["id"],(int)$_POST["id"],$_SESSION["user"]["Nom"],$_POST["message"],$_SESSION["user"]["table"]);
-   
+    SendMesg((int)$_SESSION["user"]["id"], (int)$_POST["id"], $_SESSION["user"]["Nom"], $_POST["message"], $_SESSION["user"]["table"]);
   } else {
     die('formulaire incomplet');
   }
@@ -35,7 +88,7 @@ if (!empty($_POST)) {
 
 function enseig($nom, $update)
 {
-    echo '
+  echo '
     <tr>
     <td>
         <div class="d-flex">
@@ -85,3 +138,33 @@ function enseig($nom, $update)
     </tr>
 ';
 }
+
+
+
+// <!-- <style>
+//   #formula{
+//     height: 100px;
+//     width: 50px;
+//   }
+// </style>
+
+// <div id="formula">
+//   <form action="#">
+//     <h1>modifier les informations</h1>
+//       <label for="nom">nouveau nom</label>
+//       <input type="text" id="nom" name="nom" placeholder="le nouveau nom">
+//       <label for="prenom">nouveau prenom</label>
+//       <input type="text" id="nom" name="nom" placeholder="le nouveau prenom">
+//       <button type="submit">enregistrer</button>
+//       <button id="form" onclick="closeForm()">fermer</button>
+//   </form>
+// </div>
+
+// <script>
+//    function displayForm() {
+//         document.getElementById("formula").style.display = "block";
+//     }
+//     function closeForm() {
+//         document.getElementById("form").style.display = "block";
+//     }
+// </script> 

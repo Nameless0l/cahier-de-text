@@ -32,14 +32,14 @@ include 'partials/_header.php';
 include 'config/constants.php';
 ?>
 
-<div class="container-xxl position-relative bg-white d-flex p-0">
+<div class="container-xxl position-relative fond_bleue d-flex p-0">
     <div class="container-fluid">
         <div class="row h-100 align-items-center justify-content-center" style="min-height: 100vh;">
             <div class="col-12 col-sm-8 col-md-6 col-lg-5 col-xl-4">
                 <div class="bg-light rounded p-4 p-sm-5 my-4 mx-3">
                     <div class="d-flex align-items-center justify-content-between mb-3">
                         <a href="#" class="">
-                            <h3 class="text-primary">CONNEXION</h3>
+                            <h3 class="color_text">CONNEXION</h3>
                         </a>
                     </div>
                     <?php if ($error != null) :  ?>
@@ -54,13 +54,14 @@ include 'config/constants.php';
                             <input type="password" name="pass" class="form-control" id="floatingPassword" placeholder="Password"><span id="basic-default-password2" class="input-group-text cursor-pointer"><i class="fa fa-eye-slash" id="togglePassword"></i></span>
                             <label for="floatingPassword">Mot de Passe</label>
                         </div>
-                        <button type="submit" class="btn btn-primary py-3 w-100 mb-4">Se connecter</button>
+                        <button type="submit" class="btn  fond_bleue">Se connecter</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 <script>
     const togglePassword = document.querySelector("#togglePassword");
     const password = document.querySelector("#floatingPassword");

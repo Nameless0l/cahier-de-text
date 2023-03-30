@@ -13,14 +13,31 @@ if (!empty($_POST)) {
     $ville = strip_tags($_POST["ville"]);
     $quartier = strip_tags($_POST["quartier"]);
     $matieres = strip_tags($_POST["matieres"]);
-    $classes=strip_tags($_POST["classes"]);
+    // $classes=strip_tags($_POST["classes"]);
     $pass = password_hash("Nameless", PASSWORD_ARGON2ID);
     //hashons le mot de prenom
     require_once 'config/database.php';
     require_once 'functions/Update.user.php';
 
-    $ab = new UpdateProfile();
-    $mm = $ab->ajout_enseignant($_SESSION["user"]["id"], $nom ,$prenom, $matricule, $email, $ville, $quartier, $matieres,$classes);
+    //  $ab = new UpdateProfile();
+    // $mm = $ab->ajout_enseignant($_SESSION["user"]["id"], $nom ,$prenom, $matricule, $email, $ville, $quartier, $matieres);
+
+    global $db;
+
+      $sql1 = "INSERT INTO enseignant (Nom,Prenom,matieres,matricule,ville,quartier,mot_de_pass,email) VALUES(
+         :nom, :prenom,:matieres,:matricule,:ville,:quartier,'$pass',:email)";
+
+      $query = $db->prepare($sql1);
+
+      $query->bindValue(":nom", $nom, PDO::PARAM_STR);
+      $query->bindValue(":prenom", $prenom, PDO::PARAM_STR);
+      $query->bindValue(":matieres", $matieres, PDO::PARAM_STR);
+      $query->bindValue(":matricule", $matricule, PDO::PARAM_STR);
+      $query->bindValue(":email", $email, PDO::PARAM_STR);
+      $query->bindValue(":ville", $ville, PDO::PARAM_STR);
+      $query->bindValue(":quartier", $quartier, PDO::PARAM_STR);
+
+      $query->execute();
 
   } else {
     die('formulaire incomplet');
@@ -37,7 +54,7 @@ include "partials/_nav.php";
 
 <div class="container">
 
-  <form class="row g-3 needs-validation" method="post">
+  <form class="row g-3 needs-validation" method="POST">
     <div class="col-md-4">
       <label for="validationCustom01" class="form-label">Matricule</label>
       <input type="text" name="matricule" class="form-control" id="validationCustom01" required="required" placeholder=" Matricule ici">
@@ -67,7 +84,7 @@ include "partials/_nav.php";
 
         <div>
           <input type="checkbox" id="scales" name="matieres" value="Mathematques">
-          <label for="scales">Mathatiques</label>
+          <label for="scales">mathematiques</label>
         </div>
         <div>
           <input type="checkbox" id="horns" name="matieres" value="Physiques">
@@ -75,12 +92,15 @@ include "partials/_nav.php";
         </div>
         <div>
           <input type="checkbox" id="horns" name="matieres" value="Chimie">
-          <label for="horns">Chimie</label>
+          <label for="horns">chimie</label>
+        </div>
+        <div>
+          <input type="checkbox" id="horns" name="matieres" value="Chimie">
+          <label for="horns">informatique</label>
         </div>
       </fieldset >
       <fieldset class="col-md-3 pl-20">
         <legend>classes</legend>
-
         <div>
           <input type="checkbox" name="classes" value="5eme" id="scales">
           <label for="scales">5eme</label>
@@ -93,6 +113,14 @@ include "partials/_nav.php";
         <div>
           <input type="checkbox" name="classes" value="seconde" id="horns">
           <label for="horns">seconde</label>
+        </div>
+        <div>
+          <input type="checkbox" name="classes" value="premiere" id="horns">
+          <label for="horns">premiere</label>
+        </div>
+        <div>
+          <input type="checkbox" name="classes" value="Terminal" id="horns">
+          <label for="horns">Terminale</label>
         </div>
       </fieldset>
       </div>

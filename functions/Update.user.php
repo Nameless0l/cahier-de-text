@@ -9,16 +9,17 @@ class UpdateProfile
    public $password;
    public $avatar;
    public $table;
+   
 
-   public function ajout_enseignant($id_censeur, $nom, $prenom, $matricule, $email, $ville, $quartier, $matieres,$classes)
+   public function ajout_enseignant($id_censeur, $nom, $prenom, $matricule, $email, $ville, $quartier, $matieres)
    {
       require 'config/database.php';
 
       global $db;
 
       $pass = password_hash("Nameless", PASSWORD_ARGON2ID);
-      $sql1 = "INSERT INTO enseignant (Nom,Prenom,matieres,matricule,ville,quartier,mot_de_pass,email,classes) VALUES(
-         :nom, :prenom,:matieres,:matricule,:ville,:quartier,'$pass',:email,:classe)";
+      $sql1 = "INSERT INTO enseignant (Nom,Prenom,matieres,matricule,ville,quartier,mot_de_pass,email) VALUES(
+         :nom, :prenom,:matieres,:matricule,:ville,:quartier,'$pass',:email)";
 
       $query = $db->prepare($sql1);
 
@@ -26,7 +27,6 @@ class UpdateProfile
       $query->bindValue(":prenom", $prenom, PDO::PARAM_STR);
       $query->bindValue(":matieres", $matieres, PDO::PARAM_STR);
       $query->bindValue(":matricule", $matricule, PDO::PARAM_STR);
-      $query->bindValue(":classe", $classes, PDO::PARAM_STR);
       $query->bindValue(":email", $email, PDO::PARAM_STR);
       $query->bindValue(":ville", $ville, PDO::PARAM_STR);
       $query->bindValue("quartier", $quartier, PDO::PARAM_STR);
@@ -59,8 +59,7 @@ class UpdateProfile
       $query = $db->prepare($sql);
       $query->execute();
       $id_censeur_table = $query->fetchAll();
-      // die($id_censeur_table);
-      var_dump($id_censeur_table);
+      
    }
 
    public function ajout_cahier($matricule)

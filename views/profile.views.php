@@ -8,6 +8,10 @@ include 'partials/_header.php';
 include "partials/_sidebar.php";
 include "partials/_nav.php";
 ?>
+
+
+
+
 <div class="container rounded bg-white mt-5 mb-5">
     <div class="row">
         <div class="col-md-3 border-right">
@@ -28,16 +32,16 @@ include "partials/_nav.php";
                             Modifier votre Profil
                         </button>
                         <div class="col-md-8 " id='infoProfil'>
-                            <form class=" mb-4" method = 'post'>
+                            <form class=" mb-4" method = "POST">
                                 <!-- <h5 class="card-header">Basic</h5> -->
 
                                 <div class="card-body demo-vertical-spacing demo-only-element py-4">
                                     <div class='row'>
                                         <div class="form-text-toggle py-3 col-md-6">
-                                            <label class="form-label" for="basic-default-password12">Matricule</label>
+                                            <label class="form-label" for="basic-default-password12" >Matricule</label>
                                             <div class="input-group">
                                                 <input type="text" class="form-control " id="basic-default-password12"
-                                                    value="<?=$matricule?>" aria-describedby="basic-default-text" name='matricule' disabled />
+                                                    value="<?=$matricule?>" aria-describedby="basic-default-text" name='matricule' id="matricule" disabled />
                                                 <!-- <span id="basic-default-password2"
                                                 class="input-group-text cursor-pointer"><i
                                                     class="fa fa-eye" aria-hidden="true"></i></span> -->
@@ -88,7 +92,7 @@ include "partials/_nav.php";
                                     <div class="input-group py-3 pt-3">
                                         <span class="input-group-text " id="basic-addon11">@</span>
                                         <input type="text" class="form-control" value="<?=$email?>" aria-label="Username"
-                                            aria-describedby="basic-addon11" name='email' />
+                                            aria-describedby="basic-addon11" id="email" name='email' disabled />
                                     </div>
 
 
@@ -97,7 +101,7 @@ include "partials/_nav.php";
                                         <div class="input-group">
                                             <input type="password" class="form-control" id="password"
                                                 value='<?=$password?>'
-                                                aria-describedby="basic-default-password2" name='password'/>
+                                                aria-describedby="basic-default-password2" name='password' disabled/>
                                             <span id="basic-default-password2"
                                                 class="input-group-text cursor-pointer"><i class="fa fa-eye-slash"
                                                     id="togglePassword"></i></span>
@@ -133,7 +137,7 @@ include "partials/_nav.php";
                                         </div>
                                     </div>
 
-                                    <button class="btn btn-outline-success my-3" name = 'updateProfile'>
+                                    <button type="submit" class="btn btn-outline-success my-3"id="register" name = 'updateProfile'>
                                         Enregistrer les Modifications
                                     </button>
                                 </div>
@@ -144,6 +148,15 @@ include "partials/_nav.php";
             </div>
         </div>
     </div>
+<script>
+    function disablefonction(){
+        document.getElementById("email").diseabled;
+        document.getElementById("password").diseabled;
+        document.getElementById("matricule").diseabled;
+    }
+</script>
+
+
     <?php 
 include "partials/_footer.php";
 ?>

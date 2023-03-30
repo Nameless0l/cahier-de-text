@@ -30,15 +30,15 @@ function VU($id){
     $query -> execute();
 }
 
-function matiere_et_heure($id)
-{
-    require 'config/database.php';
-    $sql  = "SELECT * FROM matieres WHERE id_enseignant = $id " ;
-    $query = $db->prepare($sql);
-    $query->execute() ;
-    $elements = $query->fetchAll();
-    return $elements ;
+// function matiere_et_heure($id)
+// {
+//     require 'config/database.php';
+//     $sql  = "SELECT * FROM matieres WHERE id_enseignant = $id " ;
+//     $query = $db->prepare($sql);
+//     $query->execute() ;
+//     $elements = $query->fetchAll();
+//     return $elements ;
 
 
-}
+// }
 ?>
